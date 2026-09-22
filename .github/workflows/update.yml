@@ -34,13 +34,16 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+      - run: pip install -r requirements.txt
       - name: Descargar PVPC
         run: |
           ARGS="--days ${{ inputs.days || '0' }}"
           if [ "${{ inputs.force }}" = "true" ]; then ARGS="$ARGS --force"; fi
           python3 scripts/fetch.py $ARGS
       - name: Generar el sitio
-        run: python3 scripts/build.py
+        run: |
+          python3 scripts/build.py
+          python3 tools/og.py
       - name: Commit de datos (solo si cambió algo)
         run: |
           git add docs

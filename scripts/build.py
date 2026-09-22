@@ -39,6 +39,7 @@ PAGES = [  # key, tab, zona, día relativo
     ("app", "dia", "peninsula", 0), ("faq", "dia", "peninsula", 0), ("404", "dia", "peninsula", 0),
 ]
 TABS = ("dia", "generacion", "resumen", "calendario")
+OG_PAGES = {"home", "manana", "resumen", "hora_mas_barata", "canarias", "baleares", "ceuta_melilla", "calendario"}
 
 
 class Site:
@@ -172,7 +173,8 @@ def page_html(site: Site, key: str, tab: str, zone_id: str, offset: int) -> tupl
     ctx = context(site, day, zone)
     ctx.update({"page_url": BASE + spec["url"], "page_name": fill(spec["h1"], ctx, key), "title": fill(spec["title"], ctx, key),
                 "description": fill(spec["description"], ctx, key), "h1": fill(spec["h1"], ctx, key),
-                "date_published_iso": EVERGREEN_DATE, "og_image_url": f"{BASE}/assets/img/og-default.png"})
+                "date_published_iso": EVERGREEN_DATE,
+                "og_image_url": f"{BASE}/assets/img/og/{key}.png" if key in OG_PAGES else f"{BASE}/assets/img/og-default.png"})
 
     pts = site.points(day, zone.series)
     ex = site.extras(day)
