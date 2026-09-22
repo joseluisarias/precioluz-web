@@ -10,8 +10,7 @@ from precioluz import copy, engine
 from precioluz.zones import Zone
 
 ICON = '<svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-{name}"/></svg>'
-STORE = "https://apps.apple.com/es/app/id6758021483"          # enlace directo (smart banner, JSON-LD)
-STORE_SEARCH = "https://apps.apple.com/es/search?term=precio%20luz%20espa%C3%B1a%20pvpc"   # búsqueda en la tienda de España (enlaces visibles)
+STORE = "https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483"   # ficha de la app en la tienda de España
 BAND_WORD = {"g": "barata", "o": "precio medio", "r": "cara"}
 BAND_NAME = {"g": "Verde", "o": "Naranja", "r": "Rojo"}
 
@@ -94,7 +93,7 @@ def cta_card(ct: str = "web-hero") -> str:  # ct se conserva por compatibilidad;
     <li>{icon("checkmark")}<span>Los precios de mañana en tu iPhone a las 20:20, sin entrar en ninguna web.</span></li>
     <li>{icon("checkmark")}<span>Widgets, pantalla de bloqueo y Siri: pregúntale cuándo poner la lavadora.</span></li>
   </ul>
-  <a class="btn btn-store" href="{STORE_SEARCH}" rel="noopener">{icon("apple")}Descargar gratis en el App Store</a>
+  <a class="btn btn-store" href="{STORE}" rel="noopener">{icon("apple")}Descargar gratis en el App Store</a>
   <p class="caption sec">Precio Luz España PVPC. Gratis, sin anuncios, sin registro. Requiere iOS 26.</p>
 </section>'''
 
