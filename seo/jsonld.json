@@ -127,7 +127,7 @@
     "name": "Precio Luz España PVPC",
     "alternateName": "Precio de la Luz",
     "url": "https://precioluz.natural-apps.com/app/",
-    "description": "El precio de la luz de hoy y de mañana por horas, la hora más barata y un aviso antes de que llegue. Widgets, pantalla de bloqueo, Live Activity y Siri. Zonas: Península, Baleares, Canarias (hora local), Ceuta y Melilla (precio propio). Gratis, sin anuncios y sin registro.",
+    "description": "El precio de la luz de hoy y de mañana por horas, la hora más barata y un aviso antes de que llegue. Widgets, pantalla de bloqueo, Live Activity y Siri. Gratis, sin anuncios y sin registro.",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "iOS 26.0 o posterior",
     "inLanguage": "es-ES",
@@ -163,7 +163,6 @@
       "Widgets de pantalla de bloqueo y StandBy",
       "Live Activity y Dynamic Island",
       "Atajos de Siri Lavadora barata y Lavavajillas barato",
-      "Zonas: Península, Baleares, Canarias (hora local), Ceuta y Melilla (precio propio)",
       "Tabla del día con colores, hora más barata y más cara, próxima oportunidad y consejo del día",
       "Comparativa con ayer y mañana, calendario mensual y mix de generación"
     ],

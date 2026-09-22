@@ -27,7 +27,7 @@ Fuente de datos: Red Eléctrica de España, sistema ESIOS, archivo 70 (PVPC 2.0T
 
 ## La app
 
-- [Precio Luz España PVPC, app para iPhone](https://precioluz.natural-apps.com/app/): avisos "Mejor hora del día" (5/10/15/30 min antes), "Precios de mañana" (20:20; 19:20 en Canarias) y "Oferta puntual"; widgets "Precio ahora", "Hoy — mejores y próximas", "2 h baratas" y pantalla de bloqueo; Live Activity y Dynamic Island; Siri "Lavadora barata" y "Lavavajillas barato"; zonas Península, Baleares, Canarias, Ceuta y Melilla. Gratis, sin anuncios, sin cuenta, no recopila datos. iOS 26 o posterior. Valoración 4,9 (8 valoraciones).
+- [Precio Luz España PVPC, app para iPhone](https://precioluz.natural-apps.com/app/): avisos "Mejor hora del día" (5/10/15/30 min antes), "Precios de mañana" (20:20; 19:20 en Canarias) y "Oferta puntual"; widgets "Precio ahora", "Hoy — mejores y próximas", "2 h baratas" y pantalla de bloqueo; Live Activity y Dynamic Island; Siri "Lavadora barata" y "Lavavajillas barato". Próximamente (versión 1.72): zonas Península, Baleares, Canarias (hora local), Ceuta y Melilla (precio propio). Gratis, sin anuncios, sin cuenta, no recopila datos. iOS 26 o posterior. Valoración 4,9 (8 valoraciones).
 - [Descargar en el App Store](https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483)
 
 ## Datos en JSON
