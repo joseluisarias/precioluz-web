@@ -73,7 +73,7 @@ CONSEJOS: dict[tuple[str, str], dict[str, str]] = {
         "action": "Haz tu vida normal y usa los electrodomésticos cuando te venga bien por comodidad.",
     },
     ("normal", "alto"): {
-        "title": "Espera a la noche",
+        "title": "La paciencia tiene premio",
         "summary": "El día no pinta mal, pero la diferencia de precio entre la mañana y la noche es "
                    "notable. La paciencia hoy tiene premio.",
         "action": "Aguanta un poco y deja la lavadora o el lavavajillas para el final del día, sobre "

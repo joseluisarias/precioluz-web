@@ -11,54 +11,63 @@
 <link rel="stylesheet" href="/assets/css/app.css">
 <script>document.documentElement.classList.replace('no-js','js')</script>
 </head>
-<body data-tab="resumen" data-band="g" data-nav="off">
+<!-- Mock estático (Resumen) con los precios reales del 22/09/2026 (PCB). "Ahora" fijado a las 12:00 para revisar rayo, banda y tinte verde. -->
+<body data-tab="resumen" data-band="g">
 <a class="skip" href="#panel-resumen">Saltar al contenido</a>
-<div class="frame" aria-hidden="true"></div>
-<main class="shell" id="app">
-  <nav class="tabbar" aria-label="Secciones">
-    <div class="tabs" role="tablist" aria-label="Pestañas de PrecioLuz">
-      <a role="tab" id="tab-dia" data-tab="dia" href="/mock/index.html" aria-controls="panel-dia" aria-selected="false" tabindex="-1"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-chart-bar"/></svg><span>Día</span></a>
-      <a role="tab" id="tab-generacion" data-tab="generacion" href="/mock/index.html#generacion" aria-controls="panel-generacion" aria-selected="false" tabindex="-1"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-bolt"/></svg><span>Generación</span></a>
-      <a role="tab" id="tab-resumen" data-tab="resumen" href="/mock/resumen.html" aria-controls="panel-resumen" aria-selected="true" tabindex="0"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-sparkles"/></svg><span>Resumen</span></a>
-      <a role="tab" id="tab-calendario" data-tab="calendario" href="/mock/calendario.html" aria-controls="panel-calendario" aria-selected="false" tabindex="-1"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-calendar"/></svg><span>Calendario</span></a>
-    </div>
-    <a class="pill store" href="https://apps.apple.com/es/app/id6758021483?ct=web-nav" rel="noopener"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-apple"/></svg>Descargar en el App Store</a>
-  </nav>
+<header class="topbar">
+  <div class="wrap">
+    <a class="brand" href="/mock/index.html"><img src="/assets/img/icon-192.png" width="28" height="28" alt="">PrecioLuz</a>
+    <nav class="nav" aria-label="Secciones">
+      <a href="/mock/index.html" data-tab="dia" aria-current="false"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-chart-bar"/></svg>Día</a>
+      <a href="/mock/index.html?manana" data-tab="manana" aria-current="false"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-arrow-circle"/></svg>Mañana</a>
+      <a href="/mock/resumen.html" data-tab="resumen" aria-current="page"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-sparkles"/></svg>Resumen</a>
+      <a href="/mock/calendario.html" data-tab="calendario" aria-current="false"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-calendar"/></svg>Calendario</a>
+      <a href="/mock/index.html?generacion" data-tab="generacion" aria-current="false"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-bolt"/></svg>Generación</a>
+      <a class="pill store" href="https://apps.apple.com/es/app/id6758021483?ct=web-nav" rel="noopener"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-apple"/></svg>Descargar en el App Store</a>
+    </nav>
+  </div>
+</header>
 
-  <section class="panel" role="tabpanel" id="panel-resumen" aria-labelledby="tab-resumen">
-    <section class="card">
-      <h2 class="lbl headline"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-timeline"/></svg>Comparativa</h2>
-      <div class="comp">
-        <div><div class="t"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-clock-arrow"/></svg>Ayer</div><div class="v">0,197</div><div class="s">€/kWh media</div><div class="s">0,018–0,415</div></div>
-        <div class="today"><div class="t"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-sun"/></svg>Hoy</div><div class="v">0,199</div><div class="s">€/kWh media</div><div class="s">0,019–0,411</div></div>
-        <div class="future"><div class="t"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-arrow-circle"/></svg>Mañana</div><div class="v">—</div><div class="s">Disponible<br>a las 20:20</div></div>
-      </div>
-    </section>
-
-    <section class="card">
-      <div class="row">
-        <h2 class="lbl headline"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-sparkles"/></svg>Resumen del día</h2>
-        <span class="badge">Laborable · Mar 22 Sep</span>
-      </div>
-      <div class="tiles">
-        <div class="tile g"><div class="t"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-clock-check"/></svg>Hora más barata</div><div class="v">0,019 €</div><div class="s">14:00</div></div>
-        <div class="tile r"><div class="t"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-warning"/></svg>Hora más cara</div><div class="v">0,411 €</div><div class="s">20:00</div></div>
-        <div class="tile t"><div class="t"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-clock-arrow"/></svg>Próxima oportunidad</div><div class="v">0,019 €</div><div class="s">14:00</div></div>
-        <div class="tile o"><div class="t"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-arrows-lr"/></svg>Rango del día</div><div class="v">0,392 €</div><div class="s">máx - mín</div></div>
-      </div>
-      <div class="callout"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-trend"/></svg><div class="stack"><div class="t">Comparativa</div><div class="x">Hoy la media es 0,199 €/kWh, un 2,7 % por encima de un laborable típico (0,194 €/kWh).</div></div></div>
-      <div class="advice">
-        <div class="row">
-          <span class="lbl caption semi sec"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-bolt"/></svg>Consejo del día</span>
-          <span class="badge xs">CARO · ALTO</span>
+<main class="wrap" id="main">
+  <div class="layout" data-tab="resumen">
+    <section class="panel" id="panel-resumen" aria-label="Resumen del día">
+      <section class="card">
+        <h2 class="lbl headline"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-timeline"/></svg>Comparativa</h2>
+        <div class="comp">
+          <div><div class="t"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-clock-arrow"/></svg>Ayer</div><div class="v">0,197</div><div class="s">€/kWh media</div><div class="s">0,018–0,415</div></div>
+          <div class="today"><div class="t"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-sun"/></svg>Hoy</div><div class="v">0,199</div><div class="s">€/kWh media</div><div class="s">0,019–0,411</div></div>
+          <div class="future"><div class="t"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-arrow-circle"/></svg>Mañana</div><div class="v">—</div><div class="s">Disponible<br>a las 20:20</div></div>
         </div>
-        <div class="callout"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-quote"/></svg><div class="stack"><div class="t">Hoy la luz está cara y cambia mucho entre unas horas y otras</div><div class="x">Concentra la lavadora, el lavavajillas y la carga del coche entre las 12:00 y las 17:00: son las únicas horas verdes del día.</div></div></div>
-        <div class="callout"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-checkmark"/></svg><div class="stack"><div class="t">Acción</div><div class="x">Mejor hora: 14:00. Peor hora: 20:00. Evita de 18:00 a 22:00, cuando el precio pasa de 0,25 €/kWh.</div></div></div>
-      </div>
-      <hr class="sep">
+      </section>
+      <section class="card">
+        <div class="row">
+          <h2 class="lbl headline"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-sparkles"/></svg>Resumen del día</h2>
+          <span class="badge">Laborable · Mar 22 Sep</span>
+        </div>
+        <div class="tiles">
+          <div class="tile g"><div class="t"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-clock-check"/></svg>Hora más barata</div><div class="v">0,019 €</div><div class="s">14:00</div></div>
+          <div class="tile r"><div class="t"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-warning"/></svg>Hora más cara</div><div class="v">0,411 €</div><div class="s">20:00</div></div>
+          <div class="tile t"><div class="t"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-clock-arrow"/></svg>Próxima oportunidad</div><div class="v">0,019 €</div><div class="s">14:00</div></div>
+          <div class="tile o"><div class="t"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-arrows-lr"/></svg>Rango del día</div><div class="v">0,392 €</div><div class="s">máx - mín</div></div>
+        </div>
+        <div class="callout"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-trend"/></svg><div class="stack"><div class="t">Comparativa</div><div class="x">Hoy la media es 0,199 €/kWh, un 2,7 % por encima de un laborable típico (0,194 €/kWh).</div></div></div>
+        <div class="advice">
+          <div class="row">
+            <span class="lbl caption semi sec"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-bolt"/></svg>Consejo del día</span>
+            <span class="badge xs">CARO · ALTO</span>
+          </div>
+          <div class="callout"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-quote"/></svg><div class="stack"><div class="t">Hoy la luz está cara y cambia mucho entre unas horas y otras</div><div class="x">Concentra la lavadora, el lavavajillas y la carga del coche entre las 12:00 y las 17:00: son las únicas horas verdes del día.</div></div></div>
+          <div class="callout"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-checkmark"/></svg><div class="stack"><div class="t">Acción</div><div class="x">Mejor hora: 14:00. Peor hora: 20:00. Evita de 18:00 a 22:00, cuando el precio pasa de 0,25 €/kWh.</div></div></div>
+        </div>
+      </section>
     </section>
-  </section>
+  </div>
 </main>
+
+<div class="seo" id="seo">
+  <h1>Resumen del precio de la luz de hoy</h1>
+  <p class="lead">Comparativa con ayer y mañana, hora más barata y más cara, próxima oportunidad y consejo del día.</p>
+</div>
 
 <footer class="foot">
   <p>PrecioLuz (precioluz.natural-apps.com) es la web de la app Precio Luz España PVPC para iPhone, de Natural Apps. Datos oficiales de Red Eléctrica, sin publicidad y sin comercializadora.</p>

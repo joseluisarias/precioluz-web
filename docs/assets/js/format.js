@@ -35,13 +35,13 @@ export const CONSEJOS = {
   },
   'normal|medio': {
     title: 'Día tranquilo con truco',
-    summary: 'Ni muy caro ni muy barato, precios bastante estándar. Sin embargo, hay un hueco a mediodía que merece la pena aprovechar para bajar la media.',
+    summary: 'Ni muy caro ni muy barato, precios bastante estándar. Sin embargo, hay un hueco barato que merece la pena aprovechar para bajar la media.',
     action: 'Si estás en casa, intenta cocinar o planchar cerca de las {bestHour}.',
   },
   'caro|alto': {
     title: '¡Cuidado con la factura!',
     summary: 'Hoy la electricidad está por las nubes y hay picos que asustan. Usar el horno o la calefacción a lo loco te saldrá caro.',
-    action: 'Evita las horas centrales y, si es urgente, programa el consumo para la madrugada ({bestHour}).',
+    action: 'Evita las horas centrales y, si es urgente, programa el consumo para la hora más barata ({bestHour}).',
   },
   'caro|plano': {
     title: 'Toca apretarse el cinturón',
@@ -54,9 +54,9 @@ export const CONSEJOS = {
     action: 'Haz tu vida normal y usa los electrodomésticos cuando te venga bien por comodidad.',
   },
   'normal|alto': {
-    title: 'Espera a la noche',
-    summary: 'El día no pinta mal, pero la diferencia de precio entre la mañana y la noche es notable. La paciencia hoy tiene premio.',
-    action: 'Aguanta un poco y deja la lavadora o el lavavajillas para el final del día, sobre las {bestHour}.',
+    title: 'La paciencia tiene premio',
+    summary: 'El día no pinta mal, pero la diferencia de precio entre unas horas y otras es notable. La paciencia hoy tiene premio.',
+    action: 'Aguanta un poco y deja la lavadora o el lavavajillas para la hora más barata, sobre las {bestHour}.',
   },
   'barato|medio': {
     title: 'Día de limpieza general',
