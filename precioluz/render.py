@@ -10,7 +10,8 @@ from precioluz import copy, engine
 from precioluz.zones import Zone
 
 ICON = '<svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-{name}"/></svg>'
-STORE = "https://apps.apple.com/es/app/id6758021483"
+STORE = "https://apps.apple.com/es/app/id6758021483"          # enlace directo (smart banner, JSON-LD)
+STORE_SEARCH = "https://apps.apple.com/es/search?term=precio%20luz%20espa%C3%B1a%20pvpc"   # búsqueda en la tienda de España (enlaces visibles)
 BAND_WORD = {"g": "barata", "o": "precio medio", "r": "cara"}
 BAND_NAME = {"g": "Verde", "o": "Naranja", "r": "Rojo"}
 
@@ -85,7 +86,7 @@ def bars(points: list[engine.HourPoint], bands: str, zone: Zone, day_label: str)
             f'<ol class="bars" id="bars" style="--max:{vmax:.4f}">' + "".join(rows) + "</ol></section>")
 
 
-def cta_card(ct: str = "web-hero") -> str:
+def cta_card(ct: str = "web-hero") -> str:  # ct se conserva por compatibilidad; la búsqueda no admite campaña
     return f'''<section class="card cta">
   <h2 class="lbl headline hd">{icon("bolt")}Que el precio te avise a ti, no al revés</h2>
   <ul>
@@ -93,7 +94,7 @@ def cta_card(ct: str = "web-hero") -> str:
     <li>{icon("checkmark")}<span>Los precios de mañana en tu iPhone a las 20:20, sin entrar en ninguna web.</span></li>
     <li>{icon("checkmark")}<span>Widgets, pantalla de bloqueo y Siri: pregúntale cuándo poner la lavadora.</span></li>
   </ul>
-  <a class="btn btn-store" href="{STORE}?ct={ct}" rel="noopener">{icon("apple")}Descargar gratis en el App Store</a>
+  <a class="btn btn-store" href="{STORE_SEARCH}" rel="noopener">{icon("apple")}Descargar gratis en el App Store</a>
   <p class="caption sec">Precio Luz España PVPC. Gratis, sin anuncios, sin registro. Requiere iOS 26.</p>
 </section>'''
 

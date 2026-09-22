@@ -112,7 +112,7 @@ def context(site: Site, day: str, zone) -> dict[str, str]:
     ctx = {
         "fecha_corta": copy.short_date(day), "fecha_larga": fecha_larga(day),
         "fecha_larga_manana": fecha_larga(cal.add_days(day, 1)), "mes_anno": copy.month_title(day[:7]).lower(),
-        "zona": zone.name if zone.id != "ceuta" else "Ceuta y Melilla", "appstore_url": render.STORE,
+        "zona": zone.name if zone.id != "ceuta" else "Ceuta y Melilla", "appstore_url": render.STORE_SEARCH,
         "actualizado": fmt_updated(site.updated_at), "actualizado_iso": site.updated_at,
         "fecha_iso": day, "data_url": f"{BASE}/data/hoy.json", "publicado_manana_a": "—",
         "hora_barata_manana": "—", "precio_barato_manana": "—", "renovable_ayer": "—", "dominante_ayer": "—",
