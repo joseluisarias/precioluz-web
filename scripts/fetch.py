@@ -25,14 +25,16 @@ from zoneinfo import ZoneInfo
 ROOT = Path(__file__).resolve().parents[1]
 sys.path.insert(0, str(ROOT))
 
-from precioluz import archive70  # noqa: E402
+from precioluz import archive70, generation  # noqa: E402
 
 MADRID = ZoneInfo("Europe/Madrid")
 URL = "https://api.esios.ree.es/archives/70/download_json?date={day}"
+GEN_URL = ("https://apidatos.ree.es/es/datos/generacion/estructura-generacion"
+           "?start_date={day}T00:00&end_date={day}T23:59&time_trunc=day")
 
 
-def download(day: str, tries: int = 3) -> bytes:
-    req = urllib.request.Request(URL.format(day=day), headers={"Accept": "application/json",
+def download(day: str, tries: int = 3, url: str = URL) -> bytes:
+    req = urllib.request.Request(url.format(day=day), headers={"Accept": "application/json",
                                                                 "User-Agent": "precioluz-web/1.0"})
     last: Exception | None = None
     for attempt in range(tries):
@@ -86,6 +88,33 @@ def save_day(data_dir: Path, day: str, hours, now_iso: str, force: bool) -> bool
     return True
 
 
+def save_generation(data_dir: Path, day: str, complete: bool, now_iso: str) -> bool:
+    """Mix diario de apidatos. D-1 es definitivo (no se reescribe si no cambia); D es parcial."""
+    path = data_dir / "generacion" / f"{day}.json"
+    try:
+        parsed = generation.parse(download(day, url=GEN_URL))
+    except generation.NoData:
+        print(f"  generación {day}: sin datos")
+        return False
+    except Exception as e:  # la generación es secundaria: nunca tumba el fetch de precios
+        print(f"  generación {day}: error {e}", file=sys.stderr)
+        return False
+    obj = {"day": day, "trunc": "day", "complete": complete, "fetchedAt": now_iso,
+           "total": parsed["total"], "renewablePct": parsed["renewablePct"],
+           "entries": parsed["entries"]}
+    if path.exists():
+        try:
+            old = json.loads(path.read_text(encoding="utf-8"))
+            if old.get("entries") == obj["entries"] and old.get("complete") == complete:
+                return False
+        except (OSError, ValueError):
+            pass
+    write_atomic(path, obj)
+    print(f"  generación {day}: {len(parsed['entries'])} tecnologías, {parsed['renewablePct']} % renovable"
+          f"{'' if complete else ' (parcial)'}")
+    return True
+
+
 def rebuild_index(data_dir: Path) -> dict:
     files = sorted((data_dir / "pvpc").glob("????-??-??.json"))
     days, updated = [], ""
@@ -104,6 +133,7 @@ def main(argv=None) -> int:
     p.add_argument("--days", type=int, default=0, help="días hacia atrás a descargar (0 = ayer, hoy y mañana)")
     p.add_argument("--force", action="store_true", help="reescribe aunque el dato no haya cambiado")
     p.add_argument("--data", default=str(ROOT / "docs" / "data"), help="directorio de datos")
+    p.add_argument("--skip-generation", action="store_true", help="no descargar el mix de generación")
     p.add_argument("--fixture", metavar="DAY", help="guarda el JSON crudo de ese día y termina")
     p.add_argument("--out", default=str(ROOT / "tests" / "fixtures" / "archive70"), help="destino de --fixture")
     a = p.parse_args(argv)
@@ -140,6 +170,11 @@ def main(argv=None) -> int:
         written += changed
         skipped += not changed
         print(f"  {day}: {len(hours)} horas{' (nuevo)' if changed else ' (sin cambios)'}")
+
+    if not a.skip_generation:
+        yesterday = (now.date() - dt.timedelta(days=1)).isoformat()
+        written += save_generation(data_dir, yesterday, complete=True, now_iso=now_iso)
+        written += save_generation(data_dir, now.date().isoformat(), complete=False, now_iso=now_iso)
 
     index = rebuild_index(data_dir)
     print(f"escritos={written} sin_cambios={skipped} pendientes={pending} "
