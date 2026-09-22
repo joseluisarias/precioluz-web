@@ -80,8 +80,8 @@ def draw(key: str, day: str, zone, points, bands: str, out: Path) -> None:
     else:
         d.text((64, 200), "Se publica a las 20:20", fill=GRAY, font=font(44))
     d.text((64, H - 56), "precioluz.natural-apps.com · datos de Red Eléctrica (PVPC)", fill=GRAY, font=font(24, False))
-    d.rounded_rectangle((W - 64 - 230, H - 70, W - 64, H - 34), radius=18, fill=INK)
-    d.text((W - 64 - 215, H - 64), "App para iPhone", fill=CREAM, font=font(22, False))
+    d.rounded_rectangle((W - 64 - 230, 56, W - 64, 92), radius=18, fill=INK)
+    d.text((W - 64 - 215, 62), "App para iPhone", fill=CREAM, font=font(22, False))
     out.parent.mkdir(parents=True, exist_ok=True)
     img.save(out, optimize=True)
 
