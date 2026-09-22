@@ -289,3 +289,8 @@ svg.ic{width:1.1em;height:1.1em;flex:none;fill:currentColor;vertical-align:-.15e
 .zonesel select{appearance:none;-webkit-appearance:none;font:inherit;font-size:13px;font-weight:600;color:var(--label);background:color-mix(in srgb,var(--label) 8%,transparent) url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 24 24' fill='none' stroke='%238e8e93' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'><path d='m6 9 6 6 6-6'/></svg>") no-repeat right 10px center;border:0;border-radius:999px;padding:6px 30px 6px 12px;cursor:pointer;min-height:32px}
 .zonesel select:focus-visible{outline:2px solid var(--blue);outline-offset:2px}
 .stack.end{align-items:flex-end;gap:8px}
+
+/* Desplegable de meses del calendario */
+.cal-months{list-style:none;margin:8px 0 0;padding:6px;display:grid;gap:2px;background:var(--card);border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.12)}
+.cal-months li{padding:8px 12px;border-radius:8px;cursor:pointer;font-size:15px}
+.cal-months li[aria-selected=true],.cal-months li:hover,.cal-months li:focus-visible{background:color-mix(in srgb,var(--blue) 12%,transparent);outline:none}

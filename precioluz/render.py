@@ -169,9 +169,9 @@ def calendar_card(month: str, month_days_json: dict, series: str, selected: str,
     next_m = months[idx + 1] if idx + 1 < len(months) else None
     title = copy.month_title(month)
     nav = (f'<div class="cal-nav">'
-           f'<a class="btn-sq" href="?m={prev_m}" aria-label="Mes anterior"{"" if prev_m else " aria-disabled=\"true\""}>{icon("chevron-left")}</a>'
+           f'<a class="btn-sq" href="?m={prev_m or ""}" aria-label="Mes anterior"{"" if prev_m else " aria-disabled=\"true\""}>{icon("chevron-left")}</a>'
            f'<button type="button" class="cal-month" id="cal-month" aria-haspopup="listbox" aria-expanded="false">{esc(title)}{icon("chevron-down")}</button>'
-           f'<a class="btn-sq" href="?m={next_m}" aria-label="Mes siguiente"{"" if next_m else " aria-disabled=\"true\""}>{icon("chevron-right")}</a></div>')
+           f'<a class="btn-sq" href="?m={next_m or ""}" aria-label="Mes siguiente"{"" if next_m else " aria-disabled=\"true\""}>{icon("chevron-right")}</a></div>')
     cells = ['<li aria-hidden="true"></li>'] * lead_blanks
     for k, d in enumerate(days):
         entry = (month_days_json.get(d) or {}).get(series)
@@ -254,8 +254,8 @@ def donut_svg(entries: list[dict]) -> str:
 
 def generacion_card(gen: dict | None, day_label: str) -> str:
     seg = ('<div class="segmented" role="group" aria-label="Modo">'
-           '<button type="button" data-mode="now" aria-selected="false">Ahora</button>'
-           '<button type="button" data-mode="day" aria-selected="true">Acumulado del día</button></div>')
+           '<button type="button" data-mode="now" aria-selected="false">Hoy (hasta ahora)</button>'
+           '<button type="button" data-mode="day" aria-selected="true">Ayer</button></div>')
     if not gen or not gen.get("entries"):
         return (f'<section class="card" id="generacion">{seg}<div class="row"><h2 class="lbl headline" id="gen-title">{icon("bolt")}Generación</h2>'
                 f'<span class="badge" id="gen-badge">Sin datos</span></div>'
@@ -270,7 +270,7 @@ def generacion_card(gen: dict | None, day_label: str) -> str:
         f'<span class="pc">{copy.fmt_pct(e["pct"])}</span></button></li>' for e in entries)
     return f'''<section class="card" id="generacion">
   {seg}
-  <div class="row"><h2 class="lbl headline" id="gen-title">{icon("bolt")}Generación acumulada · {esc(day_label)}</h2><span class="badge" id="gen-badge">{esc(gen["day"][8:10])}/{esc(gen["day"][5:7])}</span></div>
+  <div class="row"><h2 class="lbl headline" id="gen-title">{icon("bolt")}Generación de ayer · {esc(day_label)}</h2><span class="badge" id="gen-badge">{esc(gen["day"][8:10])}/{esc(gen["day"][5:7])}</span></div>
   <div class="donut" id="gen-donut">{donut_svg(entries)}<div class="center"><span class="t">Total</span><span class="v">{total_txt}</span><span class="s">{copy.fmt_pct(gen["renewablePct"])} renovable</span></div></div>
   <div class="kpis">
     <div class="kpi">{icon("bolt")}<span class="stack"><span class="t">Total</span><span class="v">{total_txt}</span></span></div>
