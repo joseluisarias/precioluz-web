@@ -38,6 +38,19 @@
       "sobre-estos-datos"
     ]
   },
+  "resumen": {
+    "url": "/resumen/",
+    "priority": 0.8,
+    "title": "Resumen del precio de la luz hoy {fecha_corta}: media y mejores horas · PrecioLuz",
+    "description": "Resumen del precio de la luz hoy {fecha_corta}: media {media} €/kWh, hora más barata a las {hora_barata} ({precio_barato} €/kWh), más cara a las {hora_cara} y comparativa con ayer y mañana.",
+    "h1": "Resumen del precio de la luz hoy, {fecha_larga}",
+    "lead": "Hoy, {fecha_larga}, la luz cuesta de media {media} €/kWh, un {pct_vs_ayer} % {mas_menos_ayer} que ayer. La hora más barata es de {hora_barata} a {hora_barata_fin} ({precio_barato} €/kWh) y la más cara de {hora_cara} a {hora_cara_fin} ({precio_caro} €/kWh). Datos oficiales de Red Eléctrica para {zona}, en precioluz.natural-apps.com.",
+    "sections": [
+      "como-leer",
+      "cta-app",
+      "sobre-estos-datos"
+    ]
+  },
   "hora_mas_barata": {
     "url": "/hora-mas-barata/",
     "priority": 0.9,

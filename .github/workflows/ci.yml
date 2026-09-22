@@ -16,3 +16,5 @@ jobs:
       - run: pip install -r requirements-dev.txt
       - run: python3 -m pytest -q
       - run: node --test "tests/js/**/*.test.js"
+      - run: python3 tools/parity.py
+      - run: python3 scripts/build.py --check

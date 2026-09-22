@@ -39,9 +39,11 @@ jobs:
           ARGS="--days ${{ inputs.days || '0' }}"
           if [ "${{ inputs.force }}" = "true" ]; then ARGS="$ARGS --force"; fi
           python3 scripts/fetch.py $ARGS
+      - name: Generar el sitio
+        run: python3 scripts/build.py
       - name: Commit de datos (solo si cambió algo)
         run: |
-          git add docs/data
+          git add docs
           if git diff --cached --quiet; then
             echo "sin cambios"
           else
