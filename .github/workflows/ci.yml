@@ -15,4 +15,4 @@ jobs:
           node-version: "22"
       - run: pip install -r requirements-dev.txt
       - run: python3 -m pytest -q
-      - run: node --test tests/js/
+      - run: node --test "tests/js/**/*.test.js"
