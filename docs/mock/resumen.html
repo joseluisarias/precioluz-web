@@ -1,0 +1,76 @@
+<!doctype html>
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Resumen · Mock PrecioLuz</title>
+<meta name="robots" content="noindex">
+<link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="stylesheet" href="/assets/css/app.css">
+<script>document.documentElement.classList.replace('no-js','js')</script>
+</head>
+<body data-tab="resumen" data-band="g" data-nav="off">
+<a class="skip" href="#panel-resumen">Saltar al contenido</a>
+<div class="frame" aria-hidden="true"></div>
+<main class="shell" id="app">
+  <nav class="tabbar" aria-label="Secciones">
+    <div class="tabs" role="tablist" aria-label="Pestañas de PrecioLuz">
+      <a role="tab" id="tab-dia" data-tab="dia" href="/mock/index.html" aria-controls="panel-dia" aria-selected="false" tabindex="-1"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-chart-bar"/></svg><span>Día</span></a>
+      <a role="tab" id="tab-generacion" data-tab="generacion" href="/mock/index.html#generacion" aria-controls="panel-generacion" aria-selected="false" tabindex="-1"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-bolt"/></svg><span>Generación</span></a>
+      <a role="tab" id="tab-resumen" data-tab="resumen" href="/mock/resumen.html" aria-controls="panel-resumen" aria-selected="true" tabindex="0"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-sparkles"/></svg><span>Resumen</span></a>
+      <a role="tab" id="tab-calendario" data-tab="calendario" href="/mock/calendario.html" aria-controls="panel-calendario" aria-selected="false" tabindex="-1"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-calendar"/></svg><span>Calendario</span></a>
+    </div>
+    <a class="pill store" href="https://apps.apple.com/es/app/id6758021483?ct=web-nav" rel="noopener"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-apple"/></svg>Descargar en el App Store</a>
+  </nav>
+
+  <section class="panel" role="tabpanel" id="panel-resumen" aria-labelledby="tab-resumen">
+    <section class="card">
+      <h2 class="lbl headline"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-timeline"/></svg>Comparativa</h2>
+      <div class="comp">
+        <div><div class="t"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-clock-arrow"/></svg>Ayer</div><div class="v">0,197</div><div class="s">€/kWh media</div><div class="s">0,018–0,415</div></div>
+        <div class="today"><div class="t"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-sun"/></svg>Hoy</div><div class="v">0,199</div><div class="s">€/kWh media</div><div class="s">0,019–0,411</div></div>
+        <div class="future"><div class="t"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-arrow-circle"/></svg>Mañana</div><div class="v">—</div><div class="s">Disponible<br>a las 20:20</div></div>
+      </div>
+    </section>
+
+    <section class="card">
+      <div class="row">
+        <h2 class="lbl headline"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-sparkles"/></svg>Resumen del día</h2>
+        <span class="badge">Laborable · Mar 22 Sep</span>
+      </div>
+      <div class="tiles">
+        <div class="tile g"><div class="t"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-clock-check"/></svg>Hora más barata</div><div class="v">0,019 €</div><div class="s">14:00</div></div>
+        <div class="tile r"><div class="t"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-warning"/></svg>Hora más cara</div><div class="v">0,411 €</div><div class="s">20:00</div></div>
+        <div class="tile t"><div class="t"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-clock-arrow"/></svg>Próxima oportunidad</div><div class="v">0,019 €</div><div class="s">14:00</div></div>
+        <div class="tile o"><div class="t"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-arrows-lr"/></svg>Rango del día</div><div class="v">0,392 €</div><div class="s">máx - mín</div></div>
+      </div>
+      <div class="callout"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-trend"/></svg><div class="stack"><div class="t">Comparativa</div><div class="x">Hoy la media es 0,199 €/kWh, un 2,7 % por encima de un laborable típico (0,194 €/kWh).</div></div></div>
+      <div class="advice">
+        <div class="row">
+          <span class="lbl caption semi sec"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-bolt"/></svg>Consejo del día</span>
+          <span class="badge xs">CARO · ALTO</span>
+        </div>
+        <div class="callout"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-quote"/></svg><div class="stack"><div class="t">Hoy la luz está cara y cambia mucho entre unas horas y otras</div><div class="x">Concentra la lavadora, el lavavajillas y la carga del coche entre las 12:00 y las 17:00: son las únicas horas verdes del día.</div></div></div>
+        <div class="callout"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-checkmark"/></svg><div class="stack"><div class="t">Acción</div><div class="x">Mejor hora: 14:00. Peor hora: 20:00. Evita de 18:00 a 22:00, cuando el precio pasa de 0,25 €/kWh.</div></div></div>
+      </div>
+      <hr class="sep">
+    </section>
+  </section>
+</main>
+
+<footer class="foot">
+  <p>PrecioLuz (precioluz.natural-apps.com) es la web de la app Precio Luz España PVPC para iPhone, de Natural Apps. Datos oficiales de Red Eléctrica, sin publicidad y sin comercializadora.</p>
+  <ul class="links">
+    <li><a href="https://apps.apple.com/es/app/id6758021483?ct=web-footer" rel="noopener">Descargar la app en el App Store</a></li>
+    <li><a href="https://www.natural-apps.com/PrecioLuz/privacy_es.html">Privacidad</a></li>
+    <li><a href="https://www.natural-apps.com/PrecioLuz/terms_es.html">Términos</a></li>
+    <li><a href="https://www.natural-apps.com/PrecioLuz/contact_es.html">Contacto</a></li>
+    <li><a href="https://www.natural-apps.com/">Natural Apps</a></li>
+  </ul>
+  <p>Fuente: Red Eléctrica de España (ESIOS, PVPC 2.0TD, archivo horario).</p>
+</footer>
+<script type="module" src="/assets/js/app.js"></script>
+</body>
+</html>

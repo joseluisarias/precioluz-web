@@ -1,0 +1,93 @@
+<!doctype html>
+<!--
+  PrecioLuz · shell única. build.py sustituye los marcadores de doble llave:
+    title, description, canonical, og_image, jsonld, active_tab, header,
+    panel_dia, panel_generacion, panel_resumen, panel_calendario, seo_sections, boot_json
+  y, derivados de active_tab (una sola pestaña activa, el resto con `hidden`):
+    sel_dia | sel_generacion | sel_resumen | sel_calendario      -> "true" | "false"
+    tabi_dia | tabi_generacion | tabi_resumen | tabi_calendario  -> "0" | "-1"
+    hid_dia | hid_generacion | hid_resumen | hid_calendario      -> "" | "hidden"
+  app.js vuelve a sincronizar aria-selected/hidden en el arranque, pero el HTML ya sale correcto sin JS.
+-->
+<html lang="es" class="no-js">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>{{title}}</title>
+<meta name="description" content="{{description}}">
+<link rel="canonical" href="{{canonical}}">
+<link rel="alternate" hreflang="es-ES" href="{{canonical}}">
+<link rel="alternate" hreflang="x-default" href="{{canonical}}">
+<meta name="apple-itunes-app" content="app-id=6758021483, app-argument=https://precioluz.natural-apps.com/manana/">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="PrecioLuz">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="{{title}}">
+<meta property="og:description" content="{{description}}">
+<meta property="og:url" content="{{canonical}}">
+<meta property="og:image" content="{{og_image}}">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="theme-color" content="#ffffff" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#000000" media="(prefers-color-scheme: dark)">
+<link rel="icon" href="/assets/img/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/assets/img/favicon-32.png">
+<link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
+<link rel="manifest" href="/manifest.webmanifest">
+<link rel="stylesheet" href="/assets/css/app.css">
+<link rel="modulepreload" href="/assets/js/app.js">
+<link rel="modulepreload" href="/assets/js/store.js">
+<script>document.documentElement.classList.replace('no-js','js')</script>
+<script type="application/ld+json">{{jsonld}}</script>
+</head>
+<body data-tab="{{active_tab}}">
+<a class="skip" href="#panel-{{active_tab}}">Saltar al contenido</a>
+<div class="frame" aria-hidden="true"></div>
+
+<main class="shell" id="app">
+  <nav class="tabbar" aria-label="Secciones">
+    <div class="tabs" role="tablist" aria-label="Pestañas de PrecioLuz">
+      <a role="tab" id="tab-dia" data-tab="dia" href="/" aria-controls="panel-dia" aria-selected="{{sel_dia}}" tabindex="{{tabi_dia}}"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-chart-bar"/></svg><span>Día</span></a>
+      <a role="tab" id="tab-generacion" data-tab="generacion" href="/generacion/" aria-controls="panel-generacion" aria-selected="{{sel_generacion}}" tabindex="{{tabi_generacion}}"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-bolt"/></svg><span>Generación</span></a>
+      <a role="tab" id="tab-resumen" data-tab="resumen" href="/resumen/" aria-controls="panel-resumen" aria-selected="{{sel_resumen}}" tabindex="{{tabi_resumen}}"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-sparkles"/></svg><span>Resumen</span></a>
+      <a role="tab" id="tab-calendario" data-tab="calendario" href="/calendario/" aria-controls="panel-calendario" aria-selected="{{sel_calendario}}" tabindex="{{tabi_calendario}}"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-calendar"/></svg><span>Calendario</span></a>
+    </div>
+    <a class="pill store" href="https://apps.apple.com/es/app/id6758021483?ct=web-nav" rel="noopener"><svg class="ic" aria-hidden="true"><use href="/assets/img/icons.svg#i-apple"/></svg>Descargar en el App Store</a>
+  </nav>
+
+  <section class="panel" role="tabpanel" id="panel-dia" aria-labelledby="tab-dia" {{hid_dia}}>
+{{header}}
+{{panel_dia}}
+  </section>
+  <section class="panel" role="tabpanel" id="panel-generacion" aria-labelledby="tab-generacion" {{hid_generacion}}>
+{{panel_generacion}}
+  </section>
+  <section class="panel" role="tabpanel" id="panel-resumen" aria-labelledby="tab-resumen" {{hid_resumen}}>
+{{panel_resumen}}
+  </section>
+  <section class="panel" role="tabpanel" id="panel-calendario" aria-labelledby="tab-calendario" {{hid_calendario}}>
+{{panel_calendario}}
+  </section>
+</main>
+
+<div class="seo" id="seo">
+{{seo_sections}}
+</div>
+
+<footer class="foot">
+  <p>PrecioLuz (precioluz.natural-apps.com) es la web de la app Precio Luz España PVPC para iPhone, de Natural Apps. Datos oficiales de Red Eléctrica, sin publicidad y sin comercializadora.</p>
+  <ul class="links">
+    <li><a href="https://apps.apple.com/es/app/id6758021483?ct=web-footer" rel="noopener">Descargar la app en el App Store</a></li>
+    <li><a href="https://www.natural-apps.com/PrecioLuz/privacy_es.html">Privacidad</a></li>
+    <li><a href="https://www.natural-apps.com/PrecioLuz/terms_es.html">Términos</a></li>
+    <li><a href="https://www.natural-apps.com/PrecioLuz/contact_es.html">Contacto</a></li>
+    <li><a href="https://www.natural-apps.com/">Natural Apps</a></li>
+  </ul>
+  <p>Fuente: Red Eléctrica de España (ESIOS, PVPC 2.0TD, archivo horario). Precios en €/kWh con impuestos del término de energía no incluidos.</p>
+</footer>
+
+<script type="application/json" id="pl-boot">{{boot_json}}</script>
+<script type="module" src="/assets/js/app.js"></script>
+</body>
+</html>
