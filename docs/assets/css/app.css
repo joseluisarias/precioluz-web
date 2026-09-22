@@ -3,7 +3,7 @@
 @property --band-color{syntax:'<color>';inherits:true;initial-value:#007AFF}
 :root{
   color-scheme:light dark;
-  --bg:#fff;--card:#F2F2F7;--label:#000;--label2:rgba(60,60,67,.6);--label3:rgba(60,60,67,.3);--sep:rgba(60,60,67,.29);
+  --bg:#fff;--card:#F2F2F7;--label:#000;--label2:rgba(60,60,67,.8);--label3:rgba(60,60,67,.3);--sep:rgba(60,60,67,.29);
   --green:#34C759;--orange:#FF9500;--red:#FF3B30;--teal:#30B0C7;--blue:#007AFF;--yellow:#FFCC00;
   --accent:var(--blue);--band-color:var(--blue);
   --fill:rgba(120,120,128,.12);--seg-on:#fff;--store-bg:#000;--store-fg:#fff;
@@ -12,12 +12,12 @@
   transition:--band-color .4s ease;
 }
 @media (prefers-color-scheme:dark){:root:not([data-theme=light]){
-  --bg:#000;--card:#1C1C1E;--label:#fff;--label2:rgba(235,235,245,.6);--label3:rgba(235,235,245,.3);--sep:rgba(84,84,88,.65);
+  --bg:#000;--card:#1C1C1E;--label:#fff;--label2:rgba(235,235,245,.75);--label3:rgba(235,235,245,.3);--sep:rgba(84,84,88,.65);
   --green:#30D158;--orange:#FF9F0A;--red:#FF453A;--teal:#40C8E0;--blue:#0A84FF;--yellow:#FFD60A;
   --fill:rgba(120,120,128,.24);--seg-on:#636366;--store-bg:#fff;--store-fg:#000;
 }}
 :root[data-theme=dark]{
-  --bg:#000;--card:#1C1C1E;--label:#fff;--label2:rgba(235,235,245,.6);--label3:rgba(235,235,245,.3);--sep:rgba(84,84,88,.65);
+  --bg:#000;--card:#1C1C1E;--label:#fff;--label2:rgba(235,235,245,.75);--label3:rgba(235,235,245,.3);--sep:rgba(84,84,88,.65);
   --green:#30D158;--orange:#FF9F0A;--red:#FF453A;--teal:#40C8E0;--blue:#0A84FF;--yellow:#FFD60A;
   --fill:rgba(120,120,128,.24);--seg-on:#636366;--store-bg:#fff;--store-fg:#000;
 }
@@ -104,7 +104,7 @@ svg.ic{width:1.1em;height:1.1em;flex:none;fill:currentColor;vertical-align:-.15e
 .btn-ic[aria-disabled=true],.btn-ic:disabled{opacity:.35;pointer-events:none}
 .segmented{display:flex;gap:2px;padding:2px;border-radius:9px;background:var(--fill)}
 .segmented button{flex:1;min-height:32px;border:0;border-radius:7px;background:none;font-size:13px;font-weight:600}
-.segmented [aria-selected=true]{background:var(--seg-on);box-shadow:var(--shadow-s)}
+.segmented [aria-pressed=true]{background:var(--seg-on);box-shadow:var(--shadow-s)}
 .tile{--tint:var(--label2);display:flex;flex-direction:column;gap:6px;min-width:0;padding:12px;border-radius:16px;
   background:color-mix(in srgb,var(--tint) 7%,transparent)}
 .tile.g{--tint:var(--green)}.tile.r{--tint:var(--red)}.tile.o{--tint:var(--orange)}.tile.t{--tint:var(--teal)}.tile.b{--tint:var(--blue)}
@@ -190,7 +190,7 @@ svg.ic{width:1.1em;height:1.1em;flex:none;fill:currentColor;vertical-align:-.15e
 .cell.g{--tint:var(--green)}.cell.o{--tint:var(--orange)}.cell.r{--tint:var(--red)}
 .cell.plain{background:color-mix(in srgb,var(--label2) 28%,transparent);color:var(--label)}
 .cell.empty{background:color-mix(in srgb,var(--label2) 18%,transparent);color:var(--label2);font-size:9px;font-weight:500}
-.cell .d{font-size:14px;font-weight:700;text-shadow:0 1px 1px rgba(0,0,0,.35)}
+.cell .d{font-size:14px;font-weight:700}
 .cell .a{font-size:10px;font-weight:700}
 .cell .m{display:flex;align-items:center;gap:4px;font-size:8px;font-weight:600}
 .cell .m .ic{width:8px;height:8px}
@@ -294,3 +294,17 @@ svg.ic{width:1.1em;height:1.1em;flex:none;fill:currentColor;vertical-align:-.15e
 .cal-months{list-style:none;margin:8px 0 0;padding:6px;display:grid;gap:2px;background:var(--card);border-radius:14px;box-shadow:0 8px 24px rgba(0,0,0,.12)}
 .cal-months li{padding:8px 12px;border-radius:8px;cursor:pointer;font-size:15px}
 .cal-months li[aria-selected=true],.cal-months li:hover,.cal-months li:focus-visible{background:color-mix(in srgb,var(--blue) 12%,transparent);outline:none}
+
+
+/* Fase 7: contraste AA */
+.comp .future{opacity:1}
+.comp .future .t,.comp .future .s,.comp .future .v{color:var(--label2)}
+.comp .future .v{opacity:.7}
+.seo .cta-button .btn,.seo a.btn{display:inline-flex;align-items:center;gap:8px;background:var(--label);color:var(--bg);padding:12px 18px;border-radius:999px;font-weight:600;text-decoration:none}
+.seo .cta-button .btn:hover,.seo a.btn:hover{opacity:.9}
+
+
+/* Fase 7: contraste AA en celdas y botones pequeños */
+.cell.g,.cell.o,.cell.r{color:#0a0a0a}
+.cell.g .ic,.cell.o .ic,.cell.r .ic{color:#0a0a0a}
+.btn.sm{color:var(--label)}

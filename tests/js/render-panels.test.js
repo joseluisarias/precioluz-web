@@ -121,7 +121,7 @@ test('generación: selección, modo hoy/ayer y unidades', () => {
   assert.ok(now.includes('data-t="Nuclear" class="sel"') && now.includes('data-t="Eólica" class="dim"'));
   assert.ok(now.includes('<div class="center"><span class="t">Nuclear</span><span class="v">10,5 GWh</span><span class="s" style="color:#7B2D8E">36,8 %</span></div>'));
   assert.ok(now.includes('data-t="Nuclear" style="--sw:#7B2D8E" aria-pressed="true"'));
-  assert.ok(now.includes('data-mode="now" aria-selected="true"'));
+  assert.ok(now.includes('data-mode="now" aria-pressed="true"'));
   const one = donutSvg([{ t: 'Solo', v: 1, pct: 100, color: '#000' }]);
   assert.equal((one.match(/<path /g) || []).length, 1);
   assert.match(one, /A138\.00 138\.00 0 0 1 140\.00 278\.00/);

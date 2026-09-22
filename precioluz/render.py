@@ -185,13 +185,13 @@ def calendar_card(month: str, month_days_json: dict, series: str, selected: str,
             cresta = copy.fmt_number(entry["cresta"], 2) + "€" if entry.get("cresta") is not None else "—"
             cells.append(
                 f'<li><button type="button" class="cell {col}{sel}" data-day="{d}" style="{delay}"{pressed} '
-                f'aria-label="{dnum} de {copy.MONTHS[int(month[5:]) - 1]}, media {copy.fmt_number(entry["avg"])} €/kWh">'
+                f'aria-description="{dnum} de {copy.MONTHS[int(month[5:]) - 1]}, media {copy.fmt_number(entry["avg"])} €/kWh">'
                 f'<span class="d">{dnum}</span><span class="a">{copy.fmt_number(entry["avg"], 2)}€</span>'
                 f'<span class="m">{icon("clock-check")}{valle}</span><span class="m">{icon("bolt")}{cresta}</span></button></li>')
         else:
             future = d > max_day
             cells.append(f'<li><button type="button" class="cell empty{" future" if future else ""}" data-day="{d}" style="{delay}" disabled '
-                         f'aria-label="{dnum} de {copy.MONTHS[int(month[5:]) - 1]}, sin datos"><span class="d">{dnum}</span>—</button></li>')
+                         f'aria-description="{dnum} de {copy.MONTHS[int(month[5:]) - 1]}, sin datos"><span class="d">{dnum}</span>—</button></li>')
     detail = _calendar_detail(selected, zone, sel_points)
     return (f'<section class="card" id="calendar"><h2 class="lbl headline">{icon("calendar")}Calendario</h2>{nav}'
             f'<div class="cal-wd" aria-hidden="true"><span>L</span><span>M</span><span>X</span><span>J</span><span>V</span><span>S</span><span>D</span></div>'
@@ -254,8 +254,8 @@ def donut_svg(entries: list[dict]) -> str:
 
 def generacion_card(gen: dict | None, day_label: str) -> str:
     seg = ('<div class="segmented" role="group" aria-label="Modo">'
-           '<button type="button" data-mode="now" aria-selected="false">Hoy (hasta ahora)</button>'
-           '<button type="button" data-mode="day" aria-selected="true">Ayer</button></div>')
+           '<button type="button" data-mode="now" aria-pressed="false">Hoy (hasta ahora)</button>'
+           '<button type="button" data-mode="day" aria-pressed="true">Ayer</button></div>')
     if not gen or not gen.get("entries"):
         return (f'<section class="card" id="generacion">{seg}<div class="row"><h2 class="lbl headline" id="gen-title">{icon("bolt")}Generación</h2>'
                 f'<span class="badge" id="gen-badge">Sin datos</span></div>'

@@ -66,13 +66,13 @@ export function cellsHtml(month, daysJson, series, selected, maxDay) {
       const valle = entry.valle !== null && entry.valle !== undefined ? `${fmtNumber(entry.valle, 2)}€` : '—';
       const cresta = entry.cresta !== null && entry.cresta !== undefined ? `${fmtNumber(entry.cresta, 2)}€` : '—';
       cells.push(`<li><button type="button" class="cell ${col}${sel ? ' sel' : ''}" data-day="${d}" style="${delay}"${sel ? ' aria-pressed="true"' : ''} `
-        + `aria-label="${dnum} de ${mname}, media ${fmtNumber(entry.avg)} €/kWh">`
+        + `aria-description="${dnum} de ${mname}, media ${fmtNumber(entry.avg)} €/kWh">`
         + `<span class="d">${dnum}</span><span class="a">${fmtNumber(entry.avg, 2)}€</span>`
         + `<span class="m">${icon('clock-check')}${valle}</span><span class="m">${icon('bolt')}${cresta}</span></button></li>`);
     } else {
       const future = d > maxDay;
       cells.push(`<li><button type="button" class="cell empty${future ? ' future' : ''}" data-day="${d}" style="${delay}" disabled `
-        + `aria-label="${dnum} de ${mname}, sin datos"><span class="d">${dnum}</span>—</button></li>`);
+        + `aria-description="${dnum} de ${mname}, sin datos"><span class="d">${dnum}</span>—</button></li>`);
     }
   });
   return cells.join('');

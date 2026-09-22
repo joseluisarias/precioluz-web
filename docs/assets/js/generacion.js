@@ -52,8 +52,8 @@ export function fmtEnergy(v, unit = 'Wh') {
 }
 
 export const SEGMENTED = (mode) => '<div class="segmented" role="group" aria-label="Modo">'
-  + `<button type="button" data-mode="now" aria-selected="${mode === 'now'}">Hoy (hasta ahora)</button>`
-  + `<button type="button" data-mode="day" aria-selected="${mode === 'day'}">Ayer</button></div>`;
+  + `<button type="button" data-mode="now" aria-pressed="${mode === 'now'}">Hoy (hasta ahora)</button>`
+  + `<button type="button" data-mode="day" aria-pressed="${mode === 'day'}">Ayer</button></div>`;
 
 export const SKELETON = '<div class="skel" aria-busy="true" aria-label="Cargando generación"><div class="skel-donut"></div>'
   + '<div class="skel-row"></div><div class="skel-row"></div><div class="skel-row"></div></div>';
@@ -140,7 +140,7 @@ function paint() {
 }
 
 function setSegmented(m) {
-  section.querySelectorAll('.segmented [data-mode]').forEach((b) => b.setAttribute('aria-selected', String(b.dataset.mode === m)));
+  section.querySelectorAll('.segmented [data-mode]').forEach((b) => b.setAttribute('aria-pressed', String(b.dataset.mode === m)));
 }
 
 /** Cambia la selección sin re-pintar todo: aria-pressed, .sel/.dim y el centro. */
