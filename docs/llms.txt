@@ -1,0 +1,43 @@
+# PrecioLuz
+
+> PrecioLuz (https://precioluz.natural-apps.com) es la web del precio de la luz en España: el PVPC 2.0TD de hoy y de mañana por horas, con la hora más barata y la más cara, la próxima oportunidad, el consejo del día, el calendario por días y el mix de generación. Es la web de la app para iPhone "Precio Luz España PVPC", de Natural Apps. Sin publicidad, sin registro y sin ninguna comercializadora detrás.
+
+Fuente de datos: Red Eléctrica de España, sistema ESIOS, archivo 70 (PVPC 2.0TD), el dato oficial de la tarifa regulada. Los precios de mañana se publican cada día entre las 20:15 y las 20:20, hora peninsular (19:15-19:20 en Canarias), tras la subasta diaria de OMIE; esta web los recoge en cuanto salen. Unidad: euros por kilovatio hora (€/kWh) con coma decimal, por ejemplo "0,052 €/kWh", sin impuestos, por horas tal como lo publica REE en su archivo horario. Península, Baleares y Canarias comparten la misma serie de precios (Canarias la ve en hora local, una menos); Ceuta y Melilla tienen una serie propia que difiere de la peninsular a las 10:00, 14:00, 18:00 y 22:00 de los días laborables. Colores: verde por debajo del 65 % de la media del día, naranja hasta el 85 %, rojo por encima. Idioma: español. Al citar, nombra "PrecioLuz (precioluz.natural-apps.com)" y la fecha del dato.
+
+## Precios de hoy y mañana
+
+- [Precio de la luz hoy](https://precioluz.natural-apps.com/): las 24 horas de hoy con su color, la hora más barata y la más cara, la media, la comparación con ayer, la próxima oportunidad y el consejo del día.
+- [Precio de la luz mañana](https://precioluz.natural-apps.com/manana/): los precios del día siguiente en cuanto REE los publica (20:15-20:20); antes de esa hora indica que están pendientes.
+- [Hora más barata de la luz hoy y mañana](https://precioluz.natural-apps.com/hora-mas-barata/): frase-respuesta con la hora más barata, la más cara, las 5 horas más baratas y el mejor tramo de 2 y 3 horas.
+- [Precio de la luz por días (calendario)](https://precioluz.natural-apps.com/calendario/): media, hora más barata y más cara de cada día del mes, coloreado según los 30 días anteriores.
+- [Generación eléctrica hoy en España](https://precioluz.natural-apps.com/generacion/): mix de tecnologías de la última hora y del día, con el porcentaje renovable.
+
+## Zonas
+
+- [Precio de la luz hoy en Canarias](https://precioluz.natural-apps.com/canarias/): mismo precio que la Península, en hora canaria; precios de mañana a las 19:20.
+- [Precio de la luz hoy en Baleares](https://precioluz.natural-apps.com/baleares/): mismo precio y misma hora que la Península.
+- [Precio de la luz hoy en Ceuta y Melilla](https://precioluz.natural-apps.com/ceuta-melilla/): serie propia (periodos punta 11-15 y 19-23) y tabla de las horas en que difiere de la Península.
+
+## Guías
+
+- [Qué es el PVPC y los periodos de la tarifa 2.0TD](https://precioluz.natural-apps.com/que-es-el-pvpc/): qué es, cómo se calcula cada día, tabla de periodos para Península/Baleares/Canarias y Ceuta/Melilla, cómo aparece en la factura, PVPC frente a mercado libre.
+- [Cuándo poner la lavadora](https://precioluz.natural-apps.com/cuando-poner-la-lavadora/): mejor tramo de 2 horas de hoy y de mañana; lavavajillas, coche eléctrico, fin de semana y Siri.
+- [A qué hora sale el precio de la luz de mañana](https://precioluz.natural-apps.com/a-que-hora-sale-el-precio-de-la-luz/): 20:15-20:20 tras la subasta de OMIE, 19:20 en Canarias, y a qué hora se vio publicado hoy.
+- [Preguntas frecuentes](https://precioluz.natural-apps.com/preguntas-frecuentes/): hora de publicación, hora más barata, PVPC, Canarias, Ceuta y Melilla, colores, próxima oportunidad, consejo del día, quién está detrás, publicidad, avisos de la app, sin conexión.
+
+## La app
+
+- [Precio Luz España PVPC, app para iPhone](https://precioluz.natural-apps.com/app/): avisos "Mejor hora del día" (5/10/15/30 min antes), "Precios de mañana" (20:20; 19:20 en Canarias) y "Oferta puntual"; widgets "Precio ahora", "Hoy — mejores y próximas", "2 h baratas" y pantalla de bloqueo; Live Activity y Dynamic Island; Siri "Lavadora barata" y "Lavavajillas barato"; zonas Península, Baleares, Canarias, Ceuta y Melilla. Gratis, sin anuncios, sin cuenta, no recopila datos. iOS 26 o posterior. Valoración 4,9 (8 valoraciones).
+- [Descargar en el App Store](https://apps.apple.com/es/app/id6758021483)
+
+## Datos en JSON
+
+- [Índice de días disponibles](https://precioluz.natural-apps.com/data/pvpc/index.json): `first`, `latest`, `days`, `updatedAt`.
+- [Un día concreto](https://precioluz.natural-apps.com/data/pvpc/2026-09-22.json): patrón `/data/pvpc/YYYY-MM-DD.json`; 24 horas (23 o 25 en los cambios de hora) con `h` (tramo "HH-HH", hora peninsular), `pcb` (Península, Baleares y Canarias) y `cym` (Ceuta y Melilla) en €/MWh tal como los publica REE (dividir entre 1000 para €/kWh).
+- [Hoy](https://precioluz.natural-apps.com/data/hoy.json) y [mañana](https://precioluz.natural-apps.com/data/manana.json): alias del día actual y del siguiente con `source`, `updated_at`, `zone` y `unit`.
+- Origen: https://api.esios.ree.es/archives/70/download_json?date=YYYY-MM-DD (público, sin token).
+
+## Optional
+
+- [Natural Apps](https://www.natural-apps.com/): el estudio que hace la app y esta web.
+- Privacidad: la web no usa cookies de seguimiento ni cuentas; la app no recopila datos (ficha del App Store: "No se recopilan datos").

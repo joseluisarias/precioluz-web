@@ -1,0 +1,193 @@
+{
+  "home": {
+    "url": "/",
+    "priority": 1.0,
+    "title": "Precio luz hoy {fecha_corta}: hora más barata {hora_barata} · PrecioLuz",
+    "description": "Precio de la luz hoy {fecha_corta} por horas: la más barata de {hora_barata} a {hora_barata_fin} ({precio_barato} €/kWh), media {media} €/kWh. PVPC oficial de Red Eléctrica, sin publicidad.",
+    "h1": "Precio de la luz hoy, {fecha_larga}",
+    "lead": "Hoy la hora más barata es de {hora_barata} a {hora_barata_fin} ({precio_barato} €/kWh) y la más cara de {hora_cara} a {hora_cara_fin} ({precio_caro} €/kWh); la media del día es {media} €/kWh, un {pct_vs_ayer} % {mas_menos_ayer} que ayer. Datos oficiales de Red Eléctrica para {zona}, sin publicidad y sin ninguna comercializadora detrás.",
+    "sections": [
+      "como-leer",
+      "cta-app",
+      "sobre-estos-datos"
+    ]
+  },
+  "manana": {
+    "url": "/manana/",
+    "priority": 0.9,
+    "title": "Precio luz mañana {fecha_corta}: hora más barata {hora_barata} · PrecioLuz",
+    "description": "Precio de la luz mañana {fecha_corta}, ya publicado: la hora más barata de {hora_barata} a {hora_barata_fin} ({precio_barato} €/kWh), media {media} €/kWh. PVPC oficial de Red Eléctrica por horas.",
+    "h1": "Precio de la luz mañana, {fecha_larga_manana}",
+    "lead": "Mañana, {fecha_larga_manana}, la hora más barata será de {hora_barata} a {hora_barata_fin} ({precio_barato} €/kWh) y la más cara de {hora_cara} a {hora_cara_fin} ({precio_caro} €/kWh); la media del día será de {media} €/kWh, un {pct_vs_ayer} % {mas_menos_ayer} que hoy. Son los precios oficiales que Red Eléctrica acaba de publicar para {zona}.",
+    "sections": [
+      "como-leer",
+      "cta-app",
+      "sobre-estos-datos"
+    ]
+  },
+  "manana_pendiente": {
+    "url": "/manana/",
+    "priority": 0.9,
+    "title": "Precio luz mañana {fecha_corta}: se publica a las 20:20 · PrecioLuz",
+    "description": "Precio de la luz mañana {fecha_corta}: se publica hoy a las 20:15-20:20 (19:20 en Canarias). La página se actualiza sola; mientras, el precio de hoy por horas.",
+    "h1": "Precio de la luz mañana, {fecha_larga_manana}",
+    "lead": "Los precios de la luz de mañana, {fecha_larga_manana}, todavía no están publicados: Red Eléctrica los publica cada día entre las 20:15 y las 20:20, hora peninsular (19:15-19:20 en Canarias), en cuanto termina la subasta de OMIE. Esta página se actualiza sola en cuanto salgan. Mientras tanto, hoy la hora más barata es de {hora_barata} a {hora_barata_fin} ({precio_barato} €/kWh) y la media del día es {media} €/kWh.",
+    "sections": [
+      "como-leer",
+      "cta-app",
+      "sobre-estos-datos"
+    ]
+  },
+  "hora_mas_barata": {
+    "url": "/hora-mas-barata/",
+    "priority": 0.9,
+    "title": "Hora más barata de la luz hoy y mañana ({fecha_corta}) · PrecioLuz",
+    "description": "Hoy {fecha_corta} la hora más barata de la luz es de {hora_barata} a {hora_barata_fin} ({precio_barato} €/kWh); mejor tramo de 2 h de {tramo2_inicio} a {tramo2_fin}. Las 5 horas más baratas de hoy y mañana.",
+    "h1": "Hora más barata de la luz hoy y mañana",
+    "lead": "Hoy, {fecha_larga}, la hora más barata de la luz es de {hora_barata} a {hora_barata_fin} ({precio_barato} €/kWh) y el mejor tramo de dos horas seguidas va de {tramo2_inicio} a {tramo2_fin} ({tramo2_media} €/kWh de media). La hora más cara es de {hora_cara} a {hora_cara_fin} ({precio_caro} €/kWh), y la media del día, {media} €/kWh. Precios oficiales del PVPC para {zona}.",
+    "lead_manana": "Mañana la hora más barata será de {hora_barata_manana} ({precio_barato_manana} €/kWh).",
+    "lead_manana_pendiente": "Los precios de mañana se publican hoy entre las 20:15 y las 20:20; en cuanto salgan, aparecerán aquí.",
+    "sections": [
+      "como-leer",
+      "cta-app",
+      "sobre-estos-datos"
+    ]
+  },
+  "canarias": {
+    "url": "/canarias/",
+    "priority": 0.8,
+    "title": "Precio luz hoy Canarias {fecha_corta}, hora local · PrecioLuz",
+    "description": "Precio de la luz hoy {fecha_corta} en Canarias, en hora canaria: la más barata de {hora_barata} a {hora_barata_fin} ({precio_barato} €/kWh), media {media} €/kWh. Mañana se publica a las 19:20.",
+    "h1": "Precio de la luz hoy en Canarias, {fecha_larga}",
+    "lead": "Hoy, {fecha_larga}, en Canarias la hora más barata de la luz es de {hora_barata} a {hora_barata_fin} en hora canaria ({precio_barato} €/kWh) y la más cara de {hora_cara} a {hora_cara_fin} ({precio_caro} €/kWh); la media del día es {media} €/kWh, un {pct_vs_ayer} % {mas_menos_ayer} que ayer. Canarias paga el mismo PVPC que la Península, pero su reloj va una hora por detrás: en esta tabla las horas ya están en hora local, no hay que restar nada.",
+    "sections": [
+      "canarias",
+      "cta-app",
+      "sobre-estos-datos"
+    ]
+  },
+  "baleares": {
+    "url": "/baleares/",
+    "priority": 0.6,
+    "title": "Precio luz hoy Baleares {fecha_corta} por horas · PrecioLuz",
+    "description": "Precio de la luz hoy {fecha_corta} en Baleares: la más barata de {hora_barata} a {hora_barata_fin} ({precio_barato} €/kWh), media {media} €/kWh. Mismo PVPC y misma hora que la Península.",
+    "h1": "Precio de la luz hoy en Baleares, {fecha_larga}",
+    "lead": "Hoy, {fecha_larga}, en Baleares la hora más barata de la luz es de {hora_barata} a {hora_barata_fin} ({precio_barato} €/kWh) y la más cara de {hora_cara} a {hora_cara_fin} ({precio_caro} €/kWh); la media del día es {media} €/kWh, un {pct_vs_ayer} % {mas_menos_ayer} que ayer. Baleares comparte con la Península el precio del PVPC y también la hora, así que esta tabla vale tal cual en Mallorca, Menorca, Ibiza y Formentera.",
+    "sections": [
+      "baleares",
+      "cta-app",
+      "sobre-estos-datos"
+    ]
+  },
+  "ceuta_melilla": {
+    "url": "/ceuta-melilla/",
+    "priority": 0.8,
+    "title": "Precio luz hoy Ceuta y Melilla {fecha_corta} por horas · PrecioLuz",
+    "description": "Precio de la luz hoy {fecha_corta} en Ceuta y Melilla, con su propia serie del PVPC: la más barata de {hora_barata} a {hora_barata_fin} ({precio_barato} €/kWh), media {media} €/kWh.",
+    "h1": "Precio de la luz hoy en Ceuta y Melilla, {fecha_larga}",
+    "lead": "Hoy, {fecha_larga}, en Ceuta y Melilla la hora más barata de la luz es de {hora_barata} a {hora_barata_fin} ({precio_barato} €/kWh) y la más cara de {hora_cara} a {hora_cara_fin} ({precio_caro} €/kWh); la media del día es {media} €/kWh, un {pct_vs_ayer} % {mas_menos_ayer} que ayer. Ceuta y Melilla tienen su propia serie de precios: los días laborables se separa de la Península a las 10:00, 14:00, 18:00 y 22:00, y los fines de semana y festivos coincide con ella.",
+    "sections": [
+      "ceuta-melilla",
+      "cta-app",
+      "sobre-estos-datos"
+    ]
+  },
+  "calendario": {
+    "url": "/calendario/",
+    "priority": 0.8,
+    "title": "Precio de la luz por días: {mes_anno} · PrecioLuz",
+    "description": "Precio de la luz por días en {mes_anno}: media, valle y cresta de cada día, con colores según los últimos 30 días. Hoy {fecha_corta}: media {media} €/kWh.",
+    "h1": "Precio de la luz por días: {mes_anno}",
+    "lead": "Así ha ido el precio de la luz en {mes_anno}: cada día con su media, su hora más barata (valle) y su hora más cara (cresta), coloreado según cómo queda respecto a los 30 días anteriores. Hoy, {fecha_corta}, la media es {media} €/kWh, un {pct_vs_ayer} % {mas_menos_ayer} que ayer. Toca un día para ver sus 24 horas.",
+    "sections": [
+      "como-leer",
+      "sobre-estos-datos",
+      "cta-app"
+    ]
+  },
+  "generacion": {
+    "url": "/generacion/",
+    "priority": 0.6,
+    "title": "Generación eléctrica hoy en España {fecha_corta}: mix · PrecioLuz",
+    "description": "Generación eléctrica en España hoy {fecha_corta}: mix por tecnologías y % renovable, con datos de Red Eléctrica. Ayer, {renovable_ayer} % renovable; primera, {dominante_ayer}.",
+    "h1": "Generación eléctrica hoy en España, {fecha_larga}",
+    "lead": "Ayer la generación eléctrica en España fue un {renovable_ayer} % renovable y la tecnología que más produjo fue {dominante_ayer}. Aquí ves el mix de hoy conforme lo publica Red Eléctrica: qué tecnologías están generando en la última hora, cuánto llevan acumulado en el día y qué parte es renovable. Es el mismo dato oficial que usa precioluz.natural-apps.com para el precio, y ayuda a entender por qué las horas de sol suelen ser las más baratas.",
+    "sections": [
+      "cta-app"
+    ]
+  },
+  "que_es_el_pvpc": {
+    "url": "/que-es-el-pvpc/",
+    "priority": 0.8,
+    "title": "Qué es el PVPC y los periodos de la tarifa 2.0TD · PrecioLuz",
+    "description": "Qué es el PVPC, cómo se calcula cada día y los periodos punta, llano y valle de la 2.0TD en Península, Baleares, Canarias, Ceuta y Melilla. Sin jerga.",
+    "h1": "Qué es el PVPC y cómo funcionan los periodos de la tarifa 2.0TD",
+    "lead": "El PVPC (Precio Voluntario para el Pequeño Consumidor) es la tarifa regulada de la luz en España: su precio cambia cada hora y se publica la tarde anterior. Hoy, {fecha_corta}, la media del día es {media} €/kWh, con la hora más barata de {hora_barata} a {hora_barata_fin} ({precio_barato} €/kWh) y la más cara de {hora_cara} a {hora_cara_fin} ({precio_caro} €/kWh). Aquí explicamos de dónde sale ese precio, qué son los periodos de la 2.0TD y cómo se traduce todo en tu factura.",
+    "sections": [
+      "que-es-el-pvpc",
+      "cta-app"
+    ]
+  },
+  "cuando_poner_la_lavadora": {
+    "url": "/cuando-poner-la-lavadora/",
+    "priority": 0.8,
+    "title": "Cuándo poner la lavadora hoy {fecha_corta}: mejor hora · PrecioLuz",
+    "description": "Cuándo poner la lavadora hoy {fecha_corta}: el mejor tramo de 2 h es de {tramo2_inicio} a {tramo2_fin} ({tramo2_media} €/kWh). También lavavajillas, coche eléctrico, fin de semana y Siri.",
+    "h1": "Cuándo poner la lavadora hoy, {fecha_larga}",
+    "lead": "Hoy, {fecha_larga}, el mejor tramo de dos horas para poner la lavadora va de {tramo2_inicio} a {tramo2_fin} ({tramo2_media} €/kWh de media). La hora más barata suelta es de {hora_barata} a {hora_barata_fin} ({precio_barato} €/kWh) y la más cara de {hora_cara} a {hora_cara_fin} ({precio_caro} €/kWh), así que la diferencia entre acertar y no acertar con la hora es real. Precios oficiales del PVPC para {zona}.",
+    "lead_manana": "Mañana la hora más barata será de {hora_barata_manana} ({precio_barato_manana} €/kWh), por si prefieres esperar.",
+    "lead_manana_pendiente": "Los precios de mañana salen hoy entre las 20:15 y las 20:20; si quieres planificar la colada de mañana, vuelve entonces o deja que la app te avise.",
+    "sections": [
+      "cuando-poner-la-lavadora",
+      "cta-app",
+      "sobre-estos-datos"
+    ]
+  },
+  "a_que_hora_sale": {
+    "url": "/a-que-hora-sale-el-precio-de-la-luz/",
+    "priority": 0.6,
+    "title": "A qué hora sale el precio de la luz de mañana · PrecioLuz",
+    "description": "El precio de la luz de mañana sale cada día a las 20:15-20:20 (19:20 en Canarias), tras la subasta de OMIE. Última vez que lo vimos publicado: {publicado_manana_a}.",
+    "h1": "A qué hora sale el precio de la luz de mañana",
+    "lead": "El precio de la luz de mañana se publica cada día entre las 20:15 y las 20:20, hora peninsular (19:15-19:20 en Canarias), en cuanto Red Eléctrica termina de calcular el PVPC con el resultado de la subasta diaria de OMIE. La última vez que los precios de mañana aparecieron en precioluz.natural-apps.com fue a las {publicado_manana_a}.",
+    "sections": [
+      "a-que-hora-sale",
+      "cta-app"
+    ]
+  },
+  "app": {
+    "url": "/app/",
+    "priority": 0.9,
+    "title": "Precio Luz España PVPC: app para iPhone con widgets y avisos",
+    "description": "Precio Luz España PVPC, app para iPhone: aviso antes de la hora más barata, precios de mañana, widgets, Live Activity y Siri. Gratis y sin anuncios.",
+    "h1": "Precio Luz España PVPC: la app para iPhone",
+    "lead": "Precio Luz España PVPC es la app para iPhone de PrecioLuz (precioluz.natural-apps.com): los mismos precios oficiales de Red Eléctrica que ves en esta web, pero con lo que una web no puede hacer, que es avisarte. Un aviso antes de la hora más barata del día, los precios de mañana a las 20:20, widgets, pantalla de bloqueo, Live Activity y Siri. Gratis, sin anuncios y sin registro. Requiere iOS 26.",
+    "sections": [
+      "app"
+    ]
+  },
+  "faq": {
+    "url": "/preguntas-frecuentes/",
+    "priority": 0.8,
+    "title": "Preguntas frecuentes sobre el precio de la luz · PrecioLuz",
+    "description": "A qué hora se publica el precio de la luz, cuál es la hora más barata hoy, qué es el PVPC, Canarias, Ceuta y Melilla, los colores y cómo avisa la app.",
+    "h1": "Preguntas frecuentes sobre el precio de la luz",
+    "lead": "Respuestas cortas a las dudas más habituales sobre el precio de la luz (PVPC): a qué hora se publica, cuál es la hora más barata hoy, por qué cambia, qué pasa en Canarias, Ceuta y Melilla, qué significan los colores y cómo te avisa la app. Hoy, {fecha_corta}, la hora más barata es de {hora_barata} a {hora_barata_fin} ({precio_barato} €/kWh).",
+    "sections": [
+      "faq",
+      "cta-app"
+    ]
+  },
+  "404": {
+    "url": "/404.html",
+    "priority": 0.0,
+    "noindex": true,
+    "title": "Página no encontrada · PrecioLuz",
+    "description": "Esa página no existe en precioluz.natural-apps.com, pero el precio de la luz de hoy y de mañana sí.",
+    "h1": "Esa página no existe, pero el precio de hoy sí",
+    "lead": "La dirección que has abierto no existe en precioluz.natural-apps.com, o ya no está. Lo que sí está siempre es el precio de la luz de hoy, el de mañana a partir de las 20:20 y la hora más barata para poner la lavadora.",
+    "sections": [
+      "404"
+    ]
+  }
+}

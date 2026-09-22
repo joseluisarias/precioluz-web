@@ -1,0 +1,315 @@
+{
+  "organization": {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "@id": "https://precioluz.natural-apps.com/#organization",
+    "name": "Natural Apps",
+    "url": "https://www.natural-apps.com/",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "https://precioluz.natural-apps.com/assets/img/icon-512.png",
+      "width": 512,
+      "height": 512
+    },
+    "sameAs": [
+      "https://apps.apple.com/es/app/id6758021483"
+    ]
+  },
+  "website": {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    "@id": "https://precioluz.natural-apps.com/#website",
+    "url": "https://precioluz.natural-apps.com/",
+    "name": "PrecioLuz",
+    "alternateName": [
+      "Precio Luz España PVPC",
+      "precioluz.natural-apps.com"
+    ],
+    "description": "El precio de la luz (PVPC 2.0TD) de hoy y de mañana por horas, con la hora más barata. Datos oficiales de Red Eléctrica (ESIOS), sin publicidad. Web de la app Precio Luz España PVPC para iPhone.",
+    "inLanguage": "es-ES",
+    "publisher": {
+      "@id": "https://precioluz.natural-apps.com/#organization"
+    }
+  },
+  "breadcrumb": {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    "itemListElement": [
+      {
+        "@type": "ListItem",
+        "position": 1,
+        "name": "Precio de la luz hoy",
+        "item": "https://precioluz.natural-apps.com/"
+      },
+      {
+        "@type": "ListItem",
+        "position": 2,
+        "name": "{page_name}",
+        "item": "{page_url}"
+      }
+    ]
+  },
+  "webpage_dataset": {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "{page_url}#webpage",
+        "url": "{page_url}",
+        "name": "{title}",
+        "description": "{description}",
+        "inLanguage": "es-ES",
+        "isPartOf": {
+          "@id": "https://precioluz.natural-apps.com/#website"
+        },
+        "about": {
+          "@id": "{page_url}#dataset"
+        },
+        "mainEntity": {
+          "@id": "{page_url}#dataset"
+        },
+        "dateModified": "{actualizado_iso}",
+        "publisher": {
+          "@id": "https://precioluz.natural-apps.com/#organization"
+        }
+      },
+      {
+        "@type": "Dataset",
+        "@id": "{page_url}#dataset",
+        "name": "Precio de la luz (PVPC 2.0TD) por horas, {zona}, {fecha_iso}",
+        "description": "Precio del PVPC 2.0TD para cada hora del {fecha_iso} en {zona}, en euros por kilovatio hora, sin impuestos, tal como lo publica Red Eléctrica de España en ESIOS (archivo 70). Incluye la hora más barata, la más cara y la media del día.",
+        "url": "{page_url}",
+        "inLanguage": "es-ES",
+        "isAccessibleForFree": true,
+        "keywords": [
+          "precio luz",
+          "PVPC",
+          "2.0TD",
+          "hora más barata",
+          "{zona}",
+          "España"
+        ],
+        "temporalCoverage": "{fecha_iso}",
+        "spatialCoverage": {
+          "@type": "Place",
+          "name": "{zona}, España"
+        },
+        "variableMeasured": "Precio de la electricidad (PVPC 2.0TD) por hora, €/kWh",
+        "isBasedOn": "https://api.esios.ree.es/archives/70/download_json?date={fecha_iso}",
+        "sourceOrganization": {
+          "@type": "Organization",
+          "name": "Red Eléctrica de España",
+          "url": "https://www.esios.ree.es/"
+        },
+        "creator": {
+          "@type": "Organization",
+          "name": "Red Eléctrica de España",
+          "url": "https://www.esios.ree.es/"
+        },
+        "publisher": {
+          "@id": "https://precioluz.natural-apps.com/#organization"
+        },
+        "dateModified": "{actualizado_iso}",
+        "distribution": [
+          {
+            "@type": "DataDownload",
+            "encodingFormat": "application/json",
+            "contentUrl": "{data_url}"
+          }
+        ]
+      }
+    ]
+  },
+  "software_application": {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    "@id": "https://precioluz.natural-apps.com/app/#app",
+    "name": "Precio Luz España PVPC",
+    "alternateName": "Precio de la Luz",
+    "url": "https://precioluz.natural-apps.com/app/",
+    "description": "El precio de la luz de hoy y de mañana por horas, la hora más barata y un aviso antes de que llegue. Widgets, pantalla de bloqueo, Live Activity y Siri. Zonas: Península, Baleares, Canarias (hora local), Ceuta y Melilla (precio propio). Gratis, sin anuncios y sin registro.",
+    "applicationCategory": "UtilitiesApplication",
+    "operatingSystem": "iOS 26.0 o posterior",
+    "inLanguage": "es-ES",
+    "isAccessibleForFree": true,
+    "offers": {
+      "@type": "Offer",
+      "price": "0",
+      "priceCurrency": "EUR",
+      "availability": "https://schema.org/InStock"
+    },
+    "aggregateRating": {
+      "@type": "AggregateRating",
+      "ratingValue": "4.9",
+      "bestRating": "5",
+      "worstRating": "1",
+      "ratingCount": "8"
+    },
+    "installUrl": "https://apps.apple.com/es/app/id6758021483",
+    "downloadUrl": "https://apps.apple.com/es/app/id6758021483",
+    "author": {
+      "@id": "https://precioluz.natural-apps.com/#organization"
+    },
+    "publisher": {
+      "@id": "https://precioluz.natural-apps.com/#organization"
+    },
+    "featureList": [
+      "Aviso Mejor hora del día (5, 10, 15 o 30 minutos antes; tramo entero si varias horas cuestan casi lo mismo)",
+      "Aviso Precios de mañana (20:20; 19:20 en Canarias)",
+      "Aviso Oferta puntual (15 minutos antes de una hora anormalmente barata)",
+      "Widget Precio ahora",
+      "Widget Hoy — mejores y próximas",
+      "Widget 2 h baratas",
+      "Widgets de pantalla de bloqueo y StandBy",
+      "Live Activity y Dynamic Island",
+      "Atajos de Siri Lavadora barata y Lavavajillas barato",
+      "Zonas: Península, Baleares, Canarias (hora local), Ceuta y Melilla (precio propio)",
+      "Tabla del día con colores, hora más barata y más cara, próxima oportunidad y consejo del día",
+      "Comparativa con ayer y mañana, calendario mensual y mix de generación"
+    ],
+    "screenshot": "{og_image_url}",
+    "sameAs": [
+      "https://precioluz.natural-apps.com/"
+    ]
+  },
+  "faq_page": {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    "@id": "https://precioluz.natural-apps.com/preguntas-frecuentes/#faq",
+    "url": "https://precioluz.natural-apps.com/preguntas-frecuentes/",
+    "inLanguage": "es-ES",
+    "mainEntity": [
+      {
+        "@type": "Question",
+        "name": "¿A qué hora se publica el precio de la luz de mañana?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Red Eléctrica publica el PVPC de mañana cada día entre las 20:15 y las 20:20, hora peninsular, en cuanto termina de calcularlo con el resultado de la subasta diaria de OMIE. En Canarias son las 19:15-19:20, hora local. Es la misma hora todos los días, incluidos fines de semana y festivos. precioluz.natural-apps.com los recoge en cuanto aparecen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cuál es la hora más barata de la luz hoy?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Hoy, {fecha_larga}, la hora más barata de la luz es de {hora_barata} a {hora_barata_fin} ({precio_barato} €/kWh). El mejor tramo de dos horas seguidas va de {tramo2_inicio} a {tramo2_fin} ({tramo2_media} €/kWh de media) y la hora más cara es de {hora_cara} a {hora_cara_fin} ({precio_caro} €/kWh). Son los precios oficiales del PVPC para {zona}; en la portada tienes las 24 horas con sus colores."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es el PVPC y por qué cambia cada hora?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "El PVPC (Precio Voluntario para el Pequeño Consumidor) es la tarifa regulada de la luz en España. Su precio sale del mercado mayorista, donde cada día se subasta la electricidad de cada hora del día siguiente, más los peajes y cargos de los periodos punta, llano y valle de la tarifa 2.0TD. Por eso cambia cada hora y cada día. Se muestra por horas, tal como lo publica REE en su archivo horario."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿En Canarias el precio de la luz es distinto?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No: Canarias paga el mismo PVPC que la Península y Baleares, porque Red Eléctrica publica una única serie de precios para los tres territorios. Lo que cambia es la hora: como Canarias va una hora por detrás, cada precio se aplica allí una hora antes según su reloj. En la página de Canarias las horas ya están en hora local, y los precios de mañana salen a las 19:20."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Y en Ceuta y Melilla?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Ceuta y Melilla tienen su propia serie de precios porque sus periodos de la tarifa 2.0TD son distintos: las horas punta son de 11:00 a 15:00 y de 19:00 a 23:00, en lugar de 10:00-14:00 y 18:00-22:00. Por eso su precio difiere del peninsular a las 10:00, a las 14:00, a las 18:00 y a las 22:00 de los días laborables. Los fines de semana y festivos, con todo el día en valle, coincide con el de la Península."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué significan los colores verde, naranja y rojo?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Cada hora se compara con la media del día. Verde: cuesta menos del 65 % de la media. Naranja: entre el 65 % y el 85 %. Rojo: más del 85 % de la media. Los colores dicen qué horas conviene aprovechar hoy, no si el día es barato o caro en general: un día muy barato puede tener horas en rojo, y uno caro puede tener alguna en verde."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Qué es la próxima oportunidad?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Es el siguiente tramo barato que queda por delante: horas seguidas cuyo precio está a menos de 1 céntimo de la más barata que aún no ha pasado, con un tope de 6 horas y una media por debajo del 85 % de la media del día. Si ningún tramo cumple esas condiciones, no se muestra nada: no se inventa una oportunidad que no existe. Nunca mira hacia atrás."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo se calcula el consejo del día?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Con dos cosas: la media del día, que dice si la luz está barata (hasta 0,12 €/kWh), a un precio normal (hasta 0,18 €/kWh) o cara, y la diferencia entre la hora más cara y la más barata, que dice si el precio apenas cambia (hasta 0,03 €/kWh), cambia algo (hasta 0,06 €/kWh) o cambia mucho. De esa combinación sale una frase corta con la mejor y la peor hora. Es el mismo consejo que da la app en su pestaña Resumen."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Quién está detrás de PrecioLuz?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "PrecioLuz (precioluz.natural-apps.com) es la web de la app Precio Luz España PVPC para iPhone, de Natural Apps (natural-apps.com), un pequeño estudio independiente de apps. No pertenece a ninguna comercializadora ni a ningún comparador de tarifas. Los datos son los oficiales de Red Eléctrica de España (ESIOS, PVPC 2.0TD)."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Hay publicidad o alguna comercializadora detrás?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "No. Ni en la web ni en la app hay anuncios, y ninguna comercializadora paga por aparecer ni tiene nada que ver con lo que ves. Tampoco hace falta registrarse ni pagar nada: la app es gratis, sin suscripción, y no recopila datos. Lo único que se pide es que, si te resulta útil, la instales y la valores en el App Store."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Cómo me avisa la app de la hora más barata?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Con tres avisos que activas en Ajustes: \"Mejor hora del día\", que llega 5, 10, 15 o 30 minutos antes de la hora más barata (y te da el tramo entero si varias horas seguidas cuestan casi lo mismo); \"Precios de mañana\", a las 20:20 (19:20 en Canarias) con la mejor hora del día siguiente; y \"Oferta puntual\", 15 minutos antes de una hora anormalmente barata. Además tiene widgets, pantalla de bloqueo, Live Activity y Siri."
+        }
+      },
+      {
+        "@type": "Question",
+        "name": "¿Funciona sin conexión?",
+        "acceptedAnswer": {
+          "@type": "Answer",
+          "text": "Para descargar los precios hace falta conexión, tanto en la web como en la app. Una vez descargados, los avisos de la app son notificaciones locales, así que saltan a su hora aunque en ese momento no tengas red, y los widgets siguen mostrando lo último que pintaron. Los precios de un día nuevo, eso sí, solo llegan cuando el iPhone vuelve a tener conexión."
+        }
+      }
+    ]
+  },
+  "article": {
+    "@context": "https://schema.org",
+    "@type": "Article",
+    "@id": "{page_url}#article",
+    "headline": "{h1}",
+    "description": "{description}",
+    "url": "{page_url}",
+    "mainEntityOfPage": {
+      "@type": "WebPage",
+      "@id": "{page_url}"
+    },
+    "inLanguage": "es-ES",
+    "image": "{og_image_url}",
+    "datePublished": "{date_published_iso}",
+    "dateModified": "{actualizado_iso}",
+    "author": {
+      "@id": "https://precioluz.natural-apps.com/#organization"
+    },
+    "publisher": {
+      "@id": "https://precioluz.natural-apps.com/#organization"
+    },
+    "isPartOf": {
+      "@id": "https://precioluz.natural-apps.com/#website"
+    },
+    "about": [
+      {
+        "@type": "Thing",
+        "name": "PVPC"
+      },
+      {
+        "@type": "Thing",
+        "name": "Precio de la luz en España"
+      }
+    ]
+  }
+}
