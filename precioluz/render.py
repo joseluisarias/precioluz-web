@@ -248,7 +248,7 @@ def donut_svg(entries: list[dict]) -> str:
             d = _arc(cx, cy, r_out, r_in, a, a1)
         paths.append(f'<path d="{d}" fill="{esc(e.get("color", "#8E8E93"))}" data-t="{esc(e["t"])}"><title>{esc(e["t"])}: {copy.fmt_pct(e["pct"])}</title></path>')
         a = a1
-    return ('<svg class="donut" viewBox="0 0 280 280" role="img" aria-label="Mix de generación">'
+    return ('<svg class="donut-svg" viewBox="0 0 280 280" role="img" aria-label="Mix de generación">'
             + "".join(paths) + "</svg>")
 
 
@@ -257,32 +257,35 @@ def generacion_card(gen: dict | None, day_label: str) -> str:
            '<button type="button" data-mode="now" aria-selected="false">Ahora</button>'
            '<button type="button" data-mode="day" aria-selected="true">Acumulado del día</button></div>')
     if not gen or not gen.get("entries"):
-        return (f'<section class="card" id="generacion">{seg}<div class="row"><h2 class="lbl headline">{icon("bolt")}Generación</h2>'
+        return (f'<section class="card" id="generacion">{seg}<div class="row"><h2 class="lbl headline" id="gen-title">{icon("bolt")}Generación</h2>'
                 f'<span class="badge" id="gen-badge">Sin datos</span></div>'
                 '<div class="skel" aria-busy="true" aria-label="Cargando generación"><div class="skel-donut"></div>'
                 '<div class="skel-row"></div><div class="skel-row"></div><div class="skel-row"></div></div></section>')
     entries = gen["entries"]
-    total_txt = f'{gen["total"] / 1000:.1f} GWh'.replace(".", ",") if gen["total"] >= 1000 else f'{gen["total"]:.0f} MWh'
+    total_txt = fmt_energy(gen["total"])
     dom = entries[0]
     rows = "".join(
-        f'<li class="tech" data-t="{esc(e["t"])}"><i class="sw" style="--c:{esc(e["color"])}"></i><span class="n">{esc(e["t"])}</span>'
-        f'<span class="v">{(f"{e["v"] / 1000:.1f} GWh" if e["v"] >= 1000 else f"{e["v"]:.0f} MWh").replace(".", ",")}</span>'
-        f'<span class="pct">{copy.fmt_pct(e["pct"])}</span></li>' for e in entries)
-    center = (f'<div class="center"><span class="headline">Total</span><span class="big">{total_txt}</span>'
-              f'<span class="caption g">{copy.fmt_pct(gen["renewablePct"])} renovable</span></div>')
+        f'<li><button type="button" data-t="{esc(e["t"])}" style="--sw:{esc(e["color"])}" aria-pressed="false">'
+        f'<span class="n">{esc(e["t"])}</span><span class="v">{fmt_energy(e["v"])}</span>'
+        f'<span class="pc">{copy.fmt_pct(e["pct"])}</span></button></li>' for e in entries)
     return f'''<section class="card" id="generacion">
   {seg}
   <div class="row"><h2 class="lbl headline" id="gen-title">{icon("bolt")}Generación acumulada · {esc(day_label)}</h2><span class="badge" id="gen-badge">{esc(gen["day"][8:10])}/{esc(gen["day"][5:7])}</span></div>
-  <div class="donut-wrap" id="gen-donut">{donut_svg(entries)}{center}</div>
+  <div class="donut" id="gen-donut">{donut_svg(entries)}<div class="center"><span class="t">Total</span><span class="v">{total_txt}</span><span class="s">{copy.fmt_pct(gen["renewablePct"])} renovable</span></div></div>
   <div class="kpis">
-    <div class="kpi"><span class="t">{icon("bolt")}Total</span><span class="v">{total_txt}</span></div>
-    <div class="kpi g"><span class="t">{icon("leaf")}Renovable</span><span class="v">{copy.fmt_pct(gen["renewablePct"])}</span></div>
-    <div class="kpi wide" style="--c:{esc(dom["color"])}"><span class="t">{icon("star")}Dominante</span><span class="v">{esc(dom["t"])}</span></div>
+    <div class="kpi">{icon("bolt")}<span class="stack"><span class="t">Total</span><span class="v">{total_txt}</span></span></div>
+    <div class="kpi" style="--tint:var(--green)">{icon("leaf")}<span class="stack"><span class="t">Renovable</span><span class="v">{copy.fmt_pct(gen["renewablePct"])}</span></span></div>
+    <div class="kpi" style="--tint:{esc(dom["color"])}">{icon("star")}<span class="stack"><span class="t">Dominante</span><span class="v">{esc(dom["t"])}</span></span></div>
   </div>
   <hr class="sep">
-  <ul class="techs" id="gen-list">{rows}</ul>
+  <ul class="tech" id="gen-list">{rows}</ul>
   <div class="row end"><button type="button" class="btn sm" id="gen-refresh">{icon("refresh")}Actualizar</button></div>
 </section>'''
+
+
+def fmt_energy(mwh: float) -> str:
+    """"789,0 GWh" / "955 MWh" (formatMW de la app, con coma)."""
+    return (f"{mwh / 1000:.1f} GWh" if mwh >= 1000 else f"{mwh:.0f} MWh").replace(".", ",")
 
 
 # MARK: SEO
