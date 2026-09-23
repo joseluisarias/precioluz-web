@@ -132,6 +132,8 @@ def main(argv=None) -> int:
     p = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     p.add_argument("--days", type=int, default=0, help="días hacia atrás a descargar (0 = ayer, hoy y mañana)")
     p.add_argument("--force", action="store_true", help="reescribe aunque el dato no haya cambiado")
+    p.add_argument("--require-tomorrow", action="store_true",
+                   help="sale con código 2 si los precios de mañana aún no están publicados (para reintentar)")
     p.add_argument("--data", default=str(ROOT / "docs" / "data"), help="directorio de datos")
     p.add_argument("--skip-generation", action="store_true", help="no descargar el mix de generación")
     p.add_argument("--fixture", metavar="DAY", help="guarda el JSON crudo de ese día y termina")
@@ -179,6 +181,13 @@ def main(argv=None) -> int:
     index = rebuild_index(data_dir)
     print(f"escritos={written} sin_cambios={skipped} pendientes={pending} "
           f"índice={index['first']}→{index['latest']} ({len(index['days'])} días)")
+
+    # Los datos ya guardados se quedan: el código 2 solo le dice a quien llama
+    # que merece la pena reintentar más tarde.
+    tomorrow = (now.date() + dt.timedelta(days=1)).isoformat()
+    if a.require_tomorrow and tomorrow in pending:
+        print(f"  mañana ({tomorrow}) todavía no está publicado")
+        return 2
     return 0
 
 

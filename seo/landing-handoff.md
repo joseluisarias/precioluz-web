@@ -15,7 +15,7 @@ Este fichero es la única fuente de verdad para todo lo que la landing copia de 
 |---|---|
 | Repo `joseluisarias/precioluz-web` | público desde hoy; GitHub Pages activo desde `main /docs`; `docs/CNAME` = `precioluz.natural-apps.com` |
 | DNS `precioluz.natural-apps.com` | **pendiente**: falta el registro `CNAME precioluz → joseluisarias.github.io` en Hostinger (lo crea Jose Luis). Hasta entonces la herramienta no responde en ninguna URL |
-| Datos | cron de GitHub Actions a partir de las 20:17 (hora de Madrid) cada día; 60 días de histórico ya cargados |
+| Datos | cron de GitHub Actions a las 20:20 (hora de Madrid) cada día, con reintentos hasta que REE publica; 60 días de histórico ya cargados |
 | App en la tienda | versión 1.71 (build 6). La 1.72 con **zonas** (Canarias hora local, Ceuta y Melilla precio propio) está hecha pero **no publicada** |
 | Landing publicada | la badge de la App Store enlaza a una búsqueda en la tienda de EE. UU.; textos de enero 2026 ("ha salido de beta", "Tres pestañas"); FAQ con funciones que la app no tiene |
 
@@ -297,7 +297,7 @@ los precios de mañana desde las 20:20 y el calendario del mes. Sin registro.</p
 
 ## 6. Opcional: cajita viva con el precio de hoy
 
-GitHub Pages sirve los JSON con `Access-Control-Allow-Origin: *`, así que la landing puede leer `https://precioluz.natural-apps.com/data/hoy.json` desde el navegador, sin backend ni clave. El fichero pesa unos 2 KB y se regenera cada día a las 20:20 y a las 00:35.
+GitHub Pages sirve los JSON con `Access-Control-Allow-Origin: *`, así que la landing puede leer `https://precioluz.natural-apps.com/data/hoy.json` desde el navegador, sin backend ni clave. El fichero pesa unos 2 KB y se regenera cada día a las 20:20 y de madrugada.
 
 Esquema: `{ "source", "updated_at", "zone", "series", "unit": "€/kWh", "day": "YYYY-MM-DD", "timezone": "Europe/Madrid", "hours": [ { "start": "00:00", "end": "01:00", "eur_kwh": 0.18834 }, … ] }`.
 
@@ -386,4 +386,117 @@ Esperado: `1` o más.
 
 (Escribir aquí, con fecha. La sesión de la herramienta lo lee antes de cada cambio suyo.)
 
-- 
+### 22/09/2026, 21:05 — sesión de la landing
+
+Secciones 4.1 a 4.5 y 4.8 hechas **en local**. Nada desplegado: `deploy.sh --go` no se ha
+lanzado y sigue esperando el OK de Jose Luis.
+
+**Compuerta B: sigue cerrada, y por una razón distinta a la que suponía el documento.**
+El CNAME ya existe y resuelve (`precioluz → joseluisarias.github.io` en los dos
+nameservers y en los resolvers públicos), y el sitio **funciona y sirve contenido real
+por HTTP**. Lo que falta es el certificado: GitHub Pages presenta todavía su
+`CN=*.github.io`, así que cualquier `https://` da error de validación. La compuerta,
+tal como está redactada ("200 **con certificado válido**"), se comporta bien: si la
+landing enlazara hoy, el visitante vería un aviso de seguridad del navegador, peor que
+un 404. Estado comprobado a las 21:05. Hay un vigilante esperando la emisión.
+
+**Cero enlaces vivos a la herramienta**, como manda 8.1: 12 comentados en cada `index`,
+5 en cada FAQ, el `Redirect 301` de `PrecioLuz/.htaccess` comentado. Todos marcados
+`COMPUERTA B` para activarlos de golpe.
+
+#### Lo que necesitamos de la sesión de la herramienta o de Jose Luis
+
+1. **Capturas de la 1.71 (bloqueante para 4.1).** Las de `assets/imagenes/precioluz_tap*`
+   son de enero: muestran la barra inferior con **tres** pestañas, sin Generación, datos
+   del 19/01/2026 y decimales con punto. De ahí salían las "cifras inventadas" que 4.1
+   manda quitar. Se han conservado con una nota honesta en página ("los precios que
+   aparecen son los del día en que se tomaron"), pero **no existe ninguna captura de la
+   pestaña Generación**, que por eso es la única tarjeta sin imagen. Hacen falta cuatro
+   capturas nuevas de la 1.71, una por pestaña.
+
+2. **`pt` (provider token) de App Store Connect**, para el enlace de campaña de 3.1.
+   Mientras no esté, la landing usa la URL con slug. Sin `pt` no hay atribución en App
+   Analytics y no se sabrá cuántas instalaciones vienen de aquí.
+
+3. **Decisión sobre `sameAs` del JSON-LD.** El bloque 5.1 incluye dos URL vivas a
+   `precioluz.natural-apps.com` (`/` y `/app/`). Es el único sitio donde el dominio
+   aparece sin comentar, y choca con "ningún enlace vivo antes de B". No es navegable,
+   pero un rastreador que lo siga hoy se encuentra el certificado inválido. Está puesto
+   tal como lo manda el documento; se quita en un minuto si se prefiere.
+
+#### Correcciones al documento
+
+4. **4.5 dice "las seis URL `guides*.html`"; en el sitemap solo había dos de PrecioLuz**
+   (`guides.html` y `guides_es.html`; `guides_en.html` nunca estuvo). Las otras cuatro
+   `guides` del fichero son de **NaturalEnglish y MD Reader**, apps distintas con guías
+   reales, y no se han tocado. Conviene ajustar la verificación de la sección 9: el
+   `grep -c guides` → `0` solo se cumpliría borrando contenido bueno de otras dos apps.
+   Sitemap: 38 → 36 URL, `xmllint` válido.
+
+5. **La causa real de la badge rota no era el HTML, era JavaScript.**
+   `shared/company-theme.js` tiene `normalizeInstallLinks()`, que reescribe en el
+   navegador **todos** los `<a>` con `apps.apple.com` de cada página usando el
+   `installUrl` de su marca. Los tres valores publicados eran búsquedas en la tienda de
+   EE. UU. y **los tres devolvían 404**, en las tres apps del sitio, no solo en
+   PrecioLuz. Es decir: arreglar el `href` de la badge en el HTML no bastaba, el JS lo
+   machacaba al cargar. **Ya corregido y desplegado** (22/09 20:55) con las tres URL
+   canónicas, verificado en navegador con el script ejecutado:
+
+   - naturalenglish → `https://apps.apple.com/es/app/english-vocabulary-b1-b2-c1-c2/id6742079970`
+   - precioluz → `https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483`
+   - mdreader → `https://apps.apple.com/es/app/markdown-reader-editor-md/id6758854494`
+
+   Nota para la verificación de la sección 9: el `curl | grep` sobre el HTML **no
+   detecta** este fallo, porque mira el marcado, no el DOM. Si se vuelve a tocar ese
+   fichero, hay que comprobarlo con el JS ejecutado.
+
+6. **`ads.html` es una landing de campaña de pago**, no una página del sitio: no está
+   enlazada desde ninguna parte ni en el sitemap, se pega como URL de destino del
+   anuncio. Existe igual en MDReader y NaturalEnglish. Corregido su enlace a la tienda.
+   Antes de usarla en una campaña necesita las capturas nuevas (punto 1), ajustar su
+   texto a las funciones reales de la sección 2 y decidir si lleva `noindex`, porque
+   duplica la landing y hoy no lo lleva.
+
+#### Dudas menores, con la decisión que se ha tomado
+
+7. **Canónica de `guides.html` / `guides_en.html`**: 4.3 dice "canónica a la herramienta"
+   sin decir a cuál. Se ha puesto `/que-es-el-pvpc/`, igual que la española. Las inglesas
+   **no** llevan `meta refresh`: la herramienta es solo en español y mandar a un
+   anglófono a una página en español es peor que dejarle decidir.
+8. **`faq_en.html` no existe** (sí existen `index_en.html`, `guides_en.html`,
+   `terms_en.html`). No se ha creado. ¿Hace falta ese duplicado?
+9. **Nombres en español dentro de la FAQ inglesa**: se han mantenido "Mejor hora del
+   día", "2 h baratas", "Lavadora barata en Precio de la Luz" con glosa en inglés entre
+   paréntesis, porque una frase de Siri traducida no funcionaría. Si la app está
+   localizada al inglés, hay que sustituirlos.
+10. **Redacción de la pregunta 14 bajo compuerta C**: el documento solo da los puntos
+    suspensivos. Se ha completado con los hechos de la sección 2 y cerrado con "La 1.72
+    todavía no está publicada en el App Store: la versión actual muestra los precios
+    peninsulares". Debajo queda comentada la respuesta definitiva. Necesita visto bueno.
+11. **Verificación de la sección 9, matiz**: `grep -i -c -E 'csv|homekit|premium|beta'`
+    devuelve 4, no 0. Son cuatro negaciones, texto literal del documento ("No hay
+    integración con enchufes ni con HomeKit", "La app no exporta CSV"), duplicadas
+    porque 4.2 obliga a que el JSON-LD sea idéntico al texto visible. Ninguna aparición
+    afirmativa: "premium" y "beta" han desaparecido.
+12. **Smart App Banner incompleto**: 5.2 dice "todas las páginas de la carpeta" y está
+    en los tres `index` y las dos FAQ. Faltan `contact*`, `privacy*`, `terms*` y
+    `ads.html`. El enlace "Guías" de la navegación también sigue vivo en esas páginas.
+
+#### Fuera del traspaso, hecho en natural-apps.com el 22/09
+
+Por si afecta a lo que la sesión de la herramienta espera encontrar:
+
+- **Las cuatro URL de 3.3 siguen intactas y responden 200**: `/PrecioLuz/privacy_es.html`,
+  `/terms_es.html`, `/contact_es.html` y `/`. Se cambiaron las reglas de redirección
+  legales del `.htaccess` raíz, pero están ancladas a la raíz (`^privacy_es\.html$`), así
+  que no tocan nada bajo `/PrecioLuz/`. Verificado.
+- **Todas las imágenes del sitio son ahora `.webp`** (94 MB → 6,5 MB). Los `.png` y
+  `.jpg` originales ya no están en el docroot; se conservan en
+  `/home/deco4048/originales-imagenes-20260922/`. Si algún documento o script de la
+  herramienta apunta a una imagen de la landing por su nombre `.png`, hay que
+  actualizarlo. Se conservan como PNG los favicons, los `apple-touch-icon` y las
+  imágenes `og/`.
+- **`.htaccess`**: bloqueo de archivos comprimidos y de copias de seguridad.
+- **`deploy.sh`**: el sondeo del raíz caía en `~/public_html`, que es **otro dominio**
+  (decoraciondeaticos.com); ahora exige que el directorio contenga `NaturalEnglish/` y
+  `shared/`. Además excluye `*.bak-*`, `*.pre-webp` y `*.orig`, que si no se publicaban.

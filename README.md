@@ -7,7 +7,7 @@ mañana hora a hora, con el estilo de la app para iPhone *Precio Luz España PVP
 - `scripts/fetch.py` descarga el archivo 70 de ESIOS (público, sin token; series `PCB` y `CYM`) y el mix de generación de apidatos a `docs/data/`.
 - `scripts/build.py` genera el sitio estático en `docs/` con los números reales en el HTML (SEO), el JSON del calendario, los alias `/data/hoy.json`, el sitemap y el JSON de arranque de cada página. Determinista: `build.py --check` falla si el HTML en disco no coincide.
 - `tools/og.py` genera las imágenes Open Graph diarias (Pillow).
-- `.github/workflows/update.yml` lo ejecuta cada día a partir de las 20:17 (hora de Madrid) con reintentos, y a las 00:35; hace commit solo si cambia algo. `workflow_dispatch` admite `days=N` para rellenar histórico.
+- `.github/workflows/update.yml` lo ejecuta una vez al día a las 20:20 (hora de Madrid) y reintenta cada 5 minutos, hasta 90, mientras REE no haya publicado mañana (`fetch.py --require-tomorrow` sale con código 2). Un segundo disparo de madrugada regenera el sitio para el día nuevo. Hace commit solo si cambia algo; `workflow_dispatch` admite `days=N` para rellenar histórico.
 - El navegador (`docs/assets/js/`) añade la interactividad: cambio de día (`?d=`) y de zona (Península, Canarias en hora local, Baleares, Ceuta/Melilla con serie propia), hora actual, calendario por meses, generación en vivo y los precios de mañana desde ESIOS si el cron aún no ha corrido.
 
 ## Desarrollo
