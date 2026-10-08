@@ -255,10 +255,23 @@ def page_html(site: Site, key: str, tab: str, zone_id: str, offset: int) -> tupl
 
 # MARK: Salidas auxiliares
 
+SOURCE = "Red Eléctrica de España — ESIOS, PVPC 2.0TD (archivo 70)"
+
+
 def data_aliases(site: Site) -> dict[str, dict]:
     out = {}
     for name, day in (("hoy", site.today), ("manana", site.tomorrow)):
         if day not in site.rows:
+            # Antes aquí había un `continue`, y como build() solo escribe los
+            # ficheros que genera y nunca borra, el manana.json del último día
+            # bueno se quedaba en disco sirviéndose como si fuera actual: el
+            # 7-10-2026 declaraba el día 5, dos días atrás. Un fichero que dice
+            # ser "mañana" y trae anteayer es peor que no existir, porque quien
+            # lo consume no tiene forma de saber que está caducado.
+            out[f"{name}.json"] = {"source": SOURCE, "updated_at": site.updated_at,
+                                   "day": day, "published": False, "unit": "€/kWh",
+                                   "note": "REE todavía no ha publicado este día.",
+                                   "hours": []}
             continue
         out[f"{name}.json"] = alias(site, day, PENINSULA)
     for z in ZONES:
@@ -272,7 +285,7 @@ def data_aliases(site: Site) -> dict[str, dict]:
 
 def alias(site: Site, day: str, zone) -> dict:
     pts = site.points(day, zone.series)
-    return {"source": "Red Eléctrica de España — ESIOS, PVPC 2.0TD (archivo 70)", "updated_at": site.updated_at,
+    return {"source": SOURCE, "updated_at": site.updated_at,
             "zone": zone.name, "series": zone.series, "unit": "€/kWh", "day": day, "timezone": zone.tz_name,
             "hours": [{"start": engine.hour_label(p.start, zone), "end": engine.hour_label(p.end, zone),
                        "eur_kwh": round(p.eur_kwh, 5)} for p in pts]}

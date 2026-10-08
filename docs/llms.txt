@@ -34,7 +34,7 @@ Fuente de datos: Red Eléctrica de España, sistema ESIOS, archivo 70 (PVPC 2.0T
 
 - [Índice de días disponibles](https://precioluz.natural-apps.com/data/pvpc/index.json): `first`, `latest`, `days`, `updatedAt`.
 - [Un día concreto](https://precioluz.natural-apps.com/data/pvpc/2026-09-22.json): patrón `/data/pvpc/YYYY-MM-DD.json`; 24 horas (23 o 25 en los cambios de hora) con `h` (tramo "HH-HH", hora peninsular), `pcb` (Península, Baleares y Canarias) y `cym` (Ceuta y Melilla) en €/MWh tal como los publica REE (dividir entre 1000 para €/kWh).
-- [Hoy](https://precioluz.natural-apps.com/data/hoy.json) y [mañana](https://precioluz.natural-apps.com/data/manana.json): alias del día actual y del siguiente con `source`, `updated_at`, `zone` y `unit`.
+- [Hoy](https://precioluz.natural-apps.com/data/hoy.json) y [mañana](https://precioluz.natural-apps.com/data/manana.json): alias del día actual y del siguiente con `source`, `updated_at`, `zone` y `unit`. Cuando Red Eléctrica todavía no ha publicado el día, el fichero trae `published: false` y `hours` vacío en lugar de datos de otro día; nunca se sirve un día caducado como si fuera actual.
 - Origen: https://api.esios.ree.es/archives/70/download_json?date=YYYY-MM-DD (público, sin token).
 
 ## Optional

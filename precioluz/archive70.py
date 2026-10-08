@@ -7,7 +7,9 @@ con precios en €/MWh y coma decimal. `PCB` = Península, Canarias y Baleares;
 días laborables). 24 filas normales, 23 o 25 en los cambios de hora.
 
 Cuando el día aún no está publicado, la API responde 200 con
-    {"message": "No values for specified archive"}.
+    {"message": "No values for specified archive"}
+o, visto el 7-10-2026, con las filas completas y TODOS los precios a "0,00".
+Los dos casos levantan `NotPublished`.
 """
 from __future__ import annotations
 
@@ -85,6 +87,14 @@ def parse(payload) -> list[Hour]:
                           cym=parse_price(row.get("CYM"))))
     if not hours:
         raise InvalidDay("ninguna fila con precio parseable")
+    if all(h.pcb == 0 for h in hours):
+        # Segunda forma de decir "aún no hay dato": el 7-10-2026 ESIOS sirvió el
+        # día siguiente con las 24 filas completas y todos los precios a "0,00",
+        # dejando rellenos solo los coeficientes que calcula por adelantado. Su
+        # propia web mostraba guiones ese día. Una hora SUELTA a cero sí es un
+        # precio legítimo —el PVPC ha estado a cero y en negativo—, así que solo
+        # se descarta cuando no queda ni un valor distinto de cero.
+        raise NotPublished("las 24 horas vienen a 0,00")
     return hours
 
 

@@ -56,7 +56,11 @@ export function parseArchive70(obj) {
     if (pcb === null) return;
     out.push({ i, h: normalizeLabel((row && row.Hora) || ''), pcb, cym: parsePrice(row.CYM) });
   });
-  return out.length ? out : null;
+  if (!out.length) return null;
+  // Día entero a cero = "sin publicar" de REE, no electricidad gratis (ver
+  // precioluz/archive70.py). Una hora suelta a cero sí es válida.
+  if (out.every((r) => r.pcb === 0)) return null;
+  return out;
 }
 
 /** Misma forma que docs/data/pvpc/<día>.json (con stats y bands). */
