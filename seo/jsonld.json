@@ -2,12 +2,12 @@
   "organization": {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://precioluz.natural-apps.com/#organization",
+    "@id": "https://preciodelaluz.app/#organization",
     "name": "Natural Apps",
     "url": "https://www.natural-apps.com/",
     "logo": {
       "@type": "ImageObject",
-      "url": "https://precioluz.natural-apps.com/assets/img/icon-512.png",
+      "url": "https://preciodelaluz.app/assets/img/icon-512.png",
       "width": 512,
       "height": 512
     },
@@ -18,17 +18,17 @@
   "website": {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://precioluz.natural-apps.com/#website",
-    "url": "https://precioluz.natural-apps.com/",
+    "@id": "https://preciodelaluz.app/#website",
+    "url": "https://preciodelaluz.app/",
     "name": "PrecioLuz",
     "alternateName": [
       "Precio Luz España PVPC",
-      "precioluz.natural-apps.com"
+      "preciodelaluz.app"
     ],
     "description": "El precio de la luz (PVPC 2.0TD) de hoy y de mañana por horas, con la hora más barata. Datos oficiales de Red Eléctrica (ESIOS), sin publicidad. Web de la app Precio Luz España PVPC para iPhone.",
     "inLanguage": "es-ES",
     "publisher": {
-      "@id": "https://precioluz.natural-apps.com/#organization"
+      "@id": "https://preciodelaluz.app/#organization"
     }
   },
   "breadcrumb": {
@@ -39,7 +39,7 @@
         "@type": "ListItem",
         "position": 1,
         "name": "Precio de la luz hoy",
-        "item": "https://precioluz.natural-apps.com/"
+        "item": "https://preciodelaluz.app/"
       },
       {
         "@type": "ListItem",
@@ -60,7 +60,7 @@
         "description": "{description}",
         "inLanguage": "es-ES",
         "isPartOf": {
-          "@id": "https://precioluz.natural-apps.com/#website"
+          "@id": "https://preciodelaluz.app/#website"
         },
         "about": {
           "@id": "{page_url}#dataset"
@@ -70,7 +70,7 @@
         },
         "dateModified": "{actualizado_iso}",
         "publisher": {
-          "@id": "https://precioluz.natural-apps.com/#organization"
+          "@id": "https://preciodelaluz.app/#organization"
         }
       },
       {
@@ -107,7 +107,7 @@
           "url": "https://www.esios.ree.es/"
         },
         "publisher": {
-          "@id": "https://precioluz.natural-apps.com/#organization"
+          "@id": "https://preciodelaluz.app/#organization"
         },
         "dateModified": "{actualizado_iso}",
         "distribution": [
@@ -123,10 +123,10 @@
   "software_application": {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
-    "@id": "https://precioluz.natural-apps.com/app/#app",
+    "@id": "https://preciodelaluz.app/app/#app",
     "name": "Precio Luz España PVPC",
     "alternateName": "Precio de la Luz",
-    "url": "https://precioluz.natural-apps.com/app/",
+    "url": "https://preciodelaluz.app/app/",
     "description": "El precio de la luz de hoy y de mañana por horas, la hora más barata y un aviso antes de que llegue. Widgets, pantalla de bloqueo, Live Activity y Siri. Gratis, sin anuncios y sin registro.",
     "applicationCategory": "UtilitiesApplication",
     "operatingSystem": "iOS 26.0 o posterior",
@@ -148,10 +148,10 @@
     "installUrl": "https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483",
     "downloadUrl": "https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483",
     "author": {
-      "@id": "https://precioluz.natural-apps.com/#organization"
+      "@id": "https://preciodelaluz.app/#organization"
     },
     "publisher": {
-      "@id": "https://precioluz.natural-apps.com/#organization"
+      "@id": "https://preciodelaluz.app/#organization"
     },
     "featureList": [
       "Aviso Mejor hora del día (5, 10, 15 o 30 minutos antes; tramo entero si varias horas cuestan casi lo mismo)",
@@ -168,14 +168,14 @@
     ],
     "screenshot": "{og_image_url}",
     "sameAs": [
-      "https://precioluz.natural-apps.com/"
+      "https://preciodelaluz.app/"
     ]
   },
   "faq_page": {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "@id": "https://precioluz.natural-apps.com/preguntas-frecuentes/#faq",
-    "url": "https://precioluz.natural-apps.com/preguntas-frecuentes/",
+    "@id": "https://preciodelaluz.app/preguntas-frecuentes/#faq",
+    "url": "https://preciodelaluz.app/preguntas-frecuentes/",
     "inLanguage": "es-ES",
     "mainEntity": [
       {
@@ -183,7 +183,7 @@
         "name": "¿A qué hora se publica el precio de la luz de mañana?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "Red Eléctrica publica el PVPC de mañana cada día entre las 20:15 y las 20:20, hora peninsular, en cuanto termina de calcularlo con el resultado de la subasta diaria de OMIE. En Canarias son las 19:15-19:20, hora local. Es la misma hora todos los días, incluidos fines de semana y festivos. precioluz.natural-apps.com los recoge en cuanto aparecen."
+          "text": "Red Eléctrica publica el PVPC de mañana cada día entre las 20:15 y las 20:20, hora peninsular, en cuanto termina de calcularlo con el resultado de la subasta diaria de OMIE. En Canarias son las 19:15-19:20, hora local. Es la misma hora todos los días, incluidos fines de semana y festivos. preciodelaluz.app los recoge en cuanto aparecen."
         }
       },
       {
@@ -247,7 +247,7 @@
         "name": "¿Quién está detrás de PrecioLuz?",
         "acceptedAnswer": {
           "@type": "Answer",
-          "text": "PrecioLuz (precioluz.natural-apps.com) es la web de la app Precio Luz España PVPC para iPhone, de Natural Apps (natural-apps.com), un pequeño estudio independiente de apps. No pertenece a ninguna comercializadora ni a ningún comparador de tarifas. Los datos son los oficiales de Red Eléctrica de España (ESIOS, PVPC 2.0TD)."
+          "text": "PrecioLuz (preciodelaluz.app) es la web de la app Precio Luz España PVPC para iPhone, de Natural Apps (natural-apps.com), un pequeño estudio independiente de apps. No pertenece a ninguna comercializadora ni a ningún comparador de tarifas. Los datos son los oficiales de Red Eléctrica de España (ESIOS, PVPC 2.0TD)."
         }
       },
       {
@@ -290,15 +290,15 @@
     "inLanguage": "es-ES",
     "image": "{og_image_url}",
     "datePublished": "{date_published_iso}",
-    "dateModified": "{actualizado_iso}",
+    "dateModified": "{date_modified_iso}",
     "author": {
-      "@id": "https://precioluz.natural-apps.com/#organization"
+      "@id": "https://preciodelaluz.app/#organization"
     },
     "publisher": {
-      "@id": "https://precioluz.natural-apps.com/#organization"
+      "@id": "https://preciodelaluz.app/#organization"
     },
     "isPartOf": {
-      "@id": "https://precioluz.natural-apps.com/#website"
+      "@id": "https://preciodelaluz.app/#website"
     },
     "about": [
       {

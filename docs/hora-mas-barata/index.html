@@ -11,53 +11,23 @@
     tabi_dia | tabi_generacion | tabi_resumen | tabi_calendario  -> "0" | "-1"        (solo data-tabi, compatibilidad)
     hid_dia | hid_generacion | hid_resumen | hid_calendario      -> "" | "hidden"     (en páginas Día son visibles panel-dia y panel-resumen)
   Los enlaces de la nav son páginas reales. app.js marca aria-current="page" por pathname (p. ej. /manana/), pone
-  --band-color, lanza cascada/reveal y emite `pl:ready`. El <h1> de la página va en <h1>Hora más barata de la luz hoy y mañana</h1>
-<p class="lead">Hoy, lunes 2 de noviembre, la hora más barata de la luz es de 10:00 a 11:00 (-0,017 €/kWh) y el mejor tramo de dos horas seguidas va de {tramo2_inicio} a {tramo2_fin} ({tramo2_media} €/kWh de media). La hora más cara es de 18:00 a 19:00 (0,329 €/kWh), y la media del día, 0,187 €/kWh. Precios oficiales del PVPC para Península.</p>
-<p class="footnote sec">Última actualización: <time datetime="2026-11-01T23:09:32+01:00">01/11/2026 23:09</time> (hora peninsular) · Fuente: Red Eléctrica (ESIOS, PVPC 2.0TD)</p>
-<h2>Las cinco horas más baratas (02/11)</h2><table class="table"><thead><tr><th>Hora</th><th class="n">€/kWh</th><th>Tramo</th><th>Color</th></tr></thead><tbody><tr><td>10:00–11:00</td><td class="n">-0,017</td><td>Punta</td><td><span class="sw g"></span>Verde</td></tr><tr><td>14:00–15:00</td><td class="n">-0,015</td><td>Llano</td><td><span class="sw g"></span>Verde</td></tr><tr><td>13:00–14:00</td><td class="n">-0,015</td><td>Punta</td><td><span class="sw g"></span>Verde</td></tr><tr><td>11:00–12:00</td><td class="n">-0,015</td><td>Punta</td><td><span class="sw g"></span>Verde</td></tr><tr><td>12:00–13:00</td><td class="n">-0,015</td><td>Punta</td><td><span class="sw g"></span>Verde</td></tr></tbody></table>
-<section class="article" id="como-leer">
-  <h2>Cómo leer esta tabla</h2>
-  <h3>Los colores</h3>
-  <p>Cada hora se compara con la media del día, no con un umbral fijo. Verde: cuesta menos del 65 % de la media. Naranja: entre el 65 % y el 85 %. Rojo: por encima del 85 %. Por eso un día muy barato puede tener horas en rojo y un día caro puede tener alguna en verde: el color dice qué horas conviene aprovechar hoy, no si hoy es un buen día en general. La hoja verde marca la hora más barata y el rayo, la hora en la que estás ahora.</p>
-  <h3>La próxima oportunidad</h3>
-  <p>Es el siguiente tramo barato que queda por delante: horas seguidas cuyo precio está a menos de 1 céntimo de la más barata que aún no ha pasado, con un tope de 6 horas y con una media por debajo del 85 % de la media del día. Si no queda ningún tramo que cumpla eso, no se muestra nada: preferimos no inventar una oportunidad que no existe. Nunca mira hacia atrás, así que a última hora de la noche puede no haber ninguna.</p>
-  <h3>El consejo del día</h3>
-  <p>Resume el día en una frase: si la luz está barata, a un precio normal o cara (según la media del día) y si apenas cambia, cambia algo o cambia mucho entre unas horas y otras (según la diferencia entre la hora más cara y la más barata). Termina siempre con la mejor y la peor hora. Es el mismo consejo que da la app Precio Luz España PVPC en su pestaña Resumen.</p>
-</section>
-
-<section class="article cta-app" id="cta-app">
-  <h2>Que el precio te avise a ti, no al revés</h2>
-  <ul>
-    <li>Un aviso antes de la hora más barata del día, y solo cuando de verdad merece la pena.</li>
-    <li>Los precios de mañana en tu iPhone a las 20:20, sin entrar en ninguna web.</li>
-    <li>Widgets, pantalla de bloqueo y Siri: pregúntale cuándo poner la lavadora.</li>
-  </ul>
-  <p class="cta-button"><a class="btn btn-appstore" href="https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483" rel="noopener">Descargar gratis en el App Store</a></p>
-  <p class="cta-subline">Precio Luz España PVPC. Gratis, sin anuncios, sin registro. Requiere iOS 26.</p>
-</section>
-
-<section class="article" id="sobre-estos-datos">
-  <h2>Sobre estos datos</h2>
-  <p>Los precios de precioluz.natural-apps.com son el PVPC 2.0TD que publica Red Eléctrica de España en su sistema ESIOS (archivo 70), el dato oficial con el que se factura la tarifa regulada. Se muestran por horas, tal como lo publica REE en su archivo horario, en euros por kilovatio hora y sin impuestos.</p>
-  <p>Península, Baleares y Canarias comparten la misma serie de precios; Canarias la ve en su hora local, una menos. Ceuta y Melilla tienen serie propia. Los precios de mañana aparecen entre las 20:15 y las 20:20 (19:15-19:20 en Canarias) y esta web los recoge en cuanto salen. Sin publicidad ni comercializadora detrás: es la web de la app Precio Luz España PVPC, de Natural Apps.</p>
-</section>
-; la cabecera lleva
+  --band-color, lanza cascada/reveal y emite `pl:ready`. El <h1> de la página va en seo_sections; la cabecera lleva
   el título de marca como <p class="title">.
 -->
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Hora más barata de la luz hoy y mañana (02/11) · PrecioLuz</title>
-<meta name="description" content="Hoy 02/11 la hora más barata de la luz es de 10:00 a 11:00 (-0,017 €/kWh); mejor tramo de 2 h de {tramo2_inicio} a {tramo2_fin}. Las 5 horas más baratas de hoy y mañana.">
-<link rel="canonical" href="https://precioluz.natural-apps.com/hora-mas-barata/">
-<link rel="alternate" hreflang="es-ES" href="https://precioluz.natural-apps.com/hora-mas-barata/">
-<link rel="alternate" hreflang="x-default" href="https://precioluz.natural-apps.com/hora-mas-barata/">
-<meta name="apple-itunes-app" content="app-id=6758021483, app-argument=https://precioluz.natural-apps.com/manana/">
+<meta name="description" content="Hoy 02/11 la hora más barata de la luz es de 10:00 a 11:00 (-0,017 €/kWh); mejor tramo de 2 h de 10:00 a 12:00. Las 5 horas más baratas de hoy y mañana.">
+<link rel="canonical" href="https://preciodelaluz.app/hora-mas-barata/">
+<link rel="alternate" hreflang="es-ES" href="https://preciodelaluz.app/hora-mas-barata/">
+<link rel="alternate" hreflang="x-default" href="https://preciodelaluz.app/hora-mas-barata/">
+<meta name="apple-itunes-app" content="app-id=6758021483, app-argument=https://preciodelaluz.app/manana/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PrecioLuz">
 <meta property="og:locale" content="es_ES">
 <meta property="og:title" content="Hora más barata de la luz hoy y mañana (02/11) · PrecioLuz">
-<meta property="og:description" content="Hoy 02/11 la hora más barata de la luz es de 10:00 a 11:00 (-0,017 €/kWh); mejor tramo de 2 h de {tramo2_inicio} a {tramo2_fin}. Las 5 horas más baratas de hoy y mañana.">
-<meta property="og:url" content="https://precioluz.natural-apps.com/hora-mas-barata/">
-<meta property="og:image" content="https://precioluz.natural-apps.com/assets/img/og/hora_mas_barata.png">
+<meta property="og:description" content="Hoy 02/11 la hora más barata de la luz es de 10:00 a 11:00 (-0,017 €/kWh); mejor tramo de 2 h de 10:00 a 12:00. Las 5 horas más baratas de hoy y mañana.">
+<meta property="og:url" content="https://preciodelaluz.app/hora-mas-barata/">
+<meta property="og:image" content="https://preciodelaluz.app/assets/img/og/hora_mas_barata.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -74,7 +44,7 @@
 <link rel="modulepreload" href="/assets/js/engine.js">
 <link rel="modulepreload" href="/assets/js/tz.js">
 <script>document.documentElement.classList.replace('no-js','js')</script>
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "@id": "https://precioluz.natural-apps.com/#organization", "name": "Natural Apps", "url": "https://www.natural-apps.com/", "logo": {"@type": "ImageObject", "url": "https://precioluz.natural-apps.com/assets/img/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483"]}, {"@context": "https://schema.org", "@type": "WebSite", "@id": "https://precioluz.natural-apps.com/#website", "url": "https://precioluz.natural-apps.com/", "name": "PrecioLuz", "alternateName": ["Precio Luz España PVPC", "precioluz.natural-apps.com"], "description": "El precio de la luz (PVPC 2.0TD) de hoy y de mañana por horas, con la hora más barata. Datos oficiales de Red Eléctrica (ESIOS), sin publicidad. Web de la app Precio Luz España PVPC para iPhone.", "inLanguage": "es-ES", "publisher": {"@id": "https://precioluz.natural-apps.com/#organization"}}, {"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://precioluz.natural-apps.com/hora-mas-barata/#webpage", "url": "https://precioluz.natural-apps.com/hora-mas-barata/", "name": "Hora más barata de la luz hoy y mañana (02/11) · PrecioLuz", "description": "Hoy 02/11 la hora más barata de la luz es de 10:00 a 11:00 (-0,017 €/kWh); mejor tramo de 2 h de {tramo2_inicio} a {tramo2_fin}. Las 5 horas más baratas de hoy y mañana.", "inLanguage": "es-ES", "isPartOf": {"@id": "https://precioluz.natural-apps.com/#website"}, "about": {"@id": "https://precioluz.natural-apps.com/hora-mas-barata/#dataset"}, "mainEntity": {"@id": "https://precioluz.natural-apps.com/hora-mas-barata/#dataset"}, "dateModified": "2026-11-01T23:09:32+01:00", "publisher": {"@id": "https://precioluz.natural-apps.com/#organization"}}, {"@type": "Dataset", "@id": "https://precioluz.natural-apps.com/hora-mas-barata/#dataset", "name": "Precio de la luz (PVPC 2.0TD) por horas, Península, 2026-11-02", "description": "Precio del PVPC 2.0TD para cada hora del 2026-11-02 en Península, en euros por kilovatio hora, sin impuestos, tal como lo publica Red Eléctrica de España en ESIOS (archivo 70). Incluye la hora más barata, la más cara y la media del día.", "url": "https://precioluz.natural-apps.com/hora-mas-barata/", "inLanguage": "es-ES", "isAccessibleForFree": true, "keywords": ["precio luz", "PVPC", "2.0TD", "hora más barata", "Península", "España"], "temporalCoverage": "2026-11-02", "spatialCoverage": {"@type": "Place", "name": "Península, España"}, "variableMeasured": "Precio de la electricidad (PVPC 2.0TD) por hora, €/kWh", "isBasedOn": "https://api.esios.ree.es/archives/70/download_json?date=2026-11-02", "sourceOrganization": {"@type": "Organization", "name": "Red Eléctrica de España", "url": "https://www.esios.ree.es/"}, "creator": {"@type": "Organization", "name": "Red Eléctrica de España", "url": "https://www.esios.ree.es/"}, "publisher": {"@id": "https://precioluz.natural-apps.com/#organization"}, "dateModified": "2026-11-01T23:09:32+01:00", "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://precioluz.natural-apps.com/data/hoy.json"}]}]}]</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "@id": "https://preciodelaluz.app/#organization", "name": "Natural Apps", "url": "https://www.natural-apps.com/", "logo": {"@type": "ImageObject", "url": "https://preciodelaluz.app/assets/img/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483"]}, {"@context": "https://schema.org", "@type": "WebSite", "@id": "https://preciodelaluz.app/#website", "url": "https://preciodelaluz.app/", "name": "PrecioLuz", "alternateName": ["Precio Luz España PVPC", "preciodelaluz.app"], "description": "El precio de la luz (PVPC 2.0TD) de hoy y de mañana por horas, con la hora más barata. Datos oficiales de Red Eléctrica (ESIOS), sin publicidad. Web de la app Precio Luz España PVPC para iPhone.", "inLanguage": "es-ES", "publisher": {"@id": "https://preciodelaluz.app/#organization"}}, {"@context": "https://schema.org", "@graph": [{"@type": "WebPage", "@id": "https://preciodelaluz.app/hora-mas-barata/#webpage", "url": "https://preciodelaluz.app/hora-mas-barata/", "name": "Hora más barata de la luz hoy y mañana (02/11) · PrecioLuz", "description": "Hoy 02/11 la hora más barata de la luz es de 10:00 a 11:00 (-0,017 €/kWh); mejor tramo de 2 h de 10:00 a 12:00. Las 5 horas más baratas de hoy y mañana.", "inLanguage": "es-ES", "isPartOf": {"@id": "https://preciodelaluz.app/#website"}, "about": {"@id": "https://preciodelaluz.app/hora-mas-barata/#dataset"}, "mainEntity": {"@id": "https://preciodelaluz.app/hora-mas-barata/#dataset"}, "dateModified": "2026-11-01T23:09:32+01:00", "publisher": {"@id": "https://preciodelaluz.app/#organization"}}, {"@type": "Dataset", "@id": "https://preciodelaluz.app/hora-mas-barata/#dataset", "name": "Precio de la luz (PVPC 2.0TD) por horas, Península, 2026-11-02", "description": "Precio del PVPC 2.0TD para cada hora del 2026-11-02 en Península, en euros por kilovatio hora, sin impuestos, tal como lo publica Red Eléctrica de España en ESIOS (archivo 70). Incluye la hora más barata, la más cara y la media del día.", "url": "https://preciodelaluz.app/hora-mas-barata/", "inLanguage": "es-ES", "isAccessibleForFree": true, "keywords": ["precio luz", "PVPC", "2.0TD", "hora más barata", "Península", "España"], "temporalCoverage": "2026-11-02", "spatialCoverage": {"@type": "Place", "name": "Península, España"}, "variableMeasured": "Precio de la electricidad (PVPC 2.0TD) por hora, €/kWh", "isBasedOn": "https://api.esios.ree.es/archives/70/download_json?date=2026-11-02", "sourceOrganization": {"@type": "Organization", "name": "Red Eléctrica de España", "url": "https://www.esios.ree.es/"}, "creator": {"@type": "Organization", "name": "Red Eléctrica de España", "url": "https://www.esios.ree.es/"}, "publisher": {"@id": "https://preciodelaluz.app/#organization"}, "dateModified": "2026-11-01T23:09:32+01:00", "distribution": [{"@type": "DataDownload", "encodingFormat": "application/json", "contentUrl": "https://preciodelaluz.app/data/hoy.json"}]}]}]</script>
 </head>
 <body data-tab="dia">
 <a class="skip" href="#panel-dia">Saltar al contenido</a>
@@ -141,7 +111,7 @@
 
   <article class="seo" id="seo">
 <h1>Hora más barata de la luz hoy y mañana</h1>
-<p class="lead">Hoy, lunes 2 de noviembre, la hora más barata de la luz es de 10:00 a 11:00 (-0,017 €/kWh) y el mejor tramo de dos horas seguidas va de {tramo2_inicio} a {tramo2_fin} ({tramo2_media} €/kWh de media). La hora más cara es de 18:00 a 19:00 (0,329 €/kWh), y la media del día, 0,187 €/kWh. Precios oficiales del PVPC para Península.</p>
+<p class="lead">Hoy, lunes 2 de noviembre, la hora más barata de la luz es de 10:00 a 11:00 (-0,017 €/kWh) y el mejor tramo de dos horas seguidas va de 10:00 a 12:00 (-0,016 €/kWh de media). La hora más cara es de 18:00 a 19:00 (0,329 €/kWh), y la media del día, 0,187 €/kWh. Precios oficiales del PVPC para Península.</p>
 <p class="footnote sec">Última actualización: <time datetime="2026-11-01T23:09:32+01:00">01/11/2026 23:09</time> (hora peninsular) · Fuente: Red Eléctrica (ESIOS, PVPC 2.0TD)</p>
 <h2>Las cinco horas más baratas (02/11)</h2><table class="table"><thead><tr><th>Hora</th><th class="n">€/kWh</th><th>Tramo</th><th>Color</th></tr></thead><tbody><tr><td>10:00–11:00</td><td class="n">-0,017</td><td>Punta</td><td><span class="sw g"></span>Verde</td></tr><tr><td>14:00–15:00</td><td class="n">-0,015</td><td>Llano</td><td><span class="sw g"></span>Verde</td></tr><tr><td>13:00–14:00</td><td class="n">-0,015</td><td>Punta</td><td><span class="sw g"></span>Verde</td></tr><tr><td>11:00–12:00</td><td class="n">-0,015</td><td>Punta</td><td><span class="sw g"></span>Verde</td></tr><tr><td>12:00–13:00</td><td class="n">-0,015</td><td>Punta</td><td><span class="sw g"></span>Verde</td></tr></tbody></table>
 <section class="article" id="como-leer">
@@ -167,7 +137,7 @@
 
 <section class="article" id="sobre-estos-datos">
   <h2>Sobre estos datos</h2>
-  <p>Los precios de precioluz.natural-apps.com son el PVPC 2.0TD que publica Red Eléctrica de España en su sistema ESIOS (archivo 70), el dato oficial con el que se factura la tarifa regulada. Se muestran por horas, tal como lo publica REE en su archivo horario, en euros por kilovatio hora y sin impuestos.</p>
+  <p>Los precios de preciodelaluz.app son el PVPC 2.0TD que publica Red Eléctrica de España en su sistema ESIOS (archivo 70), el dato oficial con el que se factura la tarifa regulada. Se muestran por horas, tal como lo publica REE en su archivo horario, en euros por kilovatio hora y sin impuestos.</p>
   <p>Península, Baleares y Canarias comparten la misma serie de precios; Canarias la ve en su hora local, una menos. Ceuta y Melilla tienen serie propia. Los precios de mañana aparecen entre las 20:15 y las 20:20 (19:15-19:20 en Canarias) y esta web los recoge en cuanto salen. Sin publicidad ni comercializadora detrás: es la web de la app Precio Luz España PVPC, de Natural Apps.</p>
 </section>
 
@@ -175,7 +145,7 @@
 </main>
 
 <footer class="foot">
-  <p>PrecioLuz (precioluz.natural-apps.com) es la web de la app Precio Luz España PVPC para iPhone, de Natural Apps. Datos oficiales de Red Eléctrica, sin publicidad y sin comercializadora.</p>
+  <p>PrecioLuz (preciodelaluz.app) es la web de la app Precio Luz España PVPC para iPhone, de Natural Apps. Datos oficiales de Red Eléctrica, sin publicidad y sin comercializadora.</p>
   <ul class="links">
     <li><a href="https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483" rel="noopener">Descargar la app en el App Store</a></li>
     <li><a href="https://www.natural-apps.com/PrecioLuz/privacy_es.html">Privacidad</a></li>

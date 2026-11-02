@@ -11,39 +11,24 @@
     tabi_dia | tabi_generacion | tabi_resumen | tabi_calendario  -> "0" | "-1"        (solo data-tabi, compatibilidad)
     hid_dia | hid_generacion | hid_resumen | hid_calendario      -> "" | "hidden"     (en páginas Día son visibles panel-dia y panel-resumen)
   Los enlaces de la nav son páginas reales. app.js marca aria-current="page" por pathname (p. ej. /manana/), pone
-  --band-color, lanza cascada/reveal y emite `pl:ready`. El <h1> de la página va en <h1>Esa página no existe, pero el precio de hoy sí</h1>
-<p class="lead">La dirección que has abierto no existe en precioluz.natural-apps.com, o ya no está. Lo que sí está siempre es el precio de la luz de hoy, el de mañana a partir de las 20:20 y la hora más barata para poner la lavadora.</p>
-<section class="article" id="no-encontrada">
-  <p>Puede que el enlace estuviera mal escrito o que la página haya cambiado de sitio. En precioluz.natural-apps.com no hay páginas por día: el precio de cada fecha se consulta desde el calendario.</p>
-  <ul>
-    <li><a href="/">Precio de la luz hoy</a>: la tabla por horas, la más barata y la más cara.</li>
-    <li><a href="/manana/">Precio de la luz mañana</a>: publicado cada día a partir de las 20:20.</li>
-    <li><a href="/hora-mas-barata/">Hora más barata hoy y mañana</a>: las 5 horas más baratas y el mejor tramo de 2 horas.</li>
-    <li><a href="/calendario/">Calendario</a>: la media, el valle y la cresta de cada día del mes.</li>
-    <li><a href="/preguntas-frecuentes/">Preguntas frecuentes</a>: a qué hora se publica, qué es el PVPC, Canarias, Ceuta y Melilla.</li>
-  </ul>
-  <h2>Y si prefieres que el precio te avise</h2>
-  <p>La app Precio Luz España PVPC para iPhone te avisa antes de la hora más barata del día y te trae los precios de mañana a las 20:20, con widgets, Live Activity y Siri. Gratis, sin anuncios y sin registro; requiere iOS 26.</p>
-  <p class="cta-button"><a class="btn btn-appstore" href="https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483" rel="noopener">Descargar gratis en el App Store</a></p>
-</section>
-; la cabecera lleva
+  --band-color, lanza cascada/reveal y emite `pl:ready`. El <h1> de la página va en seo_sections; la cabecera lleva
   el título de marca como <p class="title">.
 -->
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Página no encontrada · PrecioLuz</title>
 <meta name="robots" content="noindex">
-<meta name="description" content="Esa página no existe en precioluz.natural-apps.com, pero el precio de la luz de hoy y de mañana sí.">
-<link rel="canonical" href="https://precioluz.natural-apps.com/404.html">
-<link rel="alternate" hreflang="es-ES" href="https://precioluz.natural-apps.com/404.html">
-<link rel="alternate" hreflang="x-default" href="https://precioluz.natural-apps.com/404.html">
-<meta name="apple-itunes-app" content="app-id=6758021483, app-argument=https://precioluz.natural-apps.com/manana/">
+<meta name="description" content="Esa página no existe en preciodelaluz.app, pero el precio de la luz de hoy y de mañana sí.">
+<link rel="canonical" href="https://preciodelaluz.app/404.html">
+<link rel="alternate" hreflang="es-ES" href="https://preciodelaluz.app/404.html">
+<link rel="alternate" hreflang="x-default" href="https://preciodelaluz.app/404.html">
+<meta name="apple-itunes-app" content="app-id=6758021483, app-argument=https://preciodelaluz.app/manana/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PrecioLuz">
 <meta property="og:locale" content="es_ES">
 <meta property="og:title" content="Página no encontrada · PrecioLuz">
-<meta property="og:description" content="Esa página no existe en precioluz.natural-apps.com, pero el precio de la luz de hoy y de mañana sí.">
-<meta property="og:url" content="https://precioluz.natural-apps.com/404.html">
-<meta property="og:image" content="https://precioluz.natural-apps.com/assets/img/og-default.png">
+<meta property="og:description" content="Esa página no existe en preciodelaluz.app, pero el precio de la luz de hoy y de mañana sí.">
+<meta property="og:url" content="https://preciodelaluz.app/404.html">
+<meta property="og:image" content="https://preciodelaluz.app/assets/img/og-default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -60,7 +45,7 @@
 <link rel="modulepreload" href="/assets/js/engine.js">
 <link rel="modulepreload" href="/assets/js/tz.js">
 <script>document.documentElement.classList.replace('no-js','js')</script>
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "@id": "https://precioluz.natural-apps.com/#organization", "name": "Natural Apps", "url": "https://www.natural-apps.com/", "logo": {"@type": "ImageObject", "url": "https://precioluz.natural-apps.com/assets/img/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483"]}, {"@context": "https://schema.org", "@type": "WebSite", "@id": "https://precioluz.natural-apps.com/#website", "url": "https://precioluz.natural-apps.com/", "name": "PrecioLuz", "alternateName": ["Precio Luz España PVPC", "precioluz.natural-apps.com"], "description": "El precio de la luz (PVPC 2.0TD) de hoy y de mañana por horas, con la hora más barata. Datos oficiales de Red Eléctrica (ESIOS), sin publicidad. Web de la app Precio Luz España PVPC para iPhone.", "inLanguage": "es-ES", "publisher": {"@id": "https://precioluz.natural-apps.com/#organization"}}]</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "@id": "https://preciodelaluz.app/#organization", "name": "Natural Apps", "url": "https://www.natural-apps.com/", "logo": {"@type": "ImageObject", "url": "https://preciodelaluz.app/assets/img/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483"]}, {"@context": "https://schema.org", "@type": "WebSite", "@id": "https://preciodelaluz.app/#website", "url": "https://preciodelaluz.app/", "name": "PrecioLuz", "alternateName": ["Precio Luz España PVPC", "preciodelaluz.app"], "description": "El precio de la luz (PVPC 2.0TD) de hoy y de mañana por horas, con la hora más barata. Datos oficiales de Red Eléctrica (ESIOS), sin publicidad. Web de la app Precio Luz España PVPC para iPhone.", "inLanguage": "es-ES", "publisher": {"@id": "https://preciodelaluz.app/#organization"}}]</script>
 </head>
 <body data-tab="dia">
 <a class="skip" href="#panel-dia">Saltar al contenido</a>
@@ -127,9 +112,9 @@
 
   <article class="seo" id="seo">
 <h1>Esa página no existe, pero el precio de hoy sí</h1>
-<p class="lead">La dirección que has abierto no existe en precioluz.natural-apps.com, o ya no está. Lo que sí está siempre es el precio de la luz de hoy, el de mañana a partir de las 20:20 y la hora más barata para poner la lavadora.</p>
+<p class="lead">La dirección que has abierto no existe en preciodelaluz.app, o ya no está. Lo que sí está siempre es el precio de la luz de hoy, el de mañana a partir de las 20:20 y la hora más barata para poner la lavadora.</p>
 <section class="article" id="no-encontrada">
-  <p>Puede que el enlace estuviera mal escrito o que la página haya cambiado de sitio. En precioluz.natural-apps.com no hay páginas por día: el precio de cada fecha se consulta desde el calendario.</p>
+  <p>Puede que el enlace estuviera mal escrito o que la página haya cambiado de sitio. En preciodelaluz.app no hay páginas por día: el precio de cada fecha se consulta desde el calendario.</p>
   <ul>
     <li><a href="/">Precio de la luz hoy</a>: la tabla por horas, la más barata y la más cara.</li>
     <li><a href="/manana/">Precio de la luz mañana</a>: publicado cada día a partir de las 20:20.</li>
@@ -146,7 +131,7 @@
 </main>
 
 <footer class="foot">
-  <p>PrecioLuz (precioluz.natural-apps.com) es la web de la app Precio Luz España PVPC para iPhone, de Natural Apps. Datos oficiales de Red Eléctrica, sin publicidad y sin comercializadora.</p>
+  <p>PrecioLuz (preciodelaluz.app) es la web de la app Precio Luz España PVPC para iPhone, de Natural Apps. Datos oficiales de Red Eléctrica, sin publicidad y sin comercializadora.</p>
   <ul class="links">
     <li><a href="https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483" rel="noopener">Descargar la app en el App Store</a></li>
     <li><a href="https://www.natural-apps.com/PrecioLuz/privacy_es.html">Privacidad</a></li>

@@ -11,61 +11,23 @@
     tabi_dia | tabi_generacion | tabi_resumen | tabi_calendario  -> "0" | "-1"        (solo data-tabi, compatibilidad)
     hid_dia | hid_generacion | hid_resumen | hid_calendario      -> "" | "hidden"     (en páginas Día son visibles panel-dia y panel-resumen)
   Los enlaces de la nav son páginas reales. app.js marca aria-current="page" por pathname (p. ej. /manana/), pone
-  --band-color, lanza cascada/reveal y emite `pl:ready`. El <h1> de la página va en <h1>Cuándo poner la lavadora hoy, lunes 2 de noviembre</h1>
-<p class="lead">Hoy, lunes 2 de noviembre, el mejor tramo de dos horas para poner la lavadora va de {tramo2_inicio} a {tramo2_fin} ({tramo2_media} €/kWh de media). La hora más barata suelta es de 10:00 a 11:00 (-0,017 €/kWh) y la más cara de 18:00 a 19:00 (0,329 €/kWh), así que la diferencia entre acertar y no acertar con la hora es real. Precios oficiales del PVPC para Península.</p>
-<p class="footnote sec">Última actualización: <time datetime="2026-11-01T23:09:32+01:00">01/11/2026 23:09</time> (hora peninsular) · Fuente: Red Eléctrica (ESIOS, PVPC 2.0TD)</p>
-<section class="article" id="cuando-poner-la-lavadora">
-  <h2>La lavadora: busca dos horas seguidas, no una</h2>
-  <p>Un programa normal de lavadora dura entre una hora y media y dos horas, así que la pregunta correcta no es cuál es la hora más barata, sino cuál es el mejor tramo de dos horas seguidas. Hoy ese tramo va de {tramo2_inicio} a {tramo2_fin}, con una media de {tramo2_media} €/kWh. Si la pones al principio del tramo, todo el ciclo cae dentro de las horas buenas; si la pones en la hora más barata suelta pero la siguiente es cara, la mitad del lavado se hace a precio alto.</p>
-  <p>Con el PVPC hay dos momentos típicos para la colada. Uno es el mediodía de los días de sol, entre las 12:00 y las 17:00, cuando la fotovoltaica hunde el precio y a menudo aparecen las horas más baratas del día. El otro es la madrugada, de 0:00 a 8:00, que es periodo valle todos los días laborables y suele ser barata aunque no haya sol. Cuál conviene depende del día: hay jornadas en las que la tarde solar cuesta la mitad que la madrugada y otras al revés. Por eso merece la pena mirar la tabla, o dejar que la app te avise.</p>
-  <p>Un consejo práctico: si tu lavadora tiene inicio diferido, prográmala la noche anterior con el precio de mañana ya publicado (sale a las 20:20). Y si vas a dejarla funcionando de madrugada, hazlo solo si el electrodoméstico y la instalación están en buen estado: el ahorro no compensa un susto.</p>
-  <h2>El lavavajillas: el que más se deja programar</h2>
-  <p>El lavavajillas es el electrodoméstico ideal para el PVPC: casi todos tienen programa diferido, se cargan después de cenar y a nadie le importa a qué hora terminan. Un ciclo eco dura entre dos y tres horas, así que aquí también hay que buscar un tramo de dos o tres horas seguidas, no una hora suelta. La rutina que mejor funciona es cargarlo por la noche y diferir el arranque al principio del valle, sobre las 0:00 (o a las 23:00 en Canarias, donde el valle empieza una hora antes en su reloj). Si un día la tarde está muy barata, ponlo al mediodía.</p>
-  <p>La app Precio Luz España PVPC tiene una respuesta directa para esto: el widget "2 h baratas" muestra el siguiente tramo de dos horas más barato que queda hoy, y Siri responde a "Lavavajillas barato en Precio de la Luz" con el mejor tramo que queda hoy y cuánto más barato es que la media del día.</p>
-  <h2>El coche eléctrico: la carga larga va al valle</h2>
-  <p>Cargar un coche eléctrico en casa son varias horas seguidas, y aquí el periodo valle manda: de 0:00 a 8:00 los días laborables (de 23:00 a 7:00 en hora canaria) los peajes y cargos son los más bajos y el precio del PVPC suele ir con ellos. Programa la carga para que empiece a las 0:00 y termine antes de las 8:00, y aprovecha que los sábados, los domingos y los festivos nacionales el valle dura las 24 horas: si puedes cargar el fin de semana, casi da igual a qué hora.</p>
-  <p>Con el PVPC no hay una tarifa especial para el coche, pero puedes contratar dos potencias distintas, una para punta y otra para valle, y poner más potencia en el valle si la carga lo necesita. Los días de mucho sol, además, la tarde puede llegar a costar menos que la madrugada: si el coche está en casa al mediodía, mira la tabla antes de enchufarlo por inercia a las 0:00.</p>
-  <h2>El fin de semana: todo el día es valle</h2>
-  <p>Los sábados, los domingos y los festivos de ámbito nacional el PVPC no tiene horas punta ni llano: los peajes y cargos son los de valle durante todo el día. Eso no significa que todas las horas cuesten lo mismo (el precio de la energía sigue cambiando hora a hora con el sol y el viento), pero sí que las diferencias son mucho menores y que la tarde deja de ser tan cara. Es el mejor momento para las tareas que no encajan entre semana: varias lavadoras seguidas, el horno, la plancha o cargar el coche a fondo. En el calendario de esta web verás que los fines de semana suelen aparecer más claros que los días de entre semana.</p>
-  <p>Ojo con los festivos autonómicos y locales: para la 2.0TD son días laborables normales, con sus horas punta.</p>
-  <h2>Pregúntaselo a Siri</h2>
-  <p>Si tienes la app Precio Luz España PVPC en el iPhone, no hace falta ni abrirla. Di a Siri "Lavadora barata en Precio de la Luz" o "Lavavajillas barato en Precio de la Luz" y te responde con el mejor tramo de dos horas seguidas que queda hoy, su precio medio y cuánto se aleja de la media del día. También puedes pedirle el precio de la luz de ahora. Y si prefieres que sea la app la que dé el primer paso, activa el aviso "Mejor hora del día": te llega 5, 10, 15 o 30 minutos antes de la hora más barata, y si varias horas seguidas cuestan casi lo mismo, te da el tramo entero en vez de una sola hora.</p>
-  <p>Todo esto sale de los mismos precios oficiales de Red Eléctrica que ves en precioluz.natural-apps.com: la web te enseña la tabla, la app te avisa.</p>
-</section>
-
-<section class="article cta-app" id="cta-app">
-  <h2>Que el precio te avise a ti, no al revés</h2>
-  <ul>
-    <li>Un aviso antes de la hora más barata del día, y solo cuando de verdad merece la pena.</li>
-    <li>Los precios de mañana en tu iPhone a las 20:20, sin entrar en ninguna web.</li>
-    <li>Widgets, pantalla de bloqueo y Siri: pregúntale cuándo poner la lavadora.</li>
-  </ul>
-  <p class="cta-button"><a class="btn btn-appstore" href="https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483" rel="noopener">Descargar gratis en el App Store</a></p>
-  <p class="cta-subline">Precio Luz España PVPC. Gratis, sin anuncios, sin registro. Requiere iOS 26.</p>
-</section>
-
-<section class="article" id="sobre-estos-datos">
-  <h2>Sobre estos datos</h2>
-  <p>Los precios de precioluz.natural-apps.com son el PVPC 2.0TD que publica Red Eléctrica de España en su sistema ESIOS (archivo 70), el dato oficial con el que se factura la tarifa regulada. Se muestran por horas, tal como lo publica REE en su archivo horario, en euros por kilovatio hora y sin impuestos.</p>
-  <p>Península, Baleares y Canarias comparten la misma serie de precios; Canarias la ve en su hora local, una menos. Ceuta y Melilla tienen serie propia. Los precios de mañana aparecen entre las 20:15 y las 20:20 (19:15-19:20 en Canarias) y esta web los recoge en cuanto salen. Sin publicidad ni comercializadora detrás: es la web de la app Precio Luz España PVPC, de Natural Apps.</p>
-</section>
-; la cabecera lleva
+  --band-color, lanza cascada/reveal y emite `pl:ready`. El <h1> de la página va en seo_sections; la cabecera lleva
   el título de marca como <p class="title">.
 -->
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Cuándo poner la lavadora hoy 02/11: mejor hora · PrecioLuz</title>
-<meta name="description" content="Cuándo poner la lavadora hoy 02/11: el mejor tramo de 2 h es de {tramo2_inicio} a {tramo2_fin} ({tramo2_media} €/kWh). También lavavajillas, coche eléctrico, fin de semana y Siri.">
-<link rel="canonical" href="https://precioluz.natural-apps.com/cuando-poner-la-lavadora/">
-<link rel="alternate" hreflang="es-ES" href="https://precioluz.natural-apps.com/cuando-poner-la-lavadora/">
-<link rel="alternate" hreflang="x-default" href="https://precioluz.natural-apps.com/cuando-poner-la-lavadora/">
-<meta name="apple-itunes-app" content="app-id=6758021483, app-argument=https://precioluz.natural-apps.com/manana/">
+<meta name="description" content="Cuándo poner la lavadora hoy 02/11: el mejor tramo de 2 h es de 10:00 a 12:00 (-0,016 €/kWh). También lavavajillas, coche eléctrico, fin de semana y Siri.">
+<link rel="canonical" href="https://preciodelaluz.app/cuando-poner-la-lavadora/">
+<link rel="alternate" hreflang="es-ES" href="https://preciodelaluz.app/cuando-poner-la-lavadora/">
+<link rel="alternate" hreflang="x-default" href="https://preciodelaluz.app/cuando-poner-la-lavadora/">
+<meta name="apple-itunes-app" content="app-id=6758021483, app-argument=https://preciodelaluz.app/manana/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PrecioLuz">
 <meta property="og:locale" content="es_ES">
 <meta property="og:title" content="Cuándo poner la lavadora hoy 02/11: mejor hora · PrecioLuz">
-<meta property="og:description" content="Cuándo poner la lavadora hoy 02/11: el mejor tramo de 2 h es de {tramo2_inicio} a {tramo2_fin} ({tramo2_media} €/kWh). También lavavajillas, coche eléctrico, fin de semana y Siri.">
-<meta property="og:url" content="https://precioluz.natural-apps.com/cuando-poner-la-lavadora/">
-<meta property="og:image" content="https://precioluz.natural-apps.com/assets/img/og-default.png">
+<meta property="og:description" content="Cuándo poner la lavadora hoy 02/11: el mejor tramo de 2 h es de 10:00 a 12:00 (-0,016 €/kWh). También lavavajillas, coche eléctrico, fin de semana y Siri.">
+<meta property="og:url" content="https://preciodelaluz.app/cuando-poner-la-lavadora/">
+<meta property="og:image" content="https://preciodelaluz.app/assets/img/og-default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -82,7 +44,7 @@
 <link rel="modulepreload" href="/assets/js/engine.js">
 <link rel="modulepreload" href="/assets/js/tz.js">
 <script>document.documentElement.classList.replace('no-js','js')</script>
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "@id": "https://precioluz.natural-apps.com/#organization", "name": "Natural Apps", "url": "https://www.natural-apps.com/", "logo": {"@type": "ImageObject", "url": "https://precioluz.natural-apps.com/assets/img/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483"]}, {"@context": "https://schema.org", "@type": "WebSite", "@id": "https://precioluz.natural-apps.com/#website", "url": "https://precioluz.natural-apps.com/", "name": "PrecioLuz", "alternateName": ["Precio Luz España PVPC", "precioluz.natural-apps.com"], "description": "El precio de la luz (PVPC 2.0TD) de hoy y de mañana por horas, con la hora más barata. Datos oficiales de Red Eléctrica (ESIOS), sin publicidad. Web de la app Precio Luz España PVPC para iPhone.", "inLanguage": "es-ES", "publisher": {"@id": "https://precioluz.natural-apps.com/#organization"}}, {"@context": "https://schema.org", "@type": "Article", "@id": "https://precioluz.natural-apps.com/cuando-poner-la-lavadora/#article", "headline": "{h1}", "description": "Cuándo poner la lavadora hoy 02/11: el mejor tramo de 2 h es de {tramo2_inicio} a {tramo2_fin} ({tramo2_media} €/kWh). También lavavajillas, coche eléctrico, fin de semana y Siri.", "url": "https://precioluz.natural-apps.com/cuando-poner-la-lavadora/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://precioluz.natural-apps.com/cuando-poner-la-lavadora/"}, "inLanguage": "es-ES", "image": "https://precioluz.natural-apps.com/assets/img/og-default.png", "datePublished": "2026-09-22", "dateModified": "2026-11-01T23:09:32+01:00", "author": {"@id": "https://precioluz.natural-apps.com/#organization"}, "publisher": {"@id": "https://precioluz.natural-apps.com/#organization"}, "isPartOf": {"@id": "https://precioluz.natural-apps.com/#website"}, "about": [{"@type": "Thing", "name": "PVPC"}, {"@type": "Thing", "name": "Precio de la luz en España"}]}]</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "@id": "https://preciodelaluz.app/#organization", "name": "Natural Apps", "url": "https://www.natural-apps.com/", "logo": {"@type": "ImageObject", "url": "https://preciodelaluz.app/assets/img/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483"]}, {"@context": "https://schema.org", "@type": "WebSite", "@id": "https://preciodelaluz.app/#website", "url": "https://preciodelaluz.app/", "name": "PrecioLuz", "alternateName": ["Precio Luz España PVPC", "preciodelaluz.app"], "description": "El precio de la luz (PVPC 2.0TD) de hoy y de mañana por horas, con la hora más barata. Datos oficiales de Red Eléctrica (ESIOS), sin publicidad. Web de la app Precio Luz España PVPC para iPhone.", "inLanguage": "es-ES", "publisher": {"@id": "https://preciodelaluz.app/#organization"}}, {"@context": "https://schema.org", "@type": "Article", "@id": "https://preciodelaluz.app/cuando-poner-la-lavadora/#article", "headline": "Cuándo poner la lavadora hoy, lunes 2 de noviembre", "description": "Cuándo poner la lavadora hoy 02/11: el mejor tramo de 2 h es de 10:00 a 12:00 (-0,016 €/kWh). También lavavajillas, coche eléctrico, fin de semana y Siri.", "url": "https://preciodelaluz.app/cuando-poner-la-lavadora/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://preciodelaluz.app/cuando-poner-la-lavadora/"}, "inLanguage": "es-ES", "image": "https://preciodelaluz.app/assets/img/og-default.png", "datePublished": "2026-09-22", "dateModified": "2026-11-01T23:09:32+01:00", "author": {"@id": "https://preciodelaluz.app/#organization"}, "publisher": {"@id": "https://preciodelaluz.app/#organization"}, "isPartOf": {"@id": "https://preciodelaluz.app/#website"}, "about": [{"@type": "Thing", "name": "PVPC"}, {"@type": "Thing", "name": "Precio de la luz en España"}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Precio de la luz hoy", "item": "https://preciodelaluz.app/"}, {"@type": "ListItem", "position": 2, "name": "Cuándo poner la lavadora hoy, lunes 2 de noviembre", "item": "https://preciodelaluz.app/cuando-poner-la-lavadora/"}]}]</script>
 </head>
 <body data-tab="dia">
 <a class="skip" href="#panel-dia">Saltar al contenido</a>
@@ -149,11 +111,11 @@
 
   <article class="seo" id="seo">
 <h1>Cuándo poner la lavadora hoy, lunes 2 de noviembre</h1>
-<p class="lead">Hoy, lunes 2 de noviembre, el mejor tramo de dos horas para poner la lavadora va de {tramo2_inicio} a {tramo2_fin} ({tramo2_media} €/kWh de media). La hora más barata suelta es de 10:00 a 11:00 (-0,017 €/kWh) y la más cara de 18:00 a 19:00 (0,329 €/kWh), así que la diferencia entre acertar y no acertar con la hora es real. Precios oficiales del PVPC para Península.</p>
+<p class="lead">Hoy, lunes 2 de noviembre, el mejor tramo de dos horas para poner la lavadora va de 10:00 a 12:00 (-0,016 €/kWh de media). La hora más barata suelta es de 10:00 a 11:00 (-0,017 €/kWh) y la más cara de 18:00 a 19:00 (0,329 €/kWh), así que la diferencia entre acertar y no acertar con la hora es real. Precios oficiales del PVPC para Península.</p>
 <p class="footnote sec">Última actualización: <time datetime="2026-11-01T23:09:32+01:00">01/11/2026 23:09</time> (hora peninsular) · Fuente: Red Eléctrica (ESIOS, PVPC 2.0TD)</p>
 <section class="article" id="cuando-poner-la-lavadora">
   <h2>La lavadora: busca dos horas seguidas, no una</h2>
-  <p>Un programa normal de lavadora dura entre una hora y media y dos horas, así que la pregunta correcta no es cuál es la hora más barata, sino cuál es el mejor tramo de dos horas seguidas. Hoy ese tramo va de {tramo2_inicio} a {tramo2_fin}, con una media de {tramo2_media} €/kWh. Si la pones al principio del tramo, todo el ciclo cae dentro de las horas buenas; si la pones en la hora más barata suelta pero la siguiente es cara, la mitad del lavado se hace a precio alto.</p>
+  <p>Un programa normal de lavadora dura entre una hora y media y dos horas, así que la pregunta correcta no es cuál es la hora más barata, sino cuál es el mejor tramo de dos horas seguidas. Hoy ese tramo va de 10:00 a 12:00, con una media de -0,016 €/kWh. Si la pones al principio del tramo, todo el ciclo cae dentro de las horas buenas; si la pones en la hora más barata suelta pero la siguiente es cara, la mitad del lavado se hace a precio alto.</p>
   <p>Con el PVPC hay dos momentos típicos para la colada. Uno es el mediodía de los días de sol, entre las 12:00 y las 17:00, cuando la fotovoltaica hunde el precio y a menudo aparecen las horas más baratas del día. El otro es la madrugada, de 0:00 a 8:00, que es periodo valle todos los días laborables y suele ser barata aunque no haya sol. Cuál conviene depende del día: hay jornadas en las que la tarde solar cuesta la mitad que la madrugada y otras al revés. Por eso merece la pena mirar la tabla, o dejar que la app te avise.</p>
   <p>Un consejo práctico: si tu lavadora tiene inicio diferido, prográmala la noche anterior con el precio de mañana ya publicado (sale a las 20:20). Y si vas a dejarla funcionando de madrugada, hazlo solo si el electrodoméstico y la instalación están en buen estado: el ahorro no compensa un susto.</p>
   <h2>El lavavajillas: el que más se deja programar</h2>
@@ -167,7 +129,7 @@
   <p>Ojo con los festivos autonómicos y locales: para la 2.0TD son días laborables normales, con sus horas punta.</p>
   <h2>Pregúntaselo a Siri</h2>
   <p>Si tienes la app Precio Luz España PVPC en el iPhone, no hace falta ni abrirla. Di a Siri "Lavadora barata en Precio de la Luz" o "Lavavajillas barato en Precio de la Luz" y te responde con el mejor tramo de dos horas seguidas que queda hoy, su precio medio y cuánto se aleja de la media del día. También puedes pedirle el precio de la luz de ahora. Y si prefieres que sea la app la que dé el primer paso, activa el aviso "Mejor hora del día": te llega 5, 10, 15 o 30 minutos antes de la hora más barata, y si varias horas seguidas cuestan casi lo mismo, te da el tramo entero en vez de una sola hora.</p>
-  <p>Todo esto sale de los mismos precios oficiales de Red Eléctrica que ves en precioluz.natural-apps.com: la web te enseña la tabla, la app te avisa.</p>
+  <p>Todo esto sale de los mismos precios oficiales de Red Eléctrica que ves en preciodelaluz.app: la web te enseña la tabla, la app te avisa.</p>
 </section>
 
 <section class="article cta-app" id="cta-app">
@@ -183,7 +145,7 @@
 
 <section class="article" id="sobre-estos-datos">
   <h2>Sobre estos datos</h2>
-  <p>Los precios de precioluz.natural-apps.com son el PVPC 2.0TD que publica Red Eléctrica de España en su sistema ESIOS (archivo 70), el dato oficial con el que se factura la tarifa regulada. Se muestran por horas, tal como lo publica REE en su archivo horario, en euros por kilovatio hora y sin impuestos.</p>
+  <p>Los precios de preciodelaluz.app son el PVPC 2.0TD que publica Red Eléctrica de España en su sistema ESIOS (archivo 70), el dato oficial con el que se factura la tarifa regulada. Se muestran por horas, tal como lo publica REE en su archivo horario, en euros por kilovatio hora y sin impuestos.</p>
   <p>Península, Baleares y Canarias comparten la misma serie de precios; Canarias la ve en su hora local, una menos. Ceuta y Melilla tienen serie propia. Los precios de mañana aparecen entre las 20:15 y las 20:20 (19:15-19:20 en Canarias) y esta web los recoge en cuanto salen. Sin publicidad ni comercializadora detrás: es la web de la app Precio Luz España PVPC, de Natural Apps.</p>
 </section>
 
@@ -191,7 +153,7 @@
 </main>
 
 <footer class="foot">
-  <p>PrecioLuz (precioluz.natural-apps.com) es la web de la app Precio Luz España PVPC para iPhone, de Natural Apps. Datos oficiales de Red Eléctrica, sin publicidad y sin comercializadora.</p>
+  <p>PrecioLuz (preciodelaluz.app) es la web de la app Precio Luz España PVPC para iPhone, de Natural Apps. Datos oficiales de Red Eléctrica, sin publicidad y sin comercializadora.</p>
   <ul class="links">
     <li><a href="https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483" rel="noopener">Descargar la app en el App Store</a></li>
     <li><a href="https://www.natural-apps.com/PrecioLuz/privacy_es.html">Privacidad</a></li>

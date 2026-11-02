@@ -46,8 +46,8 @@ Todos los valores llegan ya formateados: coma decimal (`0,052`), horas `HH:MM`, 
 |---|---|---|
 | `{appstore_url}` | `cta-app.html`, `app.html`, `404.html` | el build pone el enlace de campaña con `pt`/`ct` según el emplazamiento (`web-hero`, `web-manana`, `web-hora-barata`, `web-zona-canarias`, `web-app`, `web-footer`, `web-404`). |
 | `{page_url}`, `{page_name}`, `{title}`, `{description}`, `{h1}` | `jsonld.json` | URL canónica absoluta; `page_name` = H1 sin fecha para la miga. |
-| `{fecha_iso}`, `{actualizado_iso}`, `{date_published_iso}` | `jsonld.json` | `2026-09-22`, `2026-09-21T20:24:00+02:00`. `date_published_iso` = fecha del primer despliegue de la guía (fija). |
-| `{data_url}` | `jsonld.json` (Dataset) | JSON del día: `https://precioluz.natural-apps.com/data/pvpc/2026-09-22.json` |
+| `{fecha_iso}`, `{actualizado_iso}`, `{date_published_iso}`, `{date_modified_iso}` | `jsonld.json` | `2026-09-22`, `2026-09-21T20:24:00+02:00`. `date_published_iso` = `date_published` de la página en `copy.json` o, si no lo tiene, la del primer despliegue (2026-09-22). `date_modified_iso` = `date_modified` de la página (fecha de revisión de una guía estática; también es su `lastmod` del sitemap) o, si no lo tiene, `{actualizado_iso}`. |
+| `{data_url}` | `jsonld.json` (Dataset) | JSON del día: `https://preciodelaluz.app/data/pvpc/2026-09-22.json` |
 | `{og_image_url}` | `jsonld.json` | OG 1200×630 de la página (o el icono 512 en `/app/`). |
 
 ### Reglas de contexto
@@ -76,11 +76,12 @@ El campo `sections` de cada página lista los fragmentos de `sections/` en el or
 | `que_es_el_pvpc` | `que-es-el-pvpc` · `cta-app` |
 | `cuando_poner_la_lavadora` | `cuando-poner-la-lavadora` · `cta-app` · `sobre-estos-datos` |
 | `a_que_hora_sale` | `a-que-hora-sale` · `cta-app` |
+| `periodos_tarifa_2_0td` | `periodos-tarifa-2-0td` · `cta-app` (guía estática: sin placeholders del día) |
 | `app` | `app` (lleva su propio botón; no añadir `cta-app`) |
 | `faq` | `faq` · `cta-app` |
 | `404` | `404` (lleva su propio botón) |
 
-Cada página menciona el dominio `precioluz.natural-apps.com` en el lead o en alguna de sus secciones (además del pie común).
+Cada página menciona el dominio `preciodelaluz.app` en el lead o en alguna de sus secciones (además del pie común).
 
 ## Convenciones de los fragmentos
 
@@ -96,7 +97,7 @@ Cada página menciona el dominio `precioluz.natural-apps.com` en el lead o en al
 | Dinámicas (`home`, `manana`, `hora_mas_barata`, zonas, `calendario`) | + `webpage_dataset` (solo si existe el JSON del día; en `calendario`, `{fecha_iso}` = primer día del mes y `{data_url}` = `/data/calendar/YYYY-MM.json`) |
 | `app` | + `software_application` (rating 4,9 / 8: **actualizar en cada release**) |
 | `faq` | + `faq_page` (generado a partir de `sections/faq.html`; si cambias una respuesta, regenera las dos) |
-| Guías (`que_es_el_pvpc`, `cuando_poner_la_lavadora`, `a_que_hora_sale`) | + `article` |
+| Guías (`que_es_el_pvpc`, `cuando_poner_la_lavadora`, `a_que_hora_sale`, `periodos_tarifa_2_0td`) | + `article` + `breadcrumb` (con `citation` si la página la define en `copy.json`) |
 
 `faq_page` contiene la misma respuesta dinámica que `faq.html` (con placeholders): sustituirlos también en el JSON-LD.
 

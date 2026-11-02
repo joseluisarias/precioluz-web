@@ -1,4 +1,4 @@
-# precioluz.natural-apps.com — todo el contenido es público y citable.
+# preciodelaluz.app — todo el contenido es público y citable.
 # Rastreadores de buscadores y de asistentes de IA: bienvenidos.
 
 User-agent: *
@@ -37,4 +37,4 @@ Allow: /
 User-agent: CCBot
 Allow: /
 
-Sitemap: https://precioluz.natural-apps.com/sitemap.xml
+Sitemap: https://preciodelaluz.app/sitemap.xml

@@ -250,6 +250,8 @@ svg.ic{width:1.1em;height:1.1em;flex:none;fill:currentColor;vertical-align:-.15e
 .seo a{color:var(--accent)}
 .seo .lead{font-size:19px}
 .seo table{width:100%;border-collapse:collapse;font-size:15px;margin:12px 0 20px}
+.seo .tscroll{overflow-x:auto;-webkit-overflow-scrolling:touch;margin:12px 0 20px}
+.seo .tscroll>table{margin:0}
 .seo th,.seo td{padding:8px 10px;text-align:left;border-bottom:1px solid var(--sep)}
 .seo th{font-size:12px;font-weight:600;color:var(--label2);text-transform:uppercase;letter-spacing:.04em}
 .seo .n{text-align:right}

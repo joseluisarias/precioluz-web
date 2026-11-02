@@ -44,7 +44,7 @@
     "title": "Resumen del precio de la luz hoy {fecha_corta}: media y mejores horas · PrecioLuz",
     "description": "Resumen del precio de la luz hoy {fecha_corta}: media {media} €/kWh, hora más barata a las {hora_barata} ({precio_barato} €/kWh), más cara a las {hora_cara} y comparativa con ayer y mañana.",
     "h1": "Resumen del precio de la luz hoy, {fecha_larga}",
-    "lead": "Hoy, {fecha_larga}, la luz cuesta de media {media} €/kWh, un {pct_vs_ayer} % {mas_menos_ayer} que ayer. La hora más barata es de {hora_barata} a {hora_barata_fin} ({precio_barato} €/kWh) y la más cara de {hora_cara} a {hora_cara_fin} ({precio_caro} €/kWh). Datos oficiales de Red Eléctrica para {zona}, en precioluz.natural-apps.com.",
+    "lead": "Hoy, {fecha_larga}, la luz cuesta de media {media} €/kWh, un {pct_vs_ayer} % {mas_menos_ayer} que ayer. La hora más barata es de {hora_barata} a {hora_barata_fin} ({precio_barato} €/kWh) y la más cara de {hora_cara} a {hora_cara_fin} ({precio_caro} €/kWh). Datos oficiales de Red Eléctrica para {zona}, en preciodelaluz.app.",
     "sections": [
       "como-leer",
       "cta-app",
@@ -124,7 +124,7 @@
     "title": "Generación eléctrica hoy en España {fecha_corta}: mix · PrecioLuz",
     "description": "Generación eléctrica en España hoy {fecha_corta}: mix por tecnologías y % renovable, con datos de Red Eléctrica. Ayer, {renovable_ayer} % renovable; primera, {dominante_ayer}.",
     "h1": "Generación eléctrica hoy en España, {fecha_larga}",
-    "lead": "Ayer la generación eléctrica en España fue un {renovable_ayer} % renovable y la tecnología que más produjo fue {dominante_ayer}. Aquí ves el mix de hoy conforme lo publica Red Eléctrica: qué tecnologías están generando en la última hora, cuánto llevan acumulado en el día y qué parte es renovable. Es el mismo dato oficial que usa precioluz.natural-apps.com para el precio, y ayuda a entender por qué las horas de sol suelen ser las más baratas.",
+    "lead": "Ayer la generación eléctrica en España fue un {renovable_ayer} % renovable y la tecnología que más produjo fue {dominante_ayer}. Aquí ves el mix de hoy conforme lo publica Red Eléctrica: qué tecnologías están generando en la última hora, cuánto llevan acumulado en el día y qué parte es renovable. Es el mismo dato oficial que usa preciodelaluz.app para el precio, y ayuda a entender por qué las horas de sol suelen ser las más baratas.",
     "sections": [
       "cta-app"
     ]
@@ -162,9 +162,33 @@
     "title": "A qué hora sale el precio de la luz de mañana · PrecioLuz",
     "description": "El precio de la luz de mañana sale cada día a las 20:15-20:20 (19:20 en Canarias), tras la subasta de OMIE. Última vez que lo vimos publicado: {publicado_manana_a}.",
     "h1": "A qué hora sale el precio de la luz de mañana",
-    "lead": "El precio de la luz de mañana se publica cada día entre las 20:15 y las 20:20, hora peninsular (19:15-19:20 en Canarias), en cuanto Red Eléctrica termina de calcular el PVPC con el resultado de la subasta diaria de OMIE. La última vez que los precios de mañana aparecieron en precioluz.natural-apps.com fue a las {publicado_manana_a}.",
+    "lead": "El precio de la luz de mañana se publica cada día entre las 20:15 y las 20:20, hora peninsular (19:15-19:20 en Canarias), en cuanto Red Eléctrica termina de calcular el PVPC con el resultado de la subasta diaria de OMIE. La última vez que los precios de mañana aparecieron en preciodelaluz.app fue a las {publicado_manana_a}.",
     "sections": [
       "a-que-hora-sale",
+      "cta-app"
+    ]
+  },
+  "periodos_tarifa_2_0td": {
+    "url": "/periodos-tarifa-2-0td/",
+    "priority": 0.7,
+    "date_published": "2026-11-01",
+    "date_modified": "2026-11-01",
+    "title": "Horario punta, llano y valle de la luz (tarifa 2.0TD)",
+    "description": "Horas punta, llano y valle de la tarifa 2.0TD según la CNMC: laborables, fines de semana, festivos de 2026 y 2027, Ceuta y Melilla y potencia.",
+    "h1": "Horario punta, llano y valle de la luz",
+    "lead": "A qué horas empieza y acaba cada periodo, qué pasa los sábados, domingos y festivos, y cuánto encarece el periodo cada kWh. Con la norma de la CNMC y los BOE enlazados.",
+    "citation": [
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2020-1066",
+      "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-21667",
+      "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2026-21254",
+      "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-26348",
+      "https://www.boe.es/diario_boe/txt.php?id=BOE-A-2025-26705",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2021-4239",
+      "https://www.boe.es/buscar/act.php?id=BOE-A-2014-3376",
+      "https://www.ree.es/es/sala-de-prensa/actualidad/nota-de-prensa/2021/05/red-electrica-publica-los-precios-de-la-nueva-tarifa-pequeno-consumidor"
+    ],
+    "sections": [
+      "periodos-tarifa-2-0td",
       "cta-app"
     ]
   },
@@ -174,7 +198,7 @@
     "title": "Precio Luz España PVPC: app para iPhone con widgets y avisos",
     "description": "Precio Luz España PVPC, app para iPhone: aviso antes de la hora más barata, precios de mañana, widgets, Live Activity y Siri. Gratis y sin anuncios.",
     "h1": "Precio Luz España PVPC: la app para iPhone",
-    "lead": "Precio Luz España PVPC es la app para iPhone de PrecioLuz (precioluz.natural-apps.com): los mismos precios oficiales de Red Eléctrica que ves en esta web, pero con lo que una web no puede hacer, que es avisarte. Un aviso antes de la hora más barata del día, los precios de mañana a las 20:20, widgets, pantalla de bloqueo, Live Activity y Siri. Gratis, sin anuncios y sin registro. Requiere iOS 26.",
+    "lead": "Precio Luz España PVPC es la app para iPhone de PrecioLuz (preciodelaluz.app): los mismos precios oficiales de Red Eléctrica que ves en esta web, pero con lo que una web no puede hacer, que es avisarte. Un aviso antes de la hora más barata del día, los precios de mañana a las 20:20, widgets, pantalla de bloqueo, Live Activity y Siri. Gratis, sin anuncios y sin registro. Requiere iOS 26.",
     "sections": [
       "app"
     ]
@@ -196,9 +220,9 @@
     "priority": 0.0,
     "noindex": true,
     "title": "Página no encontrada · PrecioLuz",
-    "description": "Esa página no existe en precioluz.natural-apps.com, pero el precio de la luz de hoy y de mañana sí.",
+    "description": "Esa página no existe en preciodelaluz.app, pero el precio de la luz de hoy y de mañana sí.",
     "h1": "Esa página no existe, pero el precio de hoy sí",
-    "lead": "La dirección que has abierto no existe en precioluz.natural-apps.com, o ya no está. Lo que sí está siempre es el precio de la luz de hoy, el de mañana a partir de las 20:20 y la hora más barata para poner la lavadora.",
+    "lead": "La dirección que has abierto no existe en preciodelaluz.app, o ya no está. Lo que sí está siempre es el precio de la luz de hoy, el de mañana a partir de las 20:20 y la hora más barata para poner la lavadora.",
     "sections": [
       "404"
     ]

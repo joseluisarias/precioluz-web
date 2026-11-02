@@ -27,5 +27,5 @@ def test_404_is_noindex_and_pages_have_canonical():
     today = json.loads((ROOT / "docs" / "data" / "build.json").read_text())["today"]
     out = build.build(today)
     assert 'name="robots" content="noindex"' in out["404.html"]
-    assert 'rel="canonical" href="https://precioluz.natural-apps.com/canarias/"' in out["canarias/index.html"]
+    assert 'rel="canonical" href="https://preciodelaluz.app/canarias/"' in out["canarias/index.html"]
     assert "hora local" in out["canarias/index.html"]

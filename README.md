@@ -1,6 +1,6 @@
 # precioluz-web
 
-Web de **Precio de la Luz** — [precioluz.natural-apps.com](https://precioluz.natural-apps.com): el PVPC de hoy y de
+Web de **Precio de la Luz** — [preciodelaluz.app](https://preciodelaluz.app): el PVPC de hoy y de
 mañana hora a hora, con el estilo de la app para iPhone *Precio Luz España PVPC* y sus mismas reglas de cálculo.
 
 ## Cómo funciona

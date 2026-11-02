@@ -23,11 +23,11 @@ from precioluz import archive70, calendar as cal, copy, engine, render  # noqa: 
 from precioluz.zones import ALL as ZONES, BY_ID, PENINSULA  # noqa: E402
 
 MADRID = ZoneInfo("Europe/Madrid")
-BASE = "https://precioluz.natural-apps.com"
+BASE = "https://preciodelaluz.app"
 DOCS = ROOT / "docs"
 DATA = DOCS / "data"
 EVERGREEN_DATE = "2026-09-22"          # lastmod de las páginas sin datos dinámicos
-PLACEHOLDER = re.compile(r"\{([a-z_]+)\}")
+PLACEHOLDER = re.compile(r"\{([a-z][a-z0-9_]*)\}")
 
 PAGES = [  # key, tab, zona, día relativo
     ("home", "dia", "peninsula", 0), ("manana", "dia", "peninsula", 1),
@@ -36,9 +36,11 @@ PAGES = [  # key, tab, zona, día relativo
     ("canarias", "dia", "canarias", 0), ("baleares", "dia", "baleares", 0), ("ceuta_melilla", "dia", "ceuta", 0),
     ("hora_mas_barata", "dia", "peninsula", 0), ("que_es_el_pvpc", "dia", "peninsula", 0),
     ("cuando_poner_la_lavadora", "dia", "peninsula", 0), ("a_que_hora_sale", "dia", "peninsula", 0),
+    ("periodos_tarifa_2_0td", "dia", "peninsula", 0),
     ("app", "dia", "peninsula", 0), ("faq", "dia", "peninsula", 0), ("404", "dia", "peninsula", 0),
 ]
 TABS = ("dia", "generacion", "resumen", "calendario")
+GUIDES = ("que_es_el_pvpc", "cuando_poner_la_lavadora", "a_que_hora_sale", "periodos_tarifa_2_0td")
 OG_PAGES = {"home", "manana", "resumen", "hora_mas_barata", "canarias", "baleares", "ceuta_melilla", "calendario"}
 
 
@@ -173,7 +175,8 @@ def page_html(site: Site, key: str, tab: str, zone_id: str, offset: int) -> tupl
     ctx = context(site, day, zone)
     ctx.update({"page_url": BASE + spec["url"], "page_name": fill(spec["h1"], ctx, key), "title": fill(spec["title"], ctx, key),
                 "description": fill(spec["description"], ctx, key), "h1": fill(spec["h1"], ctx, key),
-                "date_published_iso": EVERGREEN_DATE,
+                "date_published_iso": spec.get("date_published", EVERGREEN_DATE),
+                "date_modified_iso": spec.get("date_modified", site.updated_at),
                 "og_image_url": f"{BASE}/assets/img/og/{key}.png" if key in OG_PAGES else f"{BASE}/assets/img/og-default.png"})
 
     pts = site.points(day, zone.series)
@@ -202,7 +205,7 @@ def page_html(site: Site, key: str, tab: str, zone_id: str, offset: int) -> tupl
 
     lead = fill(spec["lead"], ctx, key)
     seo = [f'<h1>{render.esc(ctx["h1"])}</h1>', f'<p class="lead">{render.esc(lead)}</p>']
-    if key not in ("app", "faq", "404", "que_es_el_pvpc", "a_que_hora_sale"):
+    if key not in ("app", "faq", "404", "que_es_el_pvpc", "a_que_hora_sale", "periodos_tarifa_2_0td"):
         seo.append(f'<p class="footnote sec">Última actualización: <time datetime="{render.esc(site.updated_at)}">{render.esc(ctx["actualizado"])}</time>'
                    f' (hora peninsular) · Fuente: Red Eléctrica (ESIOS, PVPC 2.0TD)</p>')
     if key in ("home", "manana", "canarias", "baleares", "ceuta_melilla", "hora_mas_barata"):
@@ -220,8 +223,9 @@ def page_html(site: Site, key: str, tab: str, zone_id: str, offset: int) -> tupl
         ld.append(site.jsonld["software_application"])
     elif key == "faq":
         ld.append(site.jsonld["faq_page"])
-    elif key in ("que_es_el_pvpc", "cuando_poner_la_lavadora", "a_que_hora_sale"):
-        ld.append(site.jsonld["article"])
+    elif key in GUIDES:
+        ld.append({**site.jsonld["article"], **({"citation": spec["citation"]} if spec.get("citation") else {})})
+        ld.append(site.jsonld["breadcrumb"])
     jsonld = fill(json.dumps(ld, ensure_ascii=False), {k: json.dumps(v, ensure_ascii=False)[1:-1] for k, v in ctx.items()}, "jsonld")
 
     boot = {
@@ -292,13 +296,14 @@ def alias(site: Site, day: str, zone) -> dict:
 
 
 def sitemap(site: Site, urls: list[str]) -> str:
+    fixed = {spec["url"]: spec["date_modified"] for spec in site.copy.values() if spec.get("date_modified")}
     dynamic = {"/", "/manana/", "/generacion/", "/resumen/", "/calendario/", "/canarias/", "/baleares/",
                "/ceuta-melilla/", "/hora-mas-barata/", "/cuando-poner-la-lavadora/"}
     items = []
     for u in urls:
         if u == "/404.html":
             continue
-        lastmod = site.today if u in dynamic else EVERGREEN_DATE
+        lastmod = site.today if u in dynamic else fixed.get(u, EVERGREEN_DATE)
         freq = "daily" if u in dynamic else "monthly"
         items.append(f"  <url><loc>{BASE}{u}</loc><lastmod>{lastmod}</lastmod><changefreq>{freq}</changefreq></url>")
     return '<?xml version="1.0" encoding="UTF-8"?>\n<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n' + "\n".join(items) + "\n</urlset>\n"

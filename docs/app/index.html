@@ -11,54 +11,23 @@
     tabi_dia | tabi_generacion | tabi_resumen | tabi_calendario  -> "0" | "-1"        (solo data-tabi, compatibilidad)
     hid_dia | hid_generacion | hid_resumen | hid_calendario      -> "" | "hidden"     (en páginas Día son visibles panel-dia y panel-resumen)
   Los enlaces de la nav son páginas reales. app.js marca aria-current="page" por pathname (p. ej. /manana/), pone
-  --band-color, lanza cascada/reveal y emite `pl:ready`. El <h1> de la página va en <h1>Precio Luz España PVPC: la app para iPhone</h1>
-<p class="lead">Precio Luz España PVPC es la app para iPhone de PrecioLuz (precioluz.natural-apps.com): los mismos precios oficiales de Red Eléctrica que ves en esta web, pero con lo que una web no puede hacer, que es avisarte. Un aviso antes de la hora más barata del día, los precios de mañana a las 20:20, widgets, pantalla de bloqueo, Live Activity y Siri. Gratis, sin anuncios y sin registro. Requiere iOS 26.</p>
-<section class="article" id="app">
-  <h2>Lo que la web no puede hacer: avisarte</h2>
-  <p>Esta web te enseña el precio de la luz de hoy y de mañana con los mismos datos oficiales de Red Eléctrica que usa la app. Lo que una web no puede hacer es tocarte el hombro cuando llega la hora barata. Para eso está Precio Luz España PVPC, la app para iPhone de Natural Apps: gratis, sin anuncios, sin registro y sin recopilar ningún dato.</p>
-  <h2>Avisos</h2>
-  <ul>
-    <li><strong>Mejor hora del día.</strong> Un aviso 5, 10, 15 o 30 minutos antes (tú eliges) de la hora más barata del día. Si varias horas seguidas cuestan casi lo mismo (hasta 1 o 2 céntimos más, según lo configures), el aviso te da el tramo entero en vez de una sola hora. Y solo suena cuando el tramo está claramente por debajo de la media del día: la app nunca llama barata a una hora que ella misma pinta de rojo.</li>
-    <li><strong>Precios de mañana.</strong> A las 20:20 (19:20 en Canarias), en cuanto Red Eléctrica los publica, con la mejor hora de mañana ya calculada. Puedes retrasar el aviso hasta 40 minutos.</li>
-    <li><strong>Oferta puntual.</strong> Un aviso 15 minutos antes cuando una hora baja de 0,05 €/kWh o queda muy por debajo de la media del día: las horas casi gratis de los días de mucho sol o viento.</li>
-  </ul>
-  <h2>Widgets</h2>
-  <ul>
-    <li><strong>Precio ahora.</strong> El precio de la hora actual con su color, en la pantalla de inicio.</li>
-    <li><strong>Hoy — mejores y próximas.</strong> Las mejores horas del día y las que vienen a continuación.</li>
-    <li><strong>2 h baratas.</strong> El siguiente tramo de dos horas más barato que queda hoy, pensado para la lavadora y el lavavajillas.</li>
-    <li><strong>Pantalla de bloqueo.</strong> El precio de ahora en la pantalla de bloqueo y en StandBy, sin desbloquear el iPhone.</li>
-  </ul>
-  <h2>Live Activity y Dynamic Island</h2>
-  <p>Con la Live Activity, el precio de la hora actual, con su color y la mejor hora del día, se queda en la pantalla de bloqueo y en la Dynamic Island sin abrir la app.</p>
-  <h2>Siri</h2>
-  <p>Dos atajos listos para usar: "Lavadora barata" y "Lavavajillas barato". Di a Siri "Lavadora barata en Precio de la Luz" y te responde con el mejor tramo de dos horas seguidas que queda hoy, su precio medio y cuánto se aleja de la media del día y sin abrir la app. También puedes preguntarle el precio de la luz de ahora.</p>
-  <h2>Zonas (próximamente)</h2>
-  <p>La próxima versión de la app (1.72) añade la elección de zona en Ajustes → Zona: Península, Baleares, Canarias, Ceuta y Melilla. Canarias verá todas las horas en su hora local y recibirá los precios de mañana a las 19:20; Ceuta y Melilla usarán su propia serie de precios, distinta de la peninsular en cuatro horas de los días laborables. Si el iPhone está en la zona horaria de Canarias, la app lo detectará y propondrá el cambio. Mientras llega, esta web ya muestra las cinco zonas.</p>
-  <h2>Y lo mismo que en la web</h2>
-  <p>La tabla del día con sus colores, la hora más barata y la más cara, la próxima oportunidad, el consejo del día, la comparativa con ayer y mañana, el calendario mensual y el mix de generación. Todo con datos oficiales de Red Eléctrica (ESIOS), publicados por horas.</p>
-  <h2>En resumen</h2>
-  <p>Gratis, sin anuncios, sin suscripción y sin cuenta. Valoración de 4,9 sobre 5 en el App Store (8 valoraciones). Requiere iOS 26 o posterior. Una app de Natural Apps (natural-apps.com), los mismos que hacen precioluz.natural-apps.com.</p>
-  <p class="cta-button"><a class="btn btn-appstore" href="https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483" rel="noopener">Descargar gratis en el App Store</a></p>
-  <p class="cta-subline">Precio Luz España PVPC. Gratis, sin anuncios, sin registro. Requiere iOS 26.</p>
-</section>
-; la cabecera lleva
+  --band-color, lanza cascada/reveal y emite `pl:ready`. El <h1> de la página va en seo_sections; la cabecera lleva
   el título de marca como <p class="title">.
 -->
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>Precio Luz España PVPC: app para iPhone con widgets y avisos</title>
 <meta name="description" content="Precio Luz España PVPC, app para iPhone: aviso antes de la hora más barata, precios de mañana, widgets, Live Activity y Siri. Gratis y sin anuncios.">
-<link rel="canonical" href="https://precioluz.natural-apps.com/app/">
-<link rel="alternate" hreflang="es-ES" href="https://precioluz.natural-apps.com/app/">
-<link rel="alternate" hreflang="x-default" href="https://precioluz.natural-apps.com/app/">
-<meta name="apple-itunes-app" content="app-id=6758021483, app-argument=https://precioluz.natural-apps.com/manana/">
+<link rel="canonical" href="https://preciodelaluz.app/app/">
+<link rel="alternate" hreflang="es-ES" href="https://preciodelaluz.app/app/">
+<link rel="alternate" hreflang="x-default" href="https://preciodelaluz.app/app/">
+<meta name="apple-itunes-app" content="app-id=6758021483, app-argument=https://preciodelaluz.app/manana/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PrecioLuz">
 <meta property="og:locale" content="es_ES">
 <meta property="og:title" content="Precio Luz España PVPC: app para iPhone con widgets y avisos">
 <meta property="og:description" content="Precio Luz España PVPC, app para iPhone: aviso antes de la hora más barata, precios de mañana, widgets, Live Activity y Siri. Gratis y sin anuncios.">
-<meta property="og:url" content="https://precioluz.natural-apps.com/app/">
-<meta property="og:image" content="https://precioluz.natural-apps.com/assets/img/og-default.png">
+<meta property="og:url" content="https://preciodelaluz.app/app/">
+<meta property="og:image" content="https://preciodelaluz.app/assets/img/og-default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -75,7 +44,7 @@
 <link rel="modulepreload" href="/assets/js/engine.js">
 <link rel="modulepreload" href="/assets/js/tz.js">
 <script>document.documentElement.classList.replace('no-js','js')</script>
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "@id": "https://precioluz.natural-apps.com/#organization", "name": "Natural Apps", "url": "https://www.natural-apps.com/", "logo": {"@type": "ImageObject", "url": "https://precioluz.natural-apps.com/assets/img/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483"]}, {"@context": "https://schema.org", "@type": "WebSite", "@id": "https://precioluz.natural-apps.com/#website", "url": "https://precioluz.natural-apps.com/", "name": "PrecioLuz", "alternateName": ["Precio Luz España PVPC", "precioluz.natural-apps.com"], "description": "El precio de la luz (PVPC 2.0TD) de hoy y de mañana por horas, con la hora más barata. Datos oficiales de Red Eléctrica (ESIOS), sin publicidad. Web de la app Precio Luz España PVPC para iPhone.", "inLanguage": "es-ES", "publisher": {"@id": "https://precioluz.natural-apps.com/#organization"}}, {"@context": "https://schema.org", "@type": "SoftwareApplication", "@id": "https://precioluz.natural-apps.com/app/#app", "name": "Precio Luz España PVPC", "alternateName": "Precio de la Luz", "url": "https://precioluz.natural-apps.com/app/", "description": "El precio de la luz de hoy y de mañana por horas, la hora más barata y un aviso antes de que llegue. Widgets, pantalla de bloqueo, Live Activity y Siri. Gratis, sin anuncios y sin registro.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "iOS 26.0 o posterior", "inLanguage": "es-ES", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "worstRating": "1", "ratingCount": "8"}, "installUrl": "https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483", "downloadUrl": "https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483", "author": {"@id": "https://precioluz.natural-apps.com/#organization"}, "publisher": {"@id": "https://precioluz.natural-apps.com/#organization"}, "featureList": ["Aviso Mejor hora del día (5, 10, 15 o 30 minutos antes; tramo entero si varias horas cuestan casi lo mismo)", "Aviso Precios de mañana (20:20; 19:20 en Canarias)", "Aviso Oferta puntual (15 minutos antes de una hora anormalmente barata)", "Widget Precio ahora", "Widget Hoy — mejores y próximas", "Widget 2 h baratas", "Widgets de pantalla de bloqueo y StandBy", "Live Activity y Dynamic Island", "Atajos de Siri Lavadora barata y Lavavajillas barato", "Tabla del día con colores, hora más barata y más cara, próxima oportunidad y consejo del día", "Comparativa con ayer y mañana, calendario mensual y mix de generación"], "screenshot": "https://precioluz.natural-apps.com/assets/img/og-default.png", "sameAs": ["https://precioluz.natural-apps.com/"]}]</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "@id": "https://preciodelaluz.app/#organization", "name": "Natural Apps", "url": "https://www.natural-apps.com/", "logo": {"@type": "ImageObject", "url": "https://preciodelaluz.app/assets/img/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483"]}, {"@context": "https://schema.org", "@type": "WebSite", "@id": "https://preciodelaluz.app/#website", "url": "https://preciodelaluz.app/", "name": "PrecioLuz", "alternateName": ["Precio Luz España PVPC", "preciodelaluz.app"], "description": "El precio de la luz (PVPC 2.0TD) de hoy y de mañana por horas, con la hora más barata. Datos oficiales de Red Eléctrica (ESIOS), sin publicidad. Web de la app Precio Luz España PVPC para iPhone.", "inLanguage": "es-ES", "publisher": {"@id": "https://preciodelaluz.app/#organization"}}, {"@context": "https://schema.org", "@type": "SoftwareApplication", "@id": "https://preciodelaluz.app/app/#app", "name": "Precio Luz España PVPC", "alternateName": "Precio de la Luz", "url": "https://preciodelaluz.app/app/", "description": "El precio de la luz de hoy y de mañana por horas, la hora más barata y un aviso antes de que llegue. Widgets, pantalla de bloqueo, Live Activity y Siri. Gratis, sin anuncios y sin registro.", "applicationCategory": "UtilitiesApplication", "operatingSystem": "iOS 26.0 o posterior", "inLanguage": "es-ES", "isAccessibleForFree": true, "offers": {"@type": "Offer", "price": "0", "priceCurrency": "EUR", "availability": "https://schema.org/InStock"}, "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "bestRating": "5", "worstRating": "1", "ratingCount": "8"}, "installUrl": "https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483", "downloadUrl": "https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483", "author": {"@id": "https://preciodelaluz.app/#organization"}, "publisher": {"@id": "https://preciodelaluz.app/#organization"}, "featureList": ["Aviso Mejor hora del día (5, 10, 15 o 30 minutos antes; tramo entero si varias horas cuestan casi lo mismo)", "Aviso Precios de mañana (20:20; 19:20 en Canarias)", "Aviso Oferta puntual (15 minutos antes de una hora anormalmente barata)", "Widget Precio ahora", "Widget Hoy — mejores y próximas", "Widget 2 h baratas", "Widgets de pantalla de bloqueo y StandBy", "Live Activity y Dynamic Island", "Atajos de Siri Lavadora barata y Lavavajillas barato", "Tabla del día con colores, hora más barata y más cara, próxima oportunidad y consejo del día", "Comparativa con ayer y mañana, calendario mensual y mix de generación"], "screenshot": "https://preciodelaluz.app/assets/img/og-default.png", "sameAs": ["https://preciodelaluz.app/"]}]</script>
 </head>
 <body data-tab="dia">
 <a class="skip" href="#panel-dia">Saltar al contenido</a>
@@ -142,7 +111,7 @@
 
   <article class="seo" id="seo">
 <h1>Precio Luz España PVPC: la app para iPhone</h1>
-<p class="lead">Precio Luz España PVPC es la app para iPhone de PrecioLuz (precioluz.natural-apps.com): los mismos precios oficiales de Red Eléctrica que ves en esta web, pero con lo que una web no puede hacer, que es avisarte. Un aviso antes de la hora más barata del día, los precios de mañana a las 20:20, widgets, pantalla de bloqueo, Live Activity y Siri. Gratis, sin anuncios y sin registro. Requiere iOS 26.</p>
+<p class="lead">Precio Luz España PVPC es la app para iPhone de PrecioLuz (preciodelaluz.app): los mismos precios oficiales de Red Eléctrica que ves en esta web, pero con lo que una web no puede hacer, que es avisarte. Un aviso antes de la hora más barata del día, los precios de mañana a las 20:20, widgets, pantalla de bloqueo, Live Activity y Siri. Gratis, sin anuncios y sin registro. Requiere iOS 26.</p>
 <section class="article" id="app">
   <h2>Lo que la web no puede hacer: avisarte</h2>
   <p>Esta web te enseña el precio de la luz de hoy y de mañana con los mismos datos oficiales de Red Eléctrica que usa la app. Lo que una web no puede hacer es tocarte el hombro cuando llega la hora barata. Para eso está Precio Luz España PVPC, la app para iPhone de Natural Apps: gratis, sin anuncios, sin registro y sin recopilar ningún dato.</p>
@@ -168,7 +137,7 @@
   <h2>Y lo mismo que en la web</h2>
   <p>La tabla del día con sus colores, la hora más barata y la más cara, la próxima oportunidad, el consejo del día, la comparativa con ayer y mañana, el calendario mensual y el mix de generación. Todo con datos oficiales de Red Eléctrica (ESIOS), publicados por horas.</p>
   <h2>En resumen</h2>
-  <p>Gratis, sin anuncios, sin suscripción y sin cuenta. Valoración de 4,9 sobre 5 en el App Store (8 valoraciones). Requiere iOS 26 o posterior. Una app de Natural Apps (natural-apps.com), los mismos que hacen precioluz.natural-apps.com.</p>
+  <p>Gratis, sin anuncios, sin suscripción y sin cuenta. Valoración de 4,9 sobre 5 en el App Store (8 valoraciones). Requiere iOS 26 o posterior. Una app de Natural Apps (natural-apps.com), los mismos que hacen preciodelaluz.app.</p>
   <p class="cta-button"><a class="btn btn-appstore" href="https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483" rel="noopener">Descargar gratis en el App Store</a></p>
   <p class="cta-subline">Precio Luz España PVPC. Gratis, sin anuncios, sin registro. Requiere iOS 26.</p>
 </section>
@@ -177,7 +146,7 @@
 </main>
 
 <footer class="foot">
-  <p>PrecioLuz (precioluz.natural-apps.com) es la web de la app Precio Luz España PVPC para iPhone, de Natural Apps. Datos oficiales de Red Eléctrica, sin publicidad y sin comercializadora.</p>
+  <p>PrecioLuz (preciodelaluz.app) es la web de la app Precio Luz España PVPC para iPhone, de Natural Apps. Datos oficiales de Red Eléctrica, sin publicidad y sin comercializadora.</p>
   <ul class="links">
     <li><a href="https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483" rel="noopener">Descargar la app en el App Store</a></li>
     <li><a href="https://www.natural-apps.com/PrecioLuz/privacy_es.html">Privacidad</a></li>

@@ -79,7 +79,7 @@ def draw(key: str, day: str, zone, points, bands: str, out: Path) -> None:
         d.text((x1 - 70, y1 + 10), engine.hour_label(points[-1].start, zone), fill=GRAY, font=font(22, False))
     else:
         d.text((64, 200), "Se publica a las 20:20", fill=GRAY, font=font(44))
-    d.text((64, H - 56), "precioluz.natural-apps.com · datos de Red Eléctrica (PVPC)", fill=GRAY, font=font(24, False))
+    d.text((64, H - 56), "preciodelaluz.app · datos de Red Eléctrica (PVPC)", fill=GRAY, font=font(24, False))
     d.rounded_rectangle((W - 64 - 230, 56, W - 64, 92), radius=18, fill=INK)
     d.text((W - 64 - 215, 62), "App para iPhone", fill=CREAM, font=font(22, False))
     out.parent.mkdir(parents=True, exist_ok=True)

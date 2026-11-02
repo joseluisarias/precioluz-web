@@ -11,50 +11,23 @@
     tabi_dia | tabi_generacion | tabi_resumen | tabi_calendario  -> "0" | "-1"        (solo data-tabi, compatibilidad)
     hid_dia | hid_generacion | hid_resumen | hid_calendario      -> "" | "hidden"     (en páginas Día son visibles panel-dia y panel-resumen)
   Los enlaces de la nav son páginas reales. app.js marca aria-current="page" por pathname (p. ej. /manana/), pone
-  --band-color, lanza cascada/reveal y emite `pl:ready`. El <h1> de la página va en <h1>A qué hora sale el precio de la luz de mañana</h1>
-<p class="lead">El precio de la luz de mañana se publica cada día entre las 20:15 y las 20:20, hora peninsular (19:15-19:20 en Canarias), en cuanto Red Eléctrica termina de calcular el PVPC con el resultado de la subasta diaria de OMIE. La última vez que los precios de mañana aparecieron en precioluz.natural-apps.com fue a las —.</p>
-<section class="article" id="a-que-hora-sale">
-  <h2>La respuesta corta: entre las 20:15 y las 20:20</h2>
-  <p>El precio de la luz de mañana (el PVPC por horas) lo publica Red Eléctrica de España cada día entre las 20:15 y las 20:20, hora peninsular. En Canarias, con una hora menos, eso son las 19:15-19:20. Es la misma hora todos los días, incluidos sábados, domingos y festivos, porque el mercado eléctrico no descansa.</p>
-  <p>La última vez que los precios de mañana aparecieron en precioluz.natural-apps.com fue a las — (última actualización de esta web: 01/11/2026 23:09, hora peninsular).</p>
-  <h2>Por qué a esa hora: la subasta de OMIE</h2>
-  <p>Todo empieza a mediodía. OMIE, el operador del mercado eléctrico de España y Portugal, cierra cada día a las 12:00 la recepción de ofertas para el mercado diario: los productores dicen a qué precio están dispuestos a generar en cada hora del día siguiente y los compradores cuánto quieren comprar. Alrededor de las 13:00 OMIE publica el resultado, el precio de cada hora, que es el precio del pool del que hablan las noticias.</p>
-  <p>Pero ese precio no es todavía el PVPC. Para llegar al precio que paga un hogar hay que sumarle los servicios de ajuste del sistema, los peajes y los cargos de cada periodo horario y el margen regulado de la comercializadora. Red Eléctrica hace ese cálculo durante la tarde, con el resultado del mercado ya cerrado, y publica el PVPC definitivo en su sistema ESIOS a partir de las 20:15. Ese es el momento en el que el precio de mañana existe oficialmente, y el que recogen esta web, la app y cualquier otra fuente seria.</p>
-  <h2>Qué pasa si se retrasa</h2>
-  <p>Algunos días la publicación se retrasa unos minutos y, muy de vez en cuando, bastante más, por incidencias en el mercado o en el propio sistema de REE. Cuando ocurre, la página de mañana de esta web muestra que los precios están pendientes y sigue consultando a Red Eléctrica; en cuanto aparecen, se actualiza sola. Si la abres antes de que nuestro servidor la haya actualizado, tu navegador también le pregunta directamente a REE, así que no necesitas recargar a ciegas.</p>
-  <h2>Cómo enterarte sin estar pendiente</h2>
-  <p>Estar mirando la web a las 20:20 cada día es justo lo que no queremos. La app Precio Luz España PVPC para iPhone tiene un aviso llamado "Precios de mañana" que llega a las 20:20 (19:20 en Canarias) con la mejor hora del día siguiente ya calculada; puedes retrasarlo hasta 40 minutos si prefieres recibirlo más tarde. Con eso, la decisión de si la lavadora va hoy o mañana la tomas de un vistazo desde la notificación.</p>
-  <h2>Y el precio de hoy, ¿desde cuándo se sabe?</h2>
-  <p>Desde ayer a las 20:20. El precio de cada día se conoce con unas tres horas y media de antelación respecto a la medianoche, así que a las 0:00 ya lleva un rato publicado. Esta web cambia de día a medianoche, hora peninsular, y el calendario guarda la media, la hora más barata y la más cara de cada día pasado por si quieres comparar.</p>
-</section>
-
-<section class="article cta-app" id="cta-app">
-  <h2>Que el precio te avise a ti, no al revés</h2>
-  <ul>
-    <li>Un aviso antes de la hora más barata del día, y solo cuando de verdad merece la pena.</li>
-    <li>Los precios de mañana en tu iPhone a las 20:20, sin entrar en ninguna web.</li>
-    <li>Widgets, pantalla de bloqueo y Siri: pregúntale cuándo poner la lavadora.</li>
-  </ul>
-  <p class="cta-button"><a class="btn btn-appstore" href="https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483" rel="noopener">Descargar gratis en el App Store</a></p>
-  <p class="cta-subline">Precio Luz España PVPC. Gratis, sin anuncios, sin registro. Requiere iOS 26.</p>
-</section>
-; la cabecera lleva
+  --band-color, lanza cascada/reveal y emite `pl:ready`. El <h1> de la página va en seo_sections; la cabecera lleva
   el título de marca como <p class="title">.
 -->
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <title>A qué hora sale el precio de la luz de mañana · PrecioLuz</title>
 <meta name="description" content="El precio de la luz de mañana sale cada día a las 20:15-20:20 (19:20 en Canarias), tras la subasta de OMIE. Última vez que lo vimos publicado: —.">
-<link rel="canonical" href="https://precioluz.natural-apps.com/a-que-hora-sale-el-precio-de-la-luz/">
-<link rel="alternate" hreflang="es-ES" href="https://precioluz.natural-apps.com/a-que-hora-sale-el-precio-de-la-luz/">
-<link rel="alternate" hreflang="x-default" href="https://precioluz.natural-apps.com/a-que-hora-sale-el-precio-de-la-luz/">
-<meta name="apple-itunes-app" content="app-id=6758021483, app-argument=https://precioluz.natural-apps.com/manana/">
+<link rel="canonical" href="https://preciodelaluz.app/a-que-hora-sale-el-precio-de-la-luz/">
+<link rel="alternate" hreflang="es-ES" href="https://preciodelaluz.app/a-que-hora-sale-el-precio-de-la-luz/">
+<link rel="alternate" hreflang="x-default" href="https://preciodelaluz.app/a-que-hora-sale-el-precio-de-la-luz/">
+<meta name="apple-itunes-app" content="app-id=6758021483, app-argument=https://preciodelaluz.app/manana/">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="PrecioLuz">
 <meta property="og:locale" content="es_ES">
 <meta property="og:title" content="A qué hora sale el precio de la luz de mañana · PrecioLuz">
 <meta property="og:description" content="El precio de la luz de mañana sale cada día a las 20:15-20:20 (19:20 en Canarias), tras la subasta de OMIE. Última vez que lo vimos publicado: —.">
-<meta property="og:url" content="https://precioluz.natural-apps.com/a-que-hora-sale-el-precio-de-la-luz/">
-<meta property="og:image" content="https://precioluz.natural-apps.com/assets/img/og-default.png">
+<meta property="og:url" content="https://preciodelaluz.app/a-que-hora-sale-el-precio-de-la-luz/">
+<meta property="og:image" content="https://preciodelaluz.app/assets/img/og-default.png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
 <meta name="twitter:card" content="summary_large_image">
@@ -71,7 +44,7 @@
 <link rel="modulepreload" href="/assets/js/engine.js">
 <link rel="modulepreload" href="/assets/js/tz.js">
 <script>document.documentElement.classList.replace('no-js','js')</script>
-<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "@id": "https://precioluz.natural-apps.com/#organization", "name": "Natural Apps", "url": "https://www.natural-apps.com/", "logo": {"@type": "ImageObject", "url": "https://precioluz.natural-apps.com/assets/img/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483"]}, {"@context": "https://schema.org", "@type": "WebSite", "@id": "https://precioluz.natural-apps.com/#website", "url": "https://precioluz.natural-apps.com/", "name": "PrecioLuz", "alternateName": ["Precio Luz España PVPC", "precioluz.natural-apps.com"], "description": "El precio de la luz (PVPC 2.0TD) de hoy y de mañana por horas, con la hora más barata. Datos oficiales de Red Eléctrica (ESIOS), sin publicidad. Web de la app Precio Luz España PVPC para iPhone.", "inLanguage": "es-ES", "publisher": {"@id": "https://precioluz.natural-apps.com/#organization"}}, {"@context": "https://schema.org", "@type": "Article", "@id": "https://precioluz.natural-apps.com/a-que-hora-sale-el-precio-de-la-luz/#article", "headline": "{h1}", "description": "El precio de la luz de mañana sale cada día a las 20:15-20:20 (19:20 en Canarias), tras la subasta de OMIE. Última vez que lo vimos publicado: —.", "url": "https://precioluz.natural-apps.com/a-que-hora-sale-el-precio-de-la-luz/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://precioluz.natural-apps.com/a-que-hora-sale-el-precio-de-la-luz/"}, "inLanguage": "es-ES", "image": "https://precioluz.natural-apps.com/assets/img/og-default.png", "datePublished": "2026-09-22", "dateModified": "2026-11-01T23:09:32+01:00", "author": {"@id": "https://precioluz.natural-apps.com/#organization"}, "publisher": {"@id": "https://precioluz.natural-apps.com/#organization"}, "isPartOf": {"@id": "https://precioluz.natural-apps.com/#website"}, "about": [{"@type": "Thing", "name": "PVPC"}, {"@type": "Thing", "name": "Precio de la luz en España"}]}]</script>
+<script type="application/ld+json">[{"@context": "https://schema.org", "@type": "Organization", "@id": "https://preciodelaluz.app/#organization", "name": "Natural Apps", "url": "https://www.natural-apps.com/", "logo": {"@type": "ImageObject", "url": "https://preciodelaluz.app/assets/img/icon-512.png", "width": 512, "height": 512}, "sameAs": ["https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483"]}, {"@context": "https://schema.org", "@type": "WebSite", "@id": "https://preciodelaluz.app/#website", "url": "https://preciodelaluz.app/", "name": "PrecioLuz", "alternateName": ["Precio Luz España PVPC", "preciodelaluz.app"], "description": "El precio de la luz (PVPC 2.0TD) de hoy y de mañana por horas, con la hora más barata. Datos oficiales de Red Eléctrica (ESIOS), sin publicidad. Web de la app Precio Luz España PVPC para iPhone.", "inLanguage": "es-ES", "publisher": {"@id": "https://preciodelaluz.app/#organization"}}, {"@context": "https://schema.org", "@type": "Article", "@id": "https://preciodelaluz.app/a-que-hora-sale-el-precio-de-la-luz/#article", "headline": "A qué hora sale el precio de la luz de mañana", "description": "El precio de la luz de mañana sale cada día a las 20:15-20:20 (19:20 en Canarias), tras la subasta de OMIE. Última vez que lo vimos publicado: —.", "url": "https://preciodelaluz.app/a-que-hora-sale-el-precio-de-la-luz/", "mainEntityOfPage": {"@type": "WebPage", "@id": "https://preciodelaluz.app/a-que-hora-sale-el-precio-de-la-luz/"}, "inLanguage": "es-ES", "image": "https://preciodelaluz.app/assets/img/og-default.png", "datePublished": "2026-09-22", "dateModified": "2026-11-01T23:09:32+01:00", "author": {"@id": "https://preciodelaluz.app/#organization"}, "publisher": {"@id": "https://preciodelaluz.app/#organization"}, "isPartOf": {"@id": "https://preciodelaluz.app/#website"}, "about": [{"@type": "Thing", "name": "PVPC"}, {"@type": "Thing", "name": "Precio de la luz en España"}]}, {"@context": "https://schema.org", "@type": "BreadcrumbList", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "Precio de la luz hoy", "item": "https://preciodelaluz.app/"}, {"@type": "ListItem", "position": 2, "name": "A qué hora sale el precio de la luz de mañana", "item": "https://preciodelaluz.app/a-que-hora-sale-el-precio-de-la-luz/"}]}]</script>
 </head>
 <body data-tab="dia">
 <a class="skip" href="#panel-dia">Saltar al contenido</a>
@@ -138,11 +111,11 @@
 
   <article class="seo" id="seo">
 <h1>A qué hora sale el precio de la luz de mañana</h1>
-<p class="lead">El precio de la luz de mañana se publica cada día entre las 20:15 y las 20:20, hora peninsular (19:15-19:20 en Canarias), en cuanto Red Eléctrica termina de calcular el PVPC con el resultado de la subasta diaria de OMIE. La última vez que los precios de mañana aparecieron en precioluz.natural-apps.com fue a las —.</p>
+<p class="lead">El precio de la luz de mañana se publica cada día entre las 20:15 y las 20:20, hora peninsular (19:15-19:20 en Canarias), en cuanto Red Eléctrica termina de calcular el PVPC con el resultado de la subasta diaria de OMIE. La última vez que los precios de mañana aparecieron en preciodelaluz.app fue a las —.</p>
 <section class="article" id="a-que-hora-sale">
   <h2>La respuesta corta: entre las 20:15 y las 20:20</h2>
   <p>El precio de la luz de mañana (el PVPC por horas) lo publica Red Eléctrica de España cada día entre las 20:15 y las 20:20, hora peninsular. En Canarias, con una hora menos, eso son las 19:15-19:20. Es la misma hora todos los días, incluidos sábados, domingos y festivos, porque el mercado eléctrico no descansa.</p>
-  <p>La última vez que los precios de mañana aparecieron en precioluz.natural-apps.com fue a las — (última actualización de esta web: 01/11/2026 23:09, hora peninsular).</p>
+  <p>La última vez que los precios de mañana aparecieron en preciodelaluz.app fue a las — (última actualización de esta web: 01/11/2026 23:09, hora peninsular).</p>
   <h2>Por qué a esa hora: la subasta de OMIE</h2>
   <p>Todo empieza a mediodía. OMIE, el operador del mercado eléctrico de España y Portugal, cierra cada día a las 12:00 la recepción de ofertas para el mercado diario: los productores dicen a qué precio están dispuestos a generar en cada hora del día siguiente y los compradores cuánto quieren comprar. Alrededor de las 13:00 OMIE publica el resultado, el precio de cada hora, que es el precio del pool del que hablan las noticias.</p>
   <p>Pero ese precio no es todavía el PVPC. Para llegar al precio que paga un hogar hay que sumarle los servicios de ajuste del sistema, los peajes y los cargos de cada periodo horario y el margen regulado de la comercializadora. Red Eléctrica hace ese cálculo durante la tarde, con el resultado del mercado ya cerrado, y publica el PVPC definitivo en su sistema ESIOS a partir de las 20:15. Ese es el momento en el que el precio de mañana existe oficialmente, y el que recogen esta web, la app y cualquier otra fuente seria.</p>
@@ -169,7 +142,7 @@
 </main>
 
 <footer class="foot">
-  <p>PrecioLuz (precioluz.natural-apps.com) es la web de la app Precio Luz España PVPC para iPhone, de Natural Apps. Datos oficiales de Red Eléctrica, sin publicidad y sin comercializadora.</p>
+  <p>PrecioLuz (preciodelaluz.app) es la web de la app Precio Luz España PVPC para iPhone, de Natural Apps. Datos oficiales de Red Eléctrica, sin publicidad y sin comercializadora.</p>
   <ul class="links">
     <li><a href="https://apps.apple.com/es/app/precio-luz-espa%C3%B1a-pvpc/id6758021483" rel="noopener">Descargar la app en el App Store</a></li>
     <li><a href="https://www.natural-apps.com/PrecioLuz/privacy_es.html">Privacidad</a></li>
